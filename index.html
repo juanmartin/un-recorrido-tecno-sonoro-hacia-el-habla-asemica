@@ -41,6 +41,24 @@
       .cover p {
         margin-bottom: 0 !important;
       }
+      .pic-wall-container {
+        /* vertical gaps */
+        /* line-height: 0px; */
+        -webkit-column-count: 2;
+        -webkit-column-gap: 7px;
+        -moz-column-count: 2;
+        -moz-column-gap: 7px;
+        column-count: 2;
+        column-gap: 7px;
+      }
+      .pic-wall-container img {
+        /* Just in case there are inline attributes */
+        width: 100% !important;
+        height: auto !important;
+      }
+      .markdown-section iframe {
+        margin: 0 auto;
+      }
     </style>
   </head>
   <body>
@@ -67,5 +85,8 @@
     <!-- Other -->
     <script src="https://unpkg.com/docsify-copy-code@2"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
   </body>
 </html>

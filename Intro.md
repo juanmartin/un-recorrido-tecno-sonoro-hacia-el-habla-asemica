@@ -25,7 +25,7 @@ A continuación, expongo una serie de obras/piezas que ejemplifican esta metáfo
 [Link al artículo](https://www.juanm.art/in/projects/nosonseniales) - [Link al video](https://vimeo.com/625016744)
 
 <img src="/_media/nosonseniales1.png" alt="No son señales" width="100%"/>
-<div style="display: flex; width: 50%; gap: 10px; padding-right: 5px;">
+<div style="display: flex; width: 50.2%; gap: 7px; padding-right: 5px;">
   <img src="/_media/nosonseniales2.png" alt="No son señales"/>
   <img src="/_media/nosonseniales3.png" alt="No son señales"/>
 </div>
@@ -36,13 +36,13 @@ Esta obra se expuso en el espacio común del Museo MAR de Mar del Plata, es deci
 
 [Link al artículo](https://www.juanm.art/in/projects/paracrypt) - [Link a la obra](https://juanmartin.github.io/)
 
-![Parallax Cryptography](assets/20240531_000641_parallax-crypt.png)
+![Parallax Cryptography](assets/20240531_000641_parallax-crypt.png "Screenshot del sitio")
 
 Esta pieza de Net Art propone un acertijo de perspectivas que utiliza letras como símbolos arbitrarios de lenguaje. Mediante una interfaz de buscador bastante cotidiana y un algoritmo geométrico, quien utilice el sitio puede encriptar un mensaje perdido en una suerte de sopa de letras tridimensional que sólo puede desencriptar encontrando la perspectiva única donde la profundidad de campo visual deja de ser relevante. Se puede navegar y recorrer este universo de símbolos libremente hasta encontrar la perspectiva que revela el mensaje.
 
 ### Serie Alineaciones (fotografía)
 
-<div style="display: flex; width: 33%; gap: 10px; padding-right: 4px; margin: 10px 0px;">
+<div style="display: flex; width: 32.6666666%; gap: 7px; margin: 10px 0px 7px 0px;">
   <img src="/_media/alineaciones1.png" alt="No son señales"/>
   <img src="/_media/alineaciones2.png" alt="No son señales"/>
   <img src="/_media/alineaciones3.png" alt="No son señales"/>
@@ -55,21 +55,22 @@ Una serie de fotos donde se alinean perspectivas en distintas profundidades. Se 
 
 Instagram: [@patentepatente](https://www.instagram.com/patentepatente)
 
-https://lh7-us.googleusercontent.com/docsz/AD_4nXdX_VBdtchAtDtXfLiFa0aJzi1Sbb_27zbycihcmlPKdECCAvhQ7qpGMInQGtpXb2fayWWYt0tBGF7lVLYBFbqJHt6B8Sx0V05IrrLWQpK1jW2OX8roOXdB1N5LoYPiOn3PY7mktP-IgWHCTJvrIRHgVu_b?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://lh7-us.googleusercontent.com/docsz/AD_4nXcG58lp3V5x6z8jIPmsRwDPTDvewsRsJoAuiKHI1brRVOHGRgKfku2WLijwbgtgsJ-SBgraO87tmzjosh_jAcwSluVrmJDuJKaO6ys7jgNzAs3YAiJDgFAyqMD7iHr8Tw1tRGh2urnRpD3ErNb-oagKh_Q?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://lh7-us.googleusercontent.com/docsz/AD_4nXfIBK3U3aeClUk3Bsd8kuW9fAaWujAUOrOCYuwOHm5pwY1Y6NCLKWS2Ammeo-QtkheWx97X6gwK2soeUryZEEjJvAXffC7wNHQT7rZL-mxtNEjNM8wCnOaDYN4jVL1Bl_np096eLU4Ay3vmnfSsegjFXurJ?key=vdKaZcdAiRBAH-QdLKfkAA
+<div class="pic-wall-container">
+  <img src="_media/patentes1.png" alt="Patente MALO 56" />
+  <img src="_media/patentes3.png" alt="Patente LÁPIZ 8" />
+  <img src="_media/patentes2.png" alt="Patente LAGO 52" />
+  <img src="_media/patentes4.png" alt="Patente LERDO 18" />
+</div>
 
 Otra serie de fotografías de patentes (matrículas) de vehículos en la calle. A veces _aparecen_ textos que pueden formar las letras más los números si los convertimos a su semejante en letra, por ejemplo el 7 una T, el 3 una E, el 1 una I o l, el 8 una B, etc. Resulta relevante también el hecho de que _justo_ haya ubicado los ojos sobre ese texto callejero, como si fuera un _mensaje_ que nos toca ver.
 
 ### Silencio de Alerta - Instalación
 
-https://lh7-us.googleusercontent.com/docsz/AD_4nXdn5D1lsnt0Or5TP7Gctolci6qr7Fz2KLYVA90wlBiL8kLZfQR7z0jLZhFor1DHqYqQzEVTe9nKFVwq_ty2SQ_agoyhoLM63kKXjm0hentArik5ga4HPpMnhPlMSc6LwvAgEyZhqIMKSkZqegBD2rQ_8NHE?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://lh7-us.googleusercontent.com/docsz/AD_4nXfh5D9Rc_nhYQgBnP8WxaPzq0to9i_xHojiNLAm7z3h-J0EM315QNc-yTWRLiHM5HPNE7WuP9E2Zlum7vS_LjMwR4ngN7XC5b0Qv9K1xvP73lN38PvSR94ijThJKXlBZ0VoZ__bGNRfCYwnvAl4a44CnZyN?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://lh7-us.googleusercontent.com/docsz/AD_4nXfEzlym5C0mFvGi1Hcve5M4k4m4o6M5LfYoBF9hVUnEK8RHkltuCxSi_L4JTRUqpH3PXul1LP2emf23HxZqoJ3w6YqCom0AIHbgXWgbFj7Ssvz0iZFRNGlgEtOpK7ZCQzRu2otKw94nLj27LRt27iotFjE8?key=vdKaZcdAiRBAH-QdLKfkAA
+<img src="/_media/silencio-de-alerta_1.png" alt="Silencio de Alerta" width="100%" style="margin-top: 10px;"/>
+<div style="display: flex; width: 50%; gap: 10px; padding-right: 5px;">
+  <img src="/_media/silencio-de-alerta_2.png" alt="Silencio de Alerta"/>
+  <img src="/_media/silencio-de-alerta_3.png" alt="Silencio de Alerta" style="object-fit: cover;"/>
+</div>
 
 Esta obra fue montada en el antiguo anexo de la UNTREF como parte de la muestra final del Taller de Creación Sonora de Nicolás Varchausky. Se trata de una instalación puramente sonora, que busca pasar desapercibida. No tiene componente visual, es sólo sonido que invade el espacio y de pronto se detiene. Busca simular esos _ruidos_ constantes que se vuelven parte del paisaje sonoro de la cotidianeidad, que sólo cuando cesan, uno se da cuenta que siempre estuvieron, dejando una sensación de alivio repentino.
 
@@ -93,29 +94,26 @@ A continuación, daré a conocer algunas referencias que considero relevantes pa
 
 Antes de las categorías, presento un ejemplo que va de manera muy concisa al meollo del asunto. Ari Smith (aka Xiaoman) es un políglota profesional y youtuber, aprende muchos idiomas muy rápido y viaja por el mundo sorprendiendo a la gente hablando la lengua nativa del lugar. Con tanto conocimiento real acerca de diferentes idiomas, me parece un excelente referente para hacer esta "performance de imitación".
 
-[What Languages Sound Like to Foreigners](https://www.youtube.com/watch?v=QxrDNRhYFyI)
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/QxrDNRhYFyI?si=-gL8SeyQj_i4EHIr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 No sólo el contenido del video muestra lo que busco realizar a través del software de manera generalizada, sino que los comentarios del video resaltan con claridad esta rama de ideas acerca de los lenguajes:
 
-https://lh7-us.googleusercontent.com/docsz/AD_4nXcGU85D7YPzuX2L3-RgLfXUYXVz8pB2nUOqqtxl2wnPdSx7hbCbX4bUOoGl9C3wuJS3XTZSHapLM0swVcZ-kvB4Xwx3jqzir0UMuLsrkLa7Fr1o_fr8QQYB0uVi0Q6_vd12wlfD17ToPw5SgWTSdHximZ5E?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://lh7-us.googleusercontent.com/docsz/AD_4nXdLwyP0nYcDTopYB4UfrTk6vNDtoMm1jxVc2uStRtYqWCmOm1M9HYfJ9fqPBSz0pAxU1JxH1iF9aXzB30krUMpRS-6rM5CD2L6za-DnJs2RvN64jCNI3PW9-0kQl_QuGZSOxG8nhjjHJmZV1z5muq-yt2OY?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://lh7-us.googleusercontent.com/docsz/AD_4nXcKG8hW_T6f9m6vEi5ht1pIbOZ8mWq4_38oQVUOPW-QodtsEwpryFxwxMm1lkVDvsGTiEDFUCEaOWGt-mS2EDr4wgbp2OYGXi3altyAo0-CX5pt6VNjN9HMLtdzn9fGKRSzPjDW17gM8wUQgnG9HkpALu-y?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://lh7-us.googleusercontent.com/docsz/AD_4nXenV-j5MMOhAiFGba6PDp3zgUdYyZtlitptWT3xgdEc6oNL_JLkXtwG4osbDdtNB4Z-61DhzhyYm9vjHxb7madlOVUGfsUAXu1A8aO9GyCgBHnDbK1HuJHYRCjYKbvcJoVwgkWOLXGguk8KaZy0PmvS5OmN?key=vdKaZcdAiRBAH-QdLKfkAA
+<div class="pic-wall-container">
+  <img src="_media/what-languages-sound-to-foreigners-comments_1.png" alt="What Languages Sound Like to Foreigners comentario" />
+  <img src="_media/what-languages-sound-to-foreigners-comments_2.png" alt="What Languages Sound Like to Foreigners comentario" />
+  <img src="_media/what-languages-sound-to-foreigners-comments_3.png" alt="What Languages Sound Like to Foreigners comentario" />
+  <img src="_media/what-languages-sound-to-foreigners-comments_4.png" alt="What Languages Sound Like to Foreigners comentario" />
+</div>
 
 ### Arte
 
-https://lh7-us.googleusercontent.com/docsz/AD_4nXfu3S8ccNKQxzkTNq7u8gBXJnRwYLeJs76PcIRZSSG6--0-8GW1hNZf_bC872xUNrYIw3zr0dkO7QIuA0lGh0djbRpfQP8raeMWEt_OW8CO-n17QKb48FpXS_bd46rkb3lppUKLz7frKzd5iG7K1thxcUyE?key=vdKaZcdAiRBAH-QdLKfkAA
-
-**Pieter Bruegel el Viejo - La Torre de Babel (Rotterdam)**
+![Pieter Bruegel el Viejo - La Torre de Babel (Rotterdam)](_media/babel.png "Pieter Bruegel el Viejo - La Torre de Babel (Rotterdam)")
 
 **Éramos la humanidad** [(Amaral, 2022)](https://www.zotero.org/google-docs/?broken=TJ63Hn) es un proyecto audiovisual de Mateo Amaral que utiliza distintos sistemas de inteligencia artificial y motores de videojuegos para imaginar un futuro posthumano. En este futuro, los Entes -seres híbridos entre inteligencia artificial y vida orgánica- habitan un extraño ciberespacio entre estructuras incompresibles y restos de la cultura humana.
 
 La instalación consiste en la superposición de dos ecosistemas, uno virtual y otro vegetal. Mientras que los escenarios y personajes digitales aparecen proyectados en las paredes, en el suelo hay montículos de tierra donde crecen plantas y del techo cuelgan raíces, lianas y líquenes. En la intersección, la luz de la proyección se encuentra con los cuerpos vegetales produciendo dibujos flotantes. El ecosistema virtual es generado en tiempo real por un motor de videojuegos que se juega a sí mismo o una obra de teatro improvisada por criaturas fantasmales. El programa sintetiza entornos a partir de la combinación de distintos elementos y luego puebla esos entornos con personajes dotados de inteligencia artificial.
 
-[charlas](https://youtu.be/adLxW1D6sO4)
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/adLxW1D6sO4?si=iNMSzclQ3fiPS1qC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Lo particular que me interesó de la obra de Mateo es que sus entes-personajes hablan un idioma desconocido, pero a la vez familiar. Este es el punto al que deseo llegar. En su caso fue gracias a entrenar con pocas _épocas_ sus modelos de generación de voz, de manera que nunca llegaron a _aprender el idioma_ del todo, sino que quedaron truncos, eternamente balbuceando en su universo cibernético. El problema aquí es que no se puede _tunear_ el idioma a asimilarse, sino que tomó muestras de audio aleatorias para su modelo, de manera que es virtualmente imposible rastrear su origen.
 
@@ -131,9 +129,10 @@ No sólo es interesante este proyecto por la generación de sonidos que hagan re
 
 **HOME & Elsewhere** de Rosaire Appel [(_HOME & Elsewhere_, s/f)](https://www.zotero.org/google-docs/?dhY3mw) me resulta relevante para mencionar la escritura asémica, que es una forma de escritura que se caracteriza por su falta de contenido semántico o legibilidad convencional. El mismo recurso que trataré en este trabajo en la dimensión sonora. Esta se trata de una forma de expresión en la que los trazos, símbolos y gestos de la escritura se utilizan para crear una experiencia estética y emocional en lugar de transmitir un significado lingüístico claro. En palabras de Appel: _marcas no asignadas, abstractas que se utilizan como elementos lingüísticos_.
 
-https://lh7-us.googleusercontent.com/docsz/AD_4nXdLXfg_28RnaoG0YzRLFpGdj4-8kLHdWkHjaLMq3X6QzsU4U_M6zth-Z6hOOjRyOOZ0MyRhHlutQllHMEM0C-L6zCAMnAEWJSgFlL1OUGpjAc3Za-Hb_v_X0YqOxAmcg4-m-MX3DMCL2IvMHuZplrToWjpM?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://lh7-us.googleusercontent.com/docsz/AD_4nXdmmH63jUzKzr5NxGcGmltuqPv24Ga8wCJqv_NzOBsQzS88Aef8B7ogh7f1gf8K2O3MFRIu3pUMM5WK8AZcn70Wpi-mF2-AWFM1mEuiYFdvxB-6goxY6ml-JH1k7GkuP0VvuXN6NRjmytVdALaKCMk__Mkm?key=vdKaZcdAiRBAH-QdLKfkAA
+<div class="pic-wall-container">
+  <img src="_media/appel1.png" alt="Escritura Asémica" />
+  <img src="_media/appel2.png" alt="Escritura Asémica" />
+</div>
 
 Por último, me gustaría hacer mención a una obra fundacional en el arte sonoro, que hasta he recreado en 2016 durante mi cursada de la materia Psicoacústica dictada por Eleonora Rapán. Se trata de **"I am sitting in a room"** del compositor experimental Alvin Lucier (1969). En esta pieza, Lucier explora la relación entre el sonido, el espacio y la tecnología de grabación. La relación con mi trabajo es que esta pieza realiza la operación opuesta a la planteada en mi experimento sonoro.
 
@@ -145,7 +144,7 @@ El software es un componente clave de este desarrollo. A continuación menciono 
 
 **Wekinator** [(Wekinator, n.d.)](https://www.zotero.org/google-docs/?broken=dOywbx) es un software creado por Rebecca Fiebrink en 2009 que permite a los usuarios entrenar modelos de aprendizaje automático en tiempo real para crear aplicaciones interactivas y sistemas de control personalizados. Su enfoque en la interactividad y la creatividad lo hace especialmente adecuado para procesos creativos en música, arte, diseño interactivo y performance, ofreciendo a los artistas y diseñadores nuevas formas de explorar la interacción humano-máquina.
 
-https://lh7-us.googleusercontent.com/docsz/AD_4nXez-HCs4ho6CgPqjCXivTYIAiGs694sk3sAlJLferKWfDRidUgzMT4cW5SCYEHIU_em4JtfRpvpvAw6YdCmBfVhS-M4bXxRmqVw9UU8h7G4yvutEvDDNm9DLlibebB9slGLeuOlqo6OztOs9Yk-zWlsuZs?key=vdKaZcdAiRBAH-QdLKfkAA
+![Wekinator](_media/wekinator.png "Wekinator UI")
 
 Este software fue uno de los primeros encuentros que tuve con IA y vale la pena mencionarlo ya que en el campo de las artes electrónicas podría considerarse como una navaja suiza de la inteligencia artificial, dado que de manera muy intuitiva uno puede _mapear_ gestos desde alguna entrada como una cámara o sensor a datos fácilmente traducibles en audio, imagen o la interacción con actuadores físicos.
 
@@ -171,7 +170,7 @@ La utilización de voces sintetizadas en la música popular permite a los artist
 
 En los videojuegos y otras ficciones encontramos repetidas iteraciones de esta operación, pero considero este caso bien claro y lo suficientemente insertado en el imaginario colectivo para darle especial relevancia. Que sea parte de nuestro imaginario, por ejemplo, en las generaciones que lo jugamos, es importante para el reconocimiento de este tipo de sonoridades. Lo mismo ocurre con los idiomas del mundo.
 
-[The Sims 3 funny simlish talk!](https://www.youtube.com/watch?v=c379Giun-Co)
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/c379Giun-Co?si=1ClwlQdr1iBX30pV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Cuanto más abstracta sea una representación, más se puede insertar en eso la propia subjetividad. Cuanto más detalle se agregue, menos lugar queda a la intuición y la imaginación. **¿Cuál es el punto de equilibrio entre abstracción y especificidad que necesitamos para reconocer un idioma y que al mismo tiempo permita que nuestra creatividad complete los huecos semánticos?**
 
@@ -191,11 +190,9 @@ El estudio de la fonética y la fonología no solo ayuda a entender cómo los so
 
 La fonética se enfoca en la producción de sonidos individuales, aislados. Existe la fonética acústica: aquella que estudia las ondas sonoras, su componente sonoro físico; y la fonética articulatoria: que se centra en la forma en la que el humano produce el sonido con su cuerpo (músculos, flujo de aire). Por ejemplo, la pronunciación de la "r" en español es diferente a la pronunciación de la "r" en inglés, incluso difiere dentro del mismo inglés. Pensémoslo como el _banco de sonidos_ en el habla. Además, algunos idiomas tienen sonidos que no existen en otros. Por ejemplo, el idioma Xhosa, uno de los 11 idiomas hablados en Sudáfrica, tiene tres clics distintos que no existen en otros idiomas.
 
-[Khoisan click language](https://www.youtube.com/watch?v=W6WO5XabD-s)
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/W6WO5XabD-s?si=3xarbdUDQIVSaG9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-https://lh7-us.googleusercontent.com/docsz/AD_4nXcXP6--CQBSecwJ7q5BQ1BHuU66F4fcKTfGoYG-tsL9uonGzmzQhjpLC6v8WSFlMnbdHoJnyHNLD3Uu3_TJWPbLTX1cQYC4Lct6E_hgHtO175LySO3j3_nqtM0hlB1lqIDcQDYHz1E-5ByFvZQuVHZEedzb?key=vdKaZcdAiRBAH-QdLKfkAA
-
-https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
+![IPA Fonética](_media/ipa-fonetica.png "https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html")
 
 La fonología se enfoca en cómo los sonidos se combinan para formar palabras y oraciones y así identificar patrones distintivos en diferentes idiomas para entender cómo se diferencian y se relacionan entre sí. Estudia la combinación de fonemas en la estructura y la sintaxis de un idioma -o cualquier idioma- para generar determinado significado. Básicamente la fonología le da contenido semántico a la fonética, que la usa como medio para estructurar el habla humana.
 
