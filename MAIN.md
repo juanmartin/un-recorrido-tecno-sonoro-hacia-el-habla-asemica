@@ -6,10 +6,10 @@ Este trabajo investiga el concepto del _habla asémica_, el habla sin sentido se
 
 [Experimentos](Experimentos.md ":include :type=markdown")
 
-<!-- [Entrevistas](Entrevistas.md ":include :type=markdown") -->
+[Entrevistas](Entrevistas.md ":include :type=markdown")
 
-<!-- [ConceptosTécnicos](ConceptosTecnicos.md ":include :type=markdown") -->
+[ConceptosTécnicos](ConceptosTecnicos.md ":include :type=markdown")
 
-<!-- [Apéndice](Apendice.md ":include :type=markdown") -->
+[Apéndice](Apendice.md ":include :type=markdown")
 
-<!-- [Bibliografía](Bibliografia.md ":include :type=markdown") -->
+[Bibliografía](Bibliografia.md ":include :type=markdown")
