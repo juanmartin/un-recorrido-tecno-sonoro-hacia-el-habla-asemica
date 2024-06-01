@@ -129,7 +129,7 @@ No sólo es interesante este proyecto por la generación de sonidos que hagan re
 
 **HOME & Elsewhere** de Rosaire Appel (_HOME & Elsewhere_, s/f) me resulta relevante para mencionar la escritura asémica, que es una forma de escritura que se caracteriza por su falta de contenido semántico o legibilidad convencional. El mismo recurso que trataré en este trabajo en la dimensión sonora. Esta se trata de una forma de expresión en la que los trazos, símbolos y gestos de la escritura se utilizan para crear una experiencia estética y emocional en lugar de transmitir un significado lingüístico claro. En palabras de Appel: _marcas no asignadas, abstractas que se utilizan como elementos lingüísticos_.
 
-<div class="pic-wall-container">
+<div class="grid">
   <img src="_media/appel1.png" alt="Escritura Asémica" />
   <img src="_media/appel2.png" alt="Escritura Asémica" />
 </div>
