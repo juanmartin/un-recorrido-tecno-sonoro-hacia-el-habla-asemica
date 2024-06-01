@@ -2,6 +2,8 @@
 
 Akten, M. (s/f). Grannma MagNet – Granular Neural Music & Audio with Magnitude Networks (2018) – Memo Akten | Mehmet Selim Akten | The Mega Super Awesome Visuals Company. Recuperado el 19 de junio de 2023, de <https://www.memo.tv/works/grannma-magnet/>
 
+Amaral, M. (2022). Eramos la humanidad. <https://mateoamaral.com/main>
+
 Barrios, G. L. G., & Tedesco, S. (2021). Intercambios Transorgánicos
 
 Chomsky, N. (1957). Syntactic Structures. Mouton and Co.
@@ -18,4 +20,4 @@ Ladefoged, P., & Maddieson, I. (1996). The Sounds of the World’s Languages. Wi
 
 Riera, P. E., Eguía, M. C., & Zabaljáuregui, M. (2017). Timbre spaces with sparse autoencoders. Brazilian Symposium on Computer Music, 16. Proceedings... Sao Paulo: SBC, 93–98. <https://compmus.ime.usp.br/sbcm/2017/papers/sbcm-2017-14.pdf>
 
-Varchausky, N. (s/f). Archivo P.A.I.S. Recuperado el 21 de junio de 2023, de <http://archivopais.org/>
+Archivo P.A.I.S.: Cuatro hipótesis de trabajo – nicolás varchausky. (s/f). Recuperado el 21 de junio de 2023, de <https://www.varchausky.com.ar/archivo-pais/archivo-p-a-i-s-cuatro-hipotesis-de-trabajo/>

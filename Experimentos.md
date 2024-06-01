@@ -18,9 +18,17 @@ Para entrenar el modelo necesité un dataset o conjunto de datos preparados o fo
 
 A continuación algunos ejemplos de los archivos incluidos en el dataset. Son archivos `.wav`, es decir que no tienen pérdida de calidad:
 
-<audio controls src="_media/common_voice_fr_19598591.wav" title="common_voice_fr_19598591.wav"></audio>
-<audio controls src="_media/common_voice_fr_19598240.wav" title="common_voice_fr_19598240.wav"></audio>
-<audio controls src="_media/common_voice_fr_19140964.wav" title="common_voice_fr_19140964.wav"></audio>
+<div class="grid">
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/common_voice_fr_19598591.wav" title="common_voice_fr_19598591.wav"></audio>
+  </div>
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/common_voice_fr_19598240.wav" title="common_voice_fr_19598240.wav"></audio>
+  </div>
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/common_voice_fr_19140964.wav" title="common_voice_fr_19140964.wav"></audio>
+  </div>
+</div>
 
 Nótese que los fragmentos están dichos por diferentes personas, con distintas calidades y condiciones de grabación. Esto se debe a que es necesaria esta variabilidad para enriquecer el modelo, que logre generalizar el habla y la voz humana, pero a ninguna voz en particular.
 
@@ -36,21 +44,29 @@ $ sox common_* frances.wav
 
 `sox` es una utilidad para manipular audio desde la consola, funciona en macOS, Linux y Windows. De esa forma evité el trabajo manual de concatenar todos los archivos.
 
-<audio controls src="_media/french.mp3" title="Archivo de audio mp3 61.8kbps VBR para fines demostrativos, pero se utilizó el wav para entrenar el modelo."></audio>
+<audio class="full-width" controls src="_media/french.mp3" title="Archivo de audio mp3 61.8kbps VBR para fines demostrativos, pero se utilizó el wav para entrenar el modelo."></audio>
 
-<p class="caption">Archivo de audio mp3 61.8kbps VBR para fines demostrativos, pero se utilizó el wav para entrenar el modelo.</p>
+<p class="caption center">Archivo de audio mp3 61.8kbps VBR para fines demostrativos, pero se utilizó el wav para entrenar el modelo.</p>
 
 Lo mismo pero para el Español:
 
-<audio controls src="_media/common_voice_es_18681301.wav" title="common_voice_es_18681301.wav"></audio>
-<audio controls src="_media/common_voice_es_19125377.wav" title="common_voice_es_19125377.wav"></audio>
-<audio controls src="_media/common_voice_es_19602100.wav" title="common_voice_es_19602100.wav"></audio>
+<div class="grid">
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/common_voice_es_18681301.wav" title="common_voice_es_18681301.wav"></audio>
+  </div>
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/common_voice_es_19125377.wav" title="common_voice_es_19125377.wav"></audio>
+  </div>
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/common_voice_es_19602100.wav" title="common_voice_es_19602100.wav"></audio>
+  </div>
+</div>
 
 Y su versión concatenada:
 
-<audio controls src="_media/spanish.mp3" title="Archivo convertido a mp3 con ffmpeg a 61.7kbps VBR"></audio>
+<audio class="full-width" controls src="_media/spanish.mp3" title="Archivo convertido a mp3 con ffmpeg a 61.7kbps VBR"></audio>
 
-<p class="caption">Archivo convertido a mp3 con ffmpeg a 61.7kbps VBR</p>
+<p class="caption center">Archivo convertido a mp3 con ffmpeg a 61.7kbps VBR</p>
 
 Para entrenar el modelo preparé un Colab con el código a ejecutar y un entorno donde ejecutarlo, que podía ser la nube (Google) o mi computadora. Luego de realizar unos _benchmarks_ -pruebas de rendimiento- observé que mi computadora sería un poco más rápida que los recursos que ofrece el _free tier_ de Google Colab. Así que instalé Anaconda para montar un entorno con la versión requerida de Python y todas las dependencias requeridas para poder ejecutar mi propio Colab, incluso la configuración de seguridad y redes para poder acceder remotamente desde cualquier lado, como si tuviera mi propia nube en mi casa, manteniendo la soberanía de mi sistema computacional.
 
@@ -64,11 +80,11 @@ El proceso de entrenamiento que utilicé incluye la posibilidad de reconstruir e
 
 Dado este audio:
 
-<audio controls src="_media/common_voice_es_19609042.wav" title="Audio original alimentado a la red"></audio>
+<audio class="full-width" controls src="_media/common_voice_es_19609042.wav" title="Audio original alimentado a la red"></audio>
 
 Se reconstruyó el siguiente audio directamente desde el código. Para eso se insertan en el espacio latente del modelo los mismos valores que devuelve el entrenamiento. Resultando en:
 
-<audio controls src="_media/reconstructed.mp3" title="Audio reconstruido"></audio>
+<audio class="full-width" controls src="_media/reconstructed.mp3" title="Audio reconstruido"></audio>
 
 ![Espectrograma del resultado reconstruido.](_media/predicted_spectrogram.png "Espectrograma del resultado reconstruido.")
 
@@ -78,15 +94,15 @@ Al solicitarle inferencia al modelo para generar nuevos sonidos a partir del ent
 
 - Podcast en francés. mp3 55.7kbps VBR para fines demostrativos:
 
-  <audio id="podcast-frances" controls src="_media/french-clean.mp3" title="Audio extraído de https://www.youtube.com/watch?v=N55d9mPm_HA"></audio>
+  <audio class="full-width" id="podcast-frances" controls src="_media/french-clean.mp3" title="Audio extraído de https://www.youtube.com/watch?v=N55d9mPm_HA"></audio>
 
-  <p class="caption">Audio extraído de https://www.youtube.com/watch?v=N55d9mPm_HA</p>
+  <p class="caption center">Audio extraído de https://www.youtube.com/watch?v=N55d9mPm_HA</p>
 
 - Japonés:
   
-  <audio controls src="_media/japanese-clean.mp3" title="Title"></audio>
+  <audio class="full-width" controls src="_media/japanese-clean.mp3" title="Title"></audio>
 
-  <p class="caption">Audio extraído de https://www.youtube.com/watch?v=trySjnuJfJY</p>
+  <p class="caption center">Audio extraído de https://www.youtube.com/watch?v=trySjnuJfJY</p>
 
 ### Espacio Latente
 
@@ -110,9 +126,9 @@ En principio, junto con Leandro Garber, pensamos en enviar datos aleatorios de c
 
 Con el modelo [multi-lengua](#multi-lengua-training) la idea fue alimentar las dimensiones del espacio latente con los datos de entrenamiento de un modelo entrenado en Francés anteriormente. La pregunta era ¿qué pasaría si a un modelo bilingüe le hago _hablar_ uno de los idiomas que conoce?
 
-<audio controls src="_media/JF-MODEL_japanese-fantasmagorico.mp3" title="JF-MODEL_japanese-fantasmagorico"></audio>
+<audio class="full-width" controls src="_media/JF-MODEL_japanese-fantasmagorico.mp3" title="JF-MODEL_japanese-fantasmagorico"></audio>
 
-<p class="caption">JF-MODEL_japanese-fantasmagorico.mp3</p>
+<p class="caption center">JF-MODEL_japanese-fantasmagorico.mp3</p>
 
 Este audio es el resultado de alimentar el modelo bilingüe con los datos de entrenamiento que representan los movimientos dentro del espacio latente para segmento de habla en Francés.
 
@@ -144,7 +160,54 @@ La distribución de los fonemas en el mapa 2D de AudioStellar es lo que define e
 <a name="Cartografía Mundial del Habla" id="cartografias-explicacion"></a>
 - Si se agrupan por sus características sonoras, se podrán contemplar fonemas similares de los distintos idiomas, se barren las barreras geopolíticas, trazando un mapa donde el sonido hace nuestro sentido (ref sound of nonsense), es nuestra fuente de verdad y no vamos a interpolar entre idiomas sino entre sonidos de diferentes orígenes, agrupados por sus cualidades similares. Así encontramos una nueva [_Cartografía Mundial del Habla_](#audiostellar-puredata-experimento-32).
 
-La entrevista con Mateo Amaral me hizo pensar en el uso no convencional de las herramientas, en este caso tecnologías de generación de habla como los TTS, como un recurso propio de nuestro proceso creativo como artistas trabajando en piezas que luego componen obras. A lo largo del desarrollo de estos experimentos que se describen a continuación, los distintos pasos me hacen pensar en _trucos_ que uso para perseguir mi determinada búsqueda estética.
+Organicé una serie de [entrevistas](#Entrevistas) o encuentros con personas con experiencia en la generación de habla por computadora a modo de extender la mano y salir de mis propias ideas. En todos los casos fueron mencionados los [TTS](#TTS). Con el entusiasmo de las conversaciones, indagué brevemente en el famoso [Tacotron](https://pytorch.org/hub/nvidia_deeplearningexamples_tacotron2/). Este modelo de generación de habla es muy popular en la comunidad de inteligencia artificial y se basa en la arquitectura de un _encoder_ y un _decoder_ que se entrenan conjuntamente para convertir texto en habla. Aunque no profundicé en su uso, obtuve algunos rápidos resultados sonoros.
+
+<div class="grid">
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron0-spanish.wav" title="Tacotron Español"></audio>
+    <p class="caption center mt-1">Tacotron Español</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron1-french.wav" title="Tacotron Francés"></audio>
+    <p class="caption center mt-1">Tacotron Francés</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron2-german.wav" title="Tacotron Alemán"></audio>
+    <p class="caption center mt-1">Tacotron Alemán</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron3-greek.wav" title="Tacotron Griego"></audio>
+    <p class="caption center mt-1">Tacotron Griego</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron4-dutch.wav" title="Tacotron Holandés"></audio>
+    <p class="caption center mt-1">Tacotron Holandés</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron5-finnish.wav" title="Tacotron Finlandés"></audio>
+    <p class="caption center mt-1">Tacotron Finlandés</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron6-hungarian.wav" title="Tacotron Húngaro"></audio>
+    <p class="caption center mt-1">Tacotron Húngaro</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron7-chinese.wav" title="Tacotron Chino"></audio>
+    <p class="caption center mt-1">Tacotron Chino</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron8-japanese.wav" title="Tacotron Japonés"></audio>
+    <p class="caption center mt-1">Tacotron Japonés</p>
+  </div>
+  <div class="center full-width">
+    <audio class="full-width" controls src="_media/tacotron9-russian.wav" title="Tacotron Ruso"></audio>
+    <p class="caption center mt-1">Tacotron Ruso</p>
+  </div>
+</div>
+
+Si bien el resultado estético y formal de estas voces me resultó divertido, no supe encausarlo en mi investigación de la invención de nuevos idiomas dado que la manera en la que estos modelos trabajan es en diferido, y mi capricho por la generación en tiempo real me llevó a buscar otras alternativas. En este punto, la idea de separar en fonemas y recorrerlos en AudioStellar me pareció una salida exploratoria más directa.
+
+La [entrevista con Mateo Amaral](#mateo-amaral) me hizo pensar en el uso no convencional de las herramientas, en este caso tecnologías de generación de habla como los TTS, como un recurso propio de nuestro proceso creativo como artistas trabajando en piezas que luego componen obras. A lo largo del desarrollo de estos experimentos que se describen a continuación, los distintos pasos me hacen pensar en _trucos_ que uso para perseguir mi determinada búsqueda estética.
 
 Al llegar a [TTSmaker.com](http://ttsmaker.com/) y gracias a la charla con Mateo, la idea de no involucrar texto me pareció caduca. Haciendo pruebas con todas las herramientas online que encontré, ideé un flujo que me pareció interesante en cuanto a proceso y sus resultados. Escribir sus instrucciones como _performance informática_ es un nuevo devenir de este proceso que describo a continuación. Invito y celebro su interpretación y modificación.
 
@@ -268,7 +331,7 @@ Los últimos dos ejemplos son los que luego pasé por TTSmaker y utilizados en e
 
 Habiendo recorrido las nuevas [Cartografías Mundiales del Habla](#cartografias-explicacion) con las unidades provistas por AudioStellar, conversando con un amigo que fue parte de su equipo de desarrollo, [Tomas Ciccola](https://szgy.ahh.red/) me sugiere la idea de investigar nuevas formas de recorrer mi mapa mediante [OSC](#OSC) ya que dicho software provee una [API](#API) para ser [controlado con este protocolo](https://gitlab.com/ayrsd/audiostellar/-/blob/units/OSC_Documentation.md).
 
-El mapa 2D de fragmentos de voces está categorizado en Clusters: conjunto de sonidos que pueden ser agrupados tanto por cercanía (ajustable con ciertos parámetros para definir sus características) o por la carpeta donde estos archivos residen. Dado que tenía una carpeta por idioma, mis clusters estaban agrupados por idioma 👍. A su vez, están desparramados por todo el mapa ya que la distribución de cada punto -sonido- estaba dada por su _parecido tímbrico_ para determinar la cercanía entre sí. Esto permitía que tenga la posibilidad de recorrerlos con las unidades de AudioStellar de manera espacial, como hice antes, o bien, llamar por cluster mediante OSC.
+El mapa 2D de fragmentos de voces está categorizado en Clusters: conjunto de sonidos que pueden ser agrupados tanto por cercanía (ajustable con ciertos parámetros para definir sus características) o por la carpeta donde estos archivos residen. Dado que tenía una carpeta por idioma, mis clusters estaban agrupados por idioma 👍. A su vez, están desparramados por todo el mapa ya que la distribución de cada punto -sonido- estaba dada por su _parecido tímbrico_ para determinar la cercanía entre sí. Esto permitía que tenga la posibilidad de recorrerlos con las unidades de AudioStellar de manera espacial, como [hice antes](#ast-explorer), o bien, llamar por cluster mediante OSC.
 
 ```yaml
 /play/cluster [clusterName] [[index]] [[volume]]
@@ -277,9 +340,11 @@ El mapa 2D de fragmentos de voces está categorizado en Clusters: conjunto de so
 
 Comencé a bocetar una aplicación utilizando [Plug Data](https://plugdata.org/), una versión moderna de [Pure Data](https://puredata.info/) implementada con [JUCE](#asmrsynth). La idea era enviar estos mensajes hacia AudioStellar para poder reproducir los sonidos de cada idioma con determinada frecuencia de disparo, de manera que pueda _simular habla_ mezclada al concatenar los fragmentos de voces.
 
-<https://drive.google.com/file/d/1r0gbmMcFY4lDBztvNtyfK41DhlXasLIc/view?usp=drive_link>
+<video width="100%" controls src="_media/maquina idioma1-female.mp4" title="Maquina Idiomas 1"></video>
 
-// continuar
+<p class="caption">Maquina de Idiomas 1</p>
+
+Esta primera versión de mi patch de control de AudioStellar con Pure Data me permitió recorrer los clusters de fragmentos mezclados de cada idioma, pero no me permitió hacerlo de manera aleatoria, sino que debía elegir un cluster -idioma- y recorrerlo. Esto me llevó a pensar en una nueva versión que me permitiera recorrer los clusters con determinada probabilidad que el usuario desee, acercándome nuevamente a la idea de interpolación entre idiomas.
 
 ### Máquina Probabilística _(Experimento #32.1)_
 
@@ -295,15 +360,15 @@ En esta nueva iteración sobre el primer experimento con TTS, consideré algunos
 - Para Guaraní se encontró este modelo: <https://huggingface.co/facebook/mms-tts-grn> sólo provee 1 voz de hombre.
 - no inventa idiomas, genera conversaciones y multitudes.
 
-<https://drive.google.com/file/d/1PmvJszNEmjLkqitroxBEGfrv-eUTSuGu/view?usp=drive_link>
+<video width="100%" controls src="_media/maquina chance1 - male.mp4" title="Maquina Probabilística 1"></video>
 
-HISTORIA SIEMPRE LA MISMA:
+Al probar esta aplicación, me resonó haber hallado esa multiplicidad de voces en diferentes idiomas, similar a aquel primer disparador de este trabajo al escuchar el bullicio en espacios públicos de ciudades cosmopolitas. Al barrer entre los idiomas aparece ese coro de personas hablando en diferentes lenguas, fragmentos de conversaciones que se mezclan en el aire.
+
+Me pareció pertitente como hilo conductor "semántico" que la **historia** que fue despedazada en fragmentos de habla sea la misma, pero traducida en todos los idiomas que pude generar:
 
 <a id="historia"></a>
 
 > _En una galaxia muy, muy lejana, los pingüinos bailan tango con sandías y estrellas fugaces como luces de neón cubiertas de chocolate. El sol es como una gran naranja y la luna es como un gran algodón de azúcar. Los ríos fluyen con jarabe de arce y las nubes parecen pasteles de limón. Los peces saltan del agua y tocan el piano mientras las mariposas pintan dibujos en sus alas. Las carreteras están cubiertas de chocolate derretido y las casas tienen techos hechos a medida. Las estrellas fugaces se convierten en caramelos de frambuesa y los mosquitos tocan el violín en mitad de la noche. Todo esto es parte de un dulce sueño donde las olas del mar están hechas de salsa de caramelo y las estrellas brillan como caramelos de diamantes. De las nubes llueven macarrones y el atardecer es como un cuadro de chocolate. Es un mundo de imaginación, donde los arcoíris son la escalera hacia los sueños celestiales y los atardeceres saben a mil helados diferentes. Los barcos flotan en los ríos con caramelo y las montañas se convierten en pasteles dulces._
->
-- add video de cambios 2024
 
 ### Mi propia voz _(Experimento #32)_
 

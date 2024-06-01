@@ -47,6 +47,19 @@ media="(prefers-color-scheme: dark)" {
   width: 100% !important;
   height: auto !important;
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 1em;
+}
+
+/* For devices with width less than or equal to 600px */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
 .markdown-section iframe {
   margin: 0 auto;
 }
@@ -60,8 +73,10 @@ p.caption {
   font-size: 0.8em;
   margin: -1em 0 1em 0;
 }
+.center,
 p.center {
-  text-align: center;
+  text-align: center !important;
+  justify-self: center;
 }
 code.lang-txt {
   text-wrap: pretty !important;
@@ -85,4 +100,10 @@ a {
 }
 a:hover {
   color: var(--theme-color) !important;
+}
+.full-width {
+  width: 100%;
+}
+.mt-1 {
+  margin-top: 0.1em !important;
 }
