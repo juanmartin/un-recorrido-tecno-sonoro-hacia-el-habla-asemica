@@ -79,3 +79,10 @@ code.lang-txt {
   background-color: var(--mono-tint2);
   border-radius: 20px 20px 20px 5px;
 }
+a {
+  color: inherit;
+  transition: color 0.3s ease !important;
+}
+a:hover {
+  color: var(--theme-color) !important;
+}
