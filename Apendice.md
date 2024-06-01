@@ -247,7 +247,7 @@ La conversación pasó por varias etapas, fue larga pero rápida y eficaz ya que
 
     <p class="chat A">you are still not addressing the issue</p>
 
-    <div class="chat B">
+    <div class="chat B" id="script-sugerido">
     I apologize for any confusion. To ensure that the output audio files maintain the same pitch and playback speed as the input audio, you should also copy the input audio's sample width and number of channels when saving the phoneme segments. Here's the corrected code:
 
     ```python
@@ -353,9 +353,9 @@ La conversación pasó por varias etapas, fue larga pero rápida y eficaz ya que
 
 En resumen, la conversación con ChatGPT para generar el código, como si fuera un empleado *ad-honorem* de la investigación, pasó por varias etapas. En principio, al no lograr el objetivo requerido, se fue corrigiendo el pedido para alinearlo con este. Luego, la aparición de errores propios del código, como métodos –funciones– que no existen o se llaman de otra forma, y por último un problema sobre los audios generados que no eran generados con el sample rate correcto.
 
-Finalmente, corrí el último [script sugerido](https://www.notion.so/31eaddcc2bb841bcaa124ed890ed8ca7?pvs=21) sobre uno de los audios de mi dataset para realizar la separación de los archivos de audio. VOSK necesita el archivo del modelo específico para comprender el idioma con el que va a trabajar, por suerte cuentan con varios idiomas ya entrenados y [disponibles](https://alphacephei.com/vosk/models) para su descarga y uso. A continuación algunos de los resultados:
+Finalmente, corrí el último [script sugerido](#script-sugerido) sobre uno de los audios de mi dataset para realizar la separación de los archivos de audio. VOSK necesita el archivo del modelo específico para comprender el idioma con el que va a trabajar, por suerte cuentan con varios idiomas ya entrenados y [disponibles](https://alphacephei.com/vosk/models) para su descarga y uso. A continuación algunos de los resultados:
 
-- El audio original a recortar fue de la [conversación en francés](https://www.notion.so/31eaddcc2bb841bcaa124ed890ed8ca7?pvs=21) descargada de YouTube referido anteriormente.
+- El audio original a recortar fue de la [conversación en francés](#podcast-frances) descargada de YouTube referido anteriormente.
   Algunos recortes:
 
   <audio controls src="_media/segment_0.wav" title="segment_0.wav"></audio>
