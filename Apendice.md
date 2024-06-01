@@ -358,10 +358,20 @@ Finalmente, corrí el último [script sugerido](#script-sugerido) sobre uno de l
 - El audio original a recortar fue de la [conversación en francés](#podcast-frances) descargada de YouTube referido anteriormente.
   Algunos recortes:
 
-  <audio controls src="_media/segment_0.wav" title="segment_0.wav"></audio>
-  <audio controls src="_media/segment_1.wav" title="segment_1.wav"></audio>
-  <audio controls src="_media/segment_2.wav" title="segment_2.wav"></audio>
-  <audio controls src="_media/segment_3.wav" title="segment_3.wav"></audio>
+<div class="grid">
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/segment_0.wav" title="segment_0.wav"></audio>
+  </div>
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/segment_1.wav" title="segment_1.wav"></audio>
+  </div>
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/segment_2.wav" title="segment_2.wav"></audio>
+  </div>
+  <div class="full-width center">
+    <audio class="full-width" controls src="_media/segment_3.wav" title="segment_3.wav"></audio>
+  </div>
+</div>
 
 Al analizar los resultados, los segmentos de fonemas tienen la misma corta duración, lo cual me dio sospechas, sin embargo parecen ser unidades básicas de la lengua en cuestión. Imaginé de inmediato que debía conseguir el modelo para todos los idiomas que quisiera integrar en mi sistema, y si no estaban disponibles habría que generarlos mediante entrenamiento. Comencé a pensar en otras alternativas para realizar esta separación de forma más homogénea en los idiomas, dado que además, no los conozco a todos como para juzgar si los resultados generados serían correctos.
 
