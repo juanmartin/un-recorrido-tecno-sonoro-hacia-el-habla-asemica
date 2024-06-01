@@ -131,8 +131,118 @@ Estos recortes vocales, audios segmentados en fonemas, o pequeñas porciones, se
 La distribución de los fonemas en el mapa 2D de AudioStellar es lo que define esta experiencia. He aquí el _trade-off_: una cartografía diferente a la geopolítica de las lenguas versus la interpolación de idiomas al recorrer los bordes entre grupos de fonemas. Paso a explicar:
 
 - Si los fonemas se agrupan geopolíticamente, ie. por idioma, será posible recorrer un idioma específico a través de sus fonemas, sin hacer sentido, pero utilizando contenido -sonidos- propios de un sólo idioma. Esto nos da la ventaja de también poder escuchar qué hay en los bordes de cada grupo de fonemas e interpolar entre idiomas cercanos.
-- Si se agrupan por sus características sonoras, se podrán contemplar fonemas similares de los distintos idiomas, se barren las barreras geopolíticas, trazando un mapa donde el sonido hace nuestro sentido (ref sound of nonsense), es nuestra fuente de verdad y no vamos a interpolar entre idiomas sino entre sonidos de diferentes orígenes, agrupados por sus cualidades similares. Así encontramos una nueva [*Cartografía Mundial del Habla*](https://www.notion.so/Un-recorrido-tecno-sonoro-hacia-el-habla-as-mica-31eaddcc2bb841bcaa124ed890ed8ca7?pvs=21).
+- Si se agrupan por sus características sonoras, se podrán contemplar fonemas similares de los distintos idiomas, se barren las barreras geopolíticas, trazando un mapa donde el sonido hace nuestro sentido (ref sound of nonsense), es nuestra fuente de verdad y no vamos a interpolar entre idiomas sino entre sonidos de diferentes orígenes, agrupados por sus cualidades similares. Así encontramos una nueva [_Cartografía Mundial del Habla_](https://www.notion.so/Un-recorrido-tecno-sonoro-hacia-el-habla-as-mica-31eaddcc2bb841bcaa124ed890ed8ca7?pvs=21).
 
 La entrevista con Mateo Amaral me hizo pensar en el uso no convencional de las herramientas, en este caso tecnologías de generación de habla como los TTS, como un recurso propio de nuestro proceso creativo como artistas trabajando en piezas que luego componen obras. A lo largo del desarrollo de estos experimentos que se describen a continuación, los distintos pasos me hacen pensar en _trucos_ que uso para perseguir mi determinada búsqueda estética.
 
 Al llegar a [TTSmaker.com](http://ttsmaker.com/) y gracias a la charla con Mateo, la idea de no involucrar texto me pareció caduca. Haciendo pruebas con todas las herramientas online que encontré, ideé un flujo que me pareció interesante en cuanto a proceso y sus resultados. Escribir sus instrucciones como _performance informática_ es un nuevo devenir de este proceso que describo a continuación. Invito y celebro su interpretación y modificación.
+
+### Instrucciones para un experimento TTS _(Experimento #31)_
+
+1. Generar texto aleatorio en [RandomTextGenerator](https://www.randomtextgenerator.com/) en algún idioma.
+
+    a. Si no está el idioma, [DeepL](https://www.deepl.com/translator) o bien [Google Translate](https://translate.google.com/) para traducir al idioma deseado.
+
+    b. Revisar el texto generado utilizando un traductor como el mencionado, para ver su contenido. En lo posible que no repita tantas palabras, ni que haga sentido. Si hay coherencia en las oraciones pero el contenido del mensaje es surreal, vale para los propósitos de esta investigación.
+
+2. Pasar por [Gibberish Generator](https://thinkzone.wlonk.com/Gibber/GibGen.htm)
+
+    a. Revisar Gibberish Level. Probar en 3. Si el texto no parece muy coherente, o está muy mezclado (juzgado a partir de una noción del idioma) o el resultado sonoro “no coincide tanto con el imaginario de esa lengua” subir un punto.
+
+3. Generar habla con [TTSMaker](https://ttsmaker.com/)
+
+    a. Probar distintas voces
+
+    b. Intentar que el audio resultante esté entre 30 y 40 segundos
+
+4. La estructura de carpetas para la organización de sonidos resultantes podría ser la siguiente:
+
+  ![Estructura de carpeta TTS](_media/tts-folder.png "Estructura de carpeta TTS")
+
+  O bien generalizando:
+
+    ```yaml
+    <Carpeta de un idioma>
+    - Textos.txt # Documento de texto que contiene el texto que es reproducido por el TTS.
+    - ttsmaker-file-<fecha> <número>.wav # Donde número corresponde al párrafo dentro del archivo de texto.
+    + <Otra carpeta de otro idioma>
+    - Textos.txt
+    - ttsmaker-file-<fecha> <número>.wav
+    ...
+    # Tantos como idiomas se deseen agregar.
+    ```
+
+5. Un ejemplo del contenido de los archivos de texto es:
+
+  ```txt
+  1
+  De se so soubemos matada pentadessem. Alimindo comedefez os mas obederraderetado se muda no te se. Cum ques emponge janter. Cartessa esta notimido ho qua te conros te confuncido filigas tu vidos as be. Aponge as manda noivem em te ha olvempesfacominar mente mando. Carra endos ha. Alimpros has manar as em. Apos manteis avellam expleto se cape. Sei irrana dosa pitadadaveo nosa noivo. De mausoube. Papantao. Bar larra cape. La pendivido do imeta seguessemo procebo erra em erradomina neliguietticahindo
+
+  2
+  Ja sr litterato tolica patuscadas tratado por sujeitava. Vintens nervoso um fio. Entribue aos mal. Caminhar arreligioso vao rez inda vao religioso vao rez acces levantado ser que estincoes le fez accento tem nos affligioso dor sujeitae. Esmeros tento causara identes. Fazendo pe. Caminhava rajadas um oh fechava. Nos affligir symbolica documentes. Fazenda vao esmeros teu rez accesso um oh fechava. Retento por evitae. Esmerossas trando paiol vereram tal esta vae evidento companto tolica documento t
+  ```
+
+6. Recortar archivos de audio con AudioStellar o `VOSK-phoneme-slicer.py` para generar segmentos pequeños, uno por cada fonema.
+
+   ℹ️ **NOTA:** En este caso, utilicé exclusivamente AudioStellar para esta tarea dado que este separa a partir de transientes. Esta estrategia única para todos los idiomas permite cierta homogeneidad de cómo los analizamos, sin considerar reglas específicas de cada uno. Caso contrario, se debería conseguir un modelo entrenado por cada lengua –o desarrollarlo– para realizar una separación de fonemas específica debido a que no todos tienen las mismas reglas fonéticas. Esto complejiza y alarga bastante la tarea y no aporta considerablemente al resultado final sonoro. Armé un nuevo script para utilizar los métodos que AudioStellar utiliza en su código para realizar los recortes. Para esto Leandro me indicó en qué parte del código de ASt se encuentran estas funcionalidades y tomé lo que necesitaba para armar el script (ver código en Apéndice).
+
+  De esta forma, con la estructura de carpetas del paso anterior, se generarían las _tajadas_ de cada idioma en lote, de forma programática, en cuestión de minutos. Sólo se debe especificar los siguientes parámetros en el script, que son los mismos que ofrece la interfaz de AudioStellar:
+
+  ```python
+  input_folder = dir # Directorio contenedor de las carpetas de idiomas
+  window_max = 0.10
+  window_avg = 0.05
+  delta = 0.10
+  backtrack = True
+  fade = 1000
+  normalize = True
+  ```
+
+  Para mayor información, revisar la [documentación de `librosa`](https://librosa.org/doc/main/generated/librosa.onset.onset_detect.html#librosa.onset.onset_detect).
+
+7. Crear mapa en AudioStellar utilizando MFCC, algoritmo que ignora características de pitch –ideal para voces de diferentes personas– pero conserva características tímbricas –prosodia– de manera que agrupe los fonemas sin importar quien lo diga. MFCC es el algoritmo más cercano a una subjetividad perceptiva del sonido.
+
+8. 💡 Experimentar.
+
+?> Este experimento es altamente escalable, es decir que cuanto más largos, o más archivos generados por el TTS se utilicen, habrá mayor riqueza de fonemas, más contenido por idioma. La cantidad de lenguas, y cuáles, dependerá de la búsqueda sonora del experimento.
+
+<video id="ast-explorer" width="100%" controls src="_media/AudioStellar exploracion manual.mp4" title="Exploración manual con units de AudioStellar"></video>
+
+<p class="caption center">Exploración manual con units de AudioStellar.</p>
+
+#### Consideración sobre idiomas con ideogramas
+
+El Chino, por ejemplo, está compuesto por ideogramas, por lo que mezclar sus caracteres no hace mucho sentido. Es decir que no podemos inventar, al menos con este tipo de herramientas, palabras que no existan a la hora de ser pronunciadas. Quizás la oración no tenga sentido pero las palabras que la componen sí, y esto es diferente a los otros casos dado el algoritmo utilizado en la herramienta que convierte texto a gibberish (ver código fuente en el mismo [sitio web](https://thinkzone.wlonk.com/Gibber/GibGen.htm)).
+Una estrategia para mezclar el texto y evitar sonidos repetidos es borrar caracteres aleatorios en el texto a reproducir, por lo que se sugiere generar uno largo al cual se le puedan eliminar fragmentos hasta lograr el efecto y la duración deseada.
+
+#### Alternativa a paso 1 y 2
+
+Cuando el generador de texto aleatorio no ofrece determinado idioma, y si se traduce textualmente no favorece a la sonoridad _conocida_ conviene utilizar ChatGPT –u otro modelo de lenguaje– para generar texto en el idioma deseado.
+
+Por ejemplo, para turco esta fue la conversación con ChatGPT:
+
+`💬 generate a random turkish text of 100 words`
+
+  > Certainly, here's a random 100-word gibberish text in Turkish:
+  >
+  > "Gibberish metinleri, yabancı dillerin seslerini taklit eden ilginç bir yolculuğa davet ediyor. Zıpır zıpır harf sıralamaları, düşünce dünyasını farklı bir evrene taşıyor. Bu tuhaf dilin anlamı yok, ama onun sesleri ve ritmi şaşırtıcı derecede gerçekçi. Kuşlar zıpırdıyor, rüzgar zıpırdıyor ve güneş yavaşça batıyor. Bu yazıları anlamasanız bile, zıplamak istediğiniz hissine kapılacaksınız. Haydi, zıplayalım ve bu dilin sırlarını keşfedelim. Zıpır zıpır zıp, zıpır zıpır zıp, zıpır zıpır zıp!"
+  >
+  > Bu yazı tamamen anlamsızdır ve Türkçe ile ilgisi yoktur, ama ses ve harf sıralamaları Türkçeyi taklit etmektedir.
+
+`💬 make it sound more turkish not so gibberish`
+
+  > Certainly, here's a 100-word text in Turkish that may not be gibberish but is still non-sensical:
+  >
+  > "Bugün güzel bir gün. Güneş parlıyor, kuşlar cıvıl cıvıl şarkılar söylüyor. Etrafta yeşil tepeler ve mavi gökyüzü ile huzur dolu bir manzara var. İnsanlar güler yüzlü, sokaklarda gezip dolaşıyorlar. Ama aynı zamanda, kırmızı armutlar dökülüyor ağaçlardan ve şeftali çiçekleri kışın açıyor. Her şey müthiş bir uyum içinde, ama aslında bu tamamen hayal ürünü bir dünya. Biraz daha yakından bakınca, aniden yeşil elma yağmurunun yağdığını ve çikolata çiçeklerinin gülümsediğini göreceksiniz. Her şey mümkün bu harika dünyada."
+  >
+  > This text is constructed to sound more like a coherent passage in Turkish, even though the content is still nonsensical.
+
+`💬 make another one, emphasizing how turkish it may sound when spoken aloud`
+
+  > Certainly, here's a 100-word text in Turkish that emphasizes the Turkish language's phonetic and rhythmic qualities when spoken aloud:
+  >
+  > "Gün doğar, kuşlar kanat çırpar, rüzgar hafifçe eserken, doğanın melodisi kulakları çınlatacak kadar güzeldir. Denizin dalgaları sahile vurur, çocuklar gülerek oynar, yaşamın ritmi hızlıca akar. Köyde simitçiler simitlerini taze taze satar, çaycılar çaylarını demler ve çay bardaklarını birer birer dizerek servis eder. Sohbetler kahkahalarla dolup taşar, tüm renkler birbirine karışır ve gülüşler yürekleri ısıtır. Her bir kelime, her bir hece, bu güzel dili konuşurken sanki birer nota gibi çalar. Türkçe, kulaklara hoş gelen bir şarkıdır."
+  >
+  > This text aims to capture the phonetic and rhythmic qualities of the Turkish language when spoken aloud, while the content remains non-sensical.
+
+Los últimos dos ejemplos son los que luego pasé por TTSmaker y utilizados en el [experimento de la cartografía con ASt](#ast-explorer).
