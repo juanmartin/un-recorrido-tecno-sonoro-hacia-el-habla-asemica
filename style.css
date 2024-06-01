@@ -63,3 +63,6 @@ p.caption {
 p.center {
   text-align: center;
 }
+code.lang-txt {
+  text-wrap: pretty !important;
+}
