@@ -198,7 +198,7 @@ La fonología se enfoca en cómo los sonidos se combinan para formar palabras y 
 
 ### Gramática Generativa
 
-La Gramática Generativa, desarrollada por Noam Chomsky en la década de 1950, es una teoría lingüística que busca explicar la estructura de los lenguajes humanos basándose en la idea de que la capacidad para el lenguaje es innata y se rige por reglas universales. Esta teoría incluye componentes como el fonológico, que se ocupa de los sonidos del lenguaje; el léxico, que aborda el significado de las palabras; y el sintáctico, que se centra en la formación de las oraciones. Chomsky sostiene que existen reglas subyacentes comunes a todos los idiomas, representadas a través de una notación formal conocida como "gramática generativa-transformacional".
+La Gramática Generativa, desarrollada por Noam Chomsky en la década de 1950, es una teoría lingüística que busca explicar la estructura de los lenguajes humanos basándose en la idea de que la capacidad para el lenguaje es innata y se rige por reglas universales. Esta teoría incluye componentes como el fonológico, que se ocupa de los sonidos del lenguaje; el léxico, que aborda el significado de las palabras; y el sintáctico, que se centra en la formación de las oraciones. Chomsky sostiene que existen reglas subyacentes comunes a todos los idiomas, representadas a través de una notación formal conocida como "gramática generativa-transformacional" (Chomsky, 1957).
 
 Una característica clave de la Gramática Generativa es la distinción entre "competencia lingüística" y "actuación lingüística". La competencia lingüística es el conocimiento innato e inconsciente de las reglas gramaticales que posee cada hablante nativo, mientras que la actuación lingüística es el uso práctico y observable del lenguaje en la comunicación diaria. Además, la gramática generativa-transformacional describe las transformaciones que ocurren en la generación y comprensión de las oraciones, permitiendo a los hablantes modificar estructuras oracionales para expresar diferentes significados y relaciones gramaticales.
 
@@ -222,6 +222,6 @@ Richard Elliot no logra una definición concreta del sinsentido por lo que estab
 
 Quizás se vea borroso el borde entre el sinsentido y la fantasía, pero la fantasía adhiere a un sistema de reglas y lógicas que se respetan a lo largo de su desarrollo. El sinsentido, por otro lado, desafía constantemente cualquier atisbo de regla que se establezca. Está más cerca de un mecanismo que permite el lenguaje: poder decir cualquier cosa, armar estructuras de palabras que no suelen ir juntas, casi como si la materialidad de un juego de encastrar piezas sean palabras, o incluso mejor: letras.
 
->  <p class="rainbow-text">Es aleifuv una emuuef forma dkljelkeaji orden ojfodj palabras qe mve letras unoe j d ap.</p>
+> <p class="rainbow-text">Es aleifuv una emuuef forma dkljelkeaji orden ojfodj palabras qe mve letras unoe j d ap.</p>
 
 Y no pasa nada. Como si fuera simplemente _otra forma_ de armar una oración, sólo porque se puede.
