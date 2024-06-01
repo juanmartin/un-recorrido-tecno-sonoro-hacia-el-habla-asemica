@@ -49,7 +49,7 @@ Esta pieza de Net Art propone un acertijo de perspectivas que utiliza letras com
 </div>
 <img src="/_media/alineaciones4.png" alt="No son señales" width="100%"/>
 
-Una serie de fotos donde se alinean perspectivas en distintas profundidades. Se aprecian como imágenes 2D extraídas de nuestro mundo tridimensional. ¿Qué sucede si dejamos de entender la imagen? Si descartamos lo que hay allí en lo que vemos, sólo son colores y formas que nos propone la realidad.
+Una serie de fotos no publicadas -aún- donde se alinean perspectivas en distintas profundidades. Se aprecian como imágenes 2D extraídas de nuestro mundo tridimensional. ¿Qué sucede si dejamos de entender la imagen? Si descartamos lo que hay allí en lo que vemos, sólo son colores y formas que nos propone la realidad.
 
 ### Patentes
 
@@ -201,3 +201,27 @@ La fonología se enfoca en cómo los sonidos se combinan para formar palabras y 
 La Gramática Generativa, desarrollada por Noam Chomsky en la década de 1950, es una teoría lingüística que busca explicar la estructura de los lenguajes humanos basándose en la idea de que la capacidad para el lenguaje es innata y se rige por reglas universales. Esta teoría incluye componentes como el fonológico, que se ocupa de los sonidos del lenguaje; el léxico, que aborda el significado de las palabras; y el sintáctico, que se centra en la formación de las oraciones. Chomsky sostiene que existen reglas subyacentes comunes a todos los idiomas, representadas a través de una notación formal conocida como "gramática generativa-transformacional".
 
 Una característica clave de la Gramática Generativa es la distinción entre "competencia lingüística" y "actuación lingüística". La competencia lingüística es el conocimiento innato e inconsciente de las reglas gramaticales que posee cada hablante nativo, mientras que la actuación lingüística es el uso práctico y observable del lenguaje en la comunicación diaria. Además, la gramática generativa-transformacional describe las transformaciones que ocurren en la generación y comprensión de las oraciones, permitiendo a los hablantes modificar estructuras oracionales para expresar diferentes significados y relaciones gramaticales.
+
+## Sinsentido
+
+A lo largo de este trabajo tomo el sinsentido como un recurso estético que utilizo en distintos niveles de mi investigación. Me refiero al sentido propio de esta investigación, de mi carrera, del constante accionar en cada paso de cada experimento. Entrando a la materialidad: el sentido sonoro por sí mismo, el nuevo sentido que genera el sinsentido, un relato que no tiene sentido pero puede ser interpretado y genera imágenes que tienen sentido en un mundo cuyas reglas del sentido son otras.
+
+El prefijo negativo de _sin-sentido_ propone una falta, pero como se plantea en "The Sound of Nonsense” también es _meta-sentido_ y es que esto refiere a una nueva estrategia, una decisión arbitraria, diferente [(Elliott & Bull, 2017)](https://www.notion.so/Un-recorrido-tecno-sonoro-hacia-el-habla-as-mica-31eaddcc2bb841bcaa124ed890ed8ca7?pvs=21). No es lo opuesto al sentido, es otra cosa. Esto va en línea con el trabajo de escritores del sinsentido, como Lewis Carrol, conocido por su famosa obra “Alicia en el país de las maravillas”. Me atrevo a mencionar al movimiento del _Realismo Mágico_, que conocí gracias a Gabriel García Márquez, en donde las reglas del juego parecen cambiar por completo a nuestro universo pero allí son parte de la cotidianeidad. Me gustaría decir que es nuestra versión latinoamericana del sinsentido.
+
+Richard Elliot no logra una definición concreta del sinsentido por lo que establece cinco pautas de a qué se refiere con sinsentido en su texto. Me quedo con dos de ellas, y el entramado entre todas:
+
+> Destaco las que me interesan:
+>
+> - **Aquello que introduce una lógica alterada incluso cuando se utiliza un lenguaje _norma_. Sería el reino de [Lewis] Carroll y sus seguidores o de la comedia Goonesca.**
+> - Lo que se mantiene dentro de un régimen sintáctico «normal» pero introduce fallos y otras estrategias disruptivas y juega con la lógica de la semántica. Los escritores y músicos modernistas y posmodernistas estarían entre los ejemplos de este tipo.
+> - **Lo que surge de alterar la sintaxis para crear magia, confusión o verdad. Incluiría recortes, permutaciones y otras estrategias que juegan con la lógica de la sintaxis.**
+> - Lo que roza o se solapa con lo absurdo. Esto incluiría el drama Beckettiano y la canción Dylanesca.
+> - Lo que utiliza códigos o términos que sólo entienden los especialistas o los iniciados. Para los no especialistas o ajenos al tema, sólo se trata de «tonterías», lo que comúnmente se conoce como jerga. Esto incluye el lenguaje de moda, como el jazz jive, la jerga del hip-hop, los términos subculturales, ciertos discursos académicos y el Shipping Forecast de la BBC.
+>
+> Entre ellos se encuentra el momento del sinsentido, ese espacio de desconcierto entre dos o más modos de significado en el que la búsqueda de sentido se convierte en un intercambio de códigos.
+
+Quizás se vea borroso el borde entre el sinsentido y la fantasía, pero la fantasía adhiere a un sistema de reglas y lógicas que se respetan a lo largo de su desarrollo. El sinsentido, por otro lado, desafía constantemente cualquier atisbo de regla que se establezca. Está más cerca de un mecanismo que permite el lenguaje: poder decir cualquier cosa, armar estructuras de palabras que no suelen ir juntas, casi como si la materialidad de un juego de encastrar piezas sean palabras, o incluso mejor: letras.
+
+>  <p class="rainbow-text">Es aleifuv una emuuef forma dkljelkeaji orden ojfodj palabras qe mve letras unoe j d ap.</p>
+
+Y no pasa nada. Como si fuera simplemente _otra forma_ de armar una oración, sólo porque se puede.

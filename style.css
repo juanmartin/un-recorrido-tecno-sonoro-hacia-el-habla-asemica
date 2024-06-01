@@ -1,0 +1,65 @@
+:root {
+  --theme-hue: 333;
+  --theme-saturation: 75%;
+  --theme-lightness: 50%;
+}
+body {
+  text-align: justify;
+}
+a:hover {
+  text-decoration: none;
+}
+.cover a {
+  border: none !important;
+  background: none !important;
+}
+media="(prefers-color-scheme: dark)" {
+  .cover .cover-main > p:last-child {
+    margin: 0 !important;
+    color: white !important;
+  }
+  .cover .cover-main > p:last-child a:first-child {
+    color: white !important;
+  }
+}
+.cover .cover-main > p:last-child {
+  margin: 0 !important;
+  color: var(--cover-link-color) !important;
+}
+.cover .cover-main > p:last-child a:first-child {
+  color: var(--cover-link-color) !important;
+}
+.cover p {
+  margin-bottom: 0 !important;
+}
+.pic-wall-container {
+  /* vertical gaps */
+  /* line-height: 0px; */
+  -webkit-column-count: 2;
+  -webkit-column-gap: 7px;
+  -moz-column-count: 2;
+  -moz-column-gap: 7px;
+  column-count: 2;
+  column-gap: 7px;
+}
+.pic-wall-container img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+.markdown-section iframe {
+  margin: 0 auto;
+}
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+p.caption {
+  color: #808080;
+  font-size: 0.8em;
+  margin: -1em 0 1em 0;
+}
+p.center {
+  text-align: center;
+}
