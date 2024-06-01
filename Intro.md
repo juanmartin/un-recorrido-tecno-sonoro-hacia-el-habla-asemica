@@ -36,7 +36,7 @@ Esta obra se expuso en el espacio común del Museo MAR de Mar del Plata, es deci
 
 [Link al artículo](https://www.juanm.art/in/projects/paracrypt) - [Link a la obra](https://juanmartin.github.io/)
 
-![Parallax Cryptography](assets/20240531_000641_parallax-crypt.png "Screenshot del sitio")
+![Parallax Cryptography](_media/parallax-crypt.png "Screenshot del sitio")
 
 Esta pieza de Net Art propone un acertijo de perspectivas que utiliza letras como símbolos arbitrarios de lenguaje. Mediante una interfaz de buscador bastante cotidiana y un algoritmo geométrico, quien utilice el sitio puede encriptar un mensaje perdido en una suerte de sopa de letras tridimensional que sólo puede desencriptar encontrando la perspectiva única donde la profundidad de campo visual deja de ser relevante. Se puede navegar y recorrer este universo de símbolos libremente hasta encontrar la perspectiva que revela el mensaje.
 
