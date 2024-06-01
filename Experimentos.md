@@ -56,11 +56,11 @@ Para entrenar el modelo preparé un Colab con el código a ejecutar y un entorno
 
 <a id="multi-lengua-training"></a>
 
-Realicé el entrenamiento con los archivos de audio concatenados que armé en la etapa del dataset. Esto resultó en modelos _uni-lengua_ ya que sólo podrían generalizar el habla en una sola lengua. Por esto fue que el siguiente paso fue realizar un proceso de entrenamiento con dos lenguas que, como explicaré [más adelante](#multi-lengua), podría generar una cruza interesante. Concatené una conversación en Francés con otra en Japonés como dataset para luego generar un modelo _multi-lengua_ o en este primer caso bilingüe.
+Realicé el entrenamiento con los archivos de audio concatenados que armé en la etapa del dataset. Esto resultó en modelos _uni-lengua_ ya que sólo podrían generalizar el habla de una sola lengua. Por esto fue que el siguiente paso fue realizar un proceso de entrenamiento con dos lenguas que, como explicaré [más adelante](#multi-lengua), podría generar una cruza interesante. Concatené una conversación en Francés con otra en Japonés como dataset para luego generar un modelo _multi-lengua_ o en este primer caso bilingüe.
 
-Ahora bien, luego de múltiples intentos de que el proceso de entrenamiento funcione, sumado a las horas que este proceso demora, obtuve mi archivo de idioma. ¿Un archivo que representa un idioma? ¿Sería así de simple? ¿En unas horas la computadora sabría lo suficiente para sonar exactamente como suena una persona hablando Francés?
+Ahora bien, luego de múltiples intentos de que el proceso de entrenamiento funcione, sumado a las horas que este proceso demora, obtuve mi archivo de idioma. ¿Un archivo que representa un idioma? ¿Sería así de simple? ¿En unas horas la computadora sabría lo suficiente para producir sonidos similares a una persona hablando Francés?
 
-El proceso de entrenamiento que utilicé incluye la posibilidad de obtener el audio de entrada al entrenamiento como un resultado reconstruido por el mismo modelo, de manera que podía rápidamente saber si este al menos podría recrear lo mismo con lo que fue entrenado. Esto es una forma de hacer inferencia.
+El proceso de entrenamiento que utilicé incluye la posibilidad de reconstruir el audio de entrada utilizado para el entrenamiento como un resultado generado por el mismo modelo, de manera que podía rápidamente saber si este al menos podría recrear el mismo material con lo que fue entrenado. Esto es una forma de hacer [inferencia](#Inferencia).
 
 Dado este audio:
 
@@ -72,9 +72,9 @@ Se reconstruyó el siguiente audio directamente desde el código. Para eso se in
 
 ![Espectrograma del resultado reconstruido.](_media/predicted_spectrogram.png "Espectrograma del resultado reconstruido.")
 
-![Camino del espacio latente de 4 dimensiones que genera el audio reconstruido.](_media/Z_latent_score.png "Camino del espacio latente de 4 dimensiones que genera el audio reconstruido.")
+![Camino de valores del espacio latente de 4 dimensiones que genera el audio reconstruido.](_media/Z_latent_score.png "Camino de valores del espacio latente de 4 dimensiones que genera el audio reconstruido.")
 
-Al solicitarle [inferencia](#Inferencia) al modelo para generar nuevos sonidos a partir del entrenamiento con los mostrados anteriormente, los resultados no eran muy favorables para mi investigación por su alto nivel de ruido, por lo que decidí buscar videos en YouTube de Podcasts o conversaciones para armar un nuevo dataset. Encontré voces limpias de gente con buena calidad de grabación, sentí que con estos el modelo podría generalizar voces más nítidas.
+Al solicitarle inferencia al modelo para generar nuevos sonidos a partir del entrenamiento con los mostrados anteriormente, los resultados no eran muy favorables para mi investigación por su alto nivel de ruido, por lo que decidí buscar videos en YouTube de Podcasts o conversaciones para armar un nuevo dataset. Encontré voces limpias de gente con buena calidad de grabación, sentí que con estos el modelo podría generalizar voces más nítidas.
 
 - Podcast en francés. mp3 55.7kbps VBR para fines demostrativos:
 
@@ -92,15 +92,19 @@ Al solicitarle [inferencia](#Inferencia) al modelo para generar nuevos sonidos a
 
 La idea es explorar este espacio para encontrar nuevos [_caminos_](#caminos) que extraigan las características principales del sonido con el que fue entrenado el modelo. Con caminos me refiero a datos en serie de tantas dimensiones como tenga el espacio latente –números– que representan esta exploración, y al ser decodificados generan nueva información con las características principales de sus datos de entrada.
 
-En principio, junto con Leandro Garber, pensamos en enviar datos aleatorios de caminos posibles para comenzar a ver qué había en ese espacio latente. Para eso armamos un pequeño patch en Pure Data para enviar los valores en tiempo real al modelo y que este genere audio a partir de los datos de entrada.
-
 <a id="asmrsynth"></a>
 
-El [**2ASMRSynth**](https://github.com/pabloriera/2ASMRS) también programado por Pablo Riera es el sintetizador basado en [JUCE](https://juce.com/) para generar inferencia sonora en tiempo real a partir de un modelo de tipo [torchscript](https://pytorch.org/docs/stable/jit.html). Como expliqué anteriormente, uno carga el modelo en el sintetizador y puede mover los parámetros dentro del espacio latente y escucharlo en tiempo real, como un instrumento. La sonoridad de este instrumento dependerá del modelo cargado.
+Para facilitar la exploración contamos con el [**2ASMRSynth**](https://github.com/pabloriera/2ASMRS) también programado por Pablo Riera. Es una especie de sintetizador basado en [JUCE](https://juce.com/) que puede generar inferencia sonora en tiempo real a partir de un modelo de tipo [torchscript](https://pytorch.org/docs/stable/jit.html). Como expliqué anteriormente, uno carga el modelo en la aplicación y puede mover los parámetros dentro del espacio latente y escucharlo en tiempo real, como un instrumento. La sonoridad de este instrumento dependerá del modelo cargado.
 
 ![2ASMRSynth Sintetizador de inferencia de modelos](_media/2ASMRSynth.png "Captura de pantalla del 2ASMRSynth corriendo en Linux Mint.")
 
 Cada _fader_ del instrumento representa una de las dimensiones del espacio latente, y al moverlos le estamos asignando valores a cada una. La parte del decodificador del modelo genera la salida de audio. Mover estos valores manualmente, por ejemplo con el mouse, no resulta interesante ya que se debe orquestar un movimiento coordinado de todos los parámetros para que la salida haga _sentido_. Por supuesto que cuenta con la posibilidad de ser controlado mediante el protocolo MIDI.
+
+En principio, junto con Leandro Garber, pensamos en enviar datos aleatorios de caminos posibles para comenzar a ver qué había en ese espacio latente. Para eso armamos un pequeño patch en Pure Data para enviar los valores en tiempo real al modelo y que este genere audio a partir de los datos de entrada. El algoritmo aleatorio que utilizamos fue el de [**borracho**](https://en.wikipedia.org/wiki/Random_walk) o _drunk_, que consiste en moverse aleatoriamente en pasos de a uno en cualquier dirección y sentido. El resultado fue un sonido caótico, pero interesante, que se puede escuchar en la primera parte del siguiente video. En la segunda parte intenté cargar los datos de entrada del entrenamiento para ver si podía reconstruir el audio original, volveremos sobre esto en las pruebas siguientes.
+
+<video width="100%" controls src="_media/French4dim_drunkYlatent.mp4" title="French4dim_drunkYlatent"></video>
+
+<p class="caption">Exploración de modelo de 4 dimensiones con algoritmo Drunk</p>
 
 <a id="multi-lengua"></a>
 
@@ -112,19 +116,19 @@ Con el modelo [multi-lengua](#multi-lengua-training) la idea fue alimentar las d
 
 Este audio es el resultado de alimentar el modelo bilingüe con los datos de entrenamiento que representan los movimientos dentro del espacio latente para segmento de habla en Francés.
 
-Las siguientes pruebas consisten en cargar los modelos entrenados en el sintetizador _2ASMRSynth_ y luego alimentar los parámetros del modelo (nótese el errático movimiento de los faders) con una lista de cada valor en el tiempo. En el siguiente ejemplo son 8 listas, una para cada dimensión del espacio latente representada en los faders.
+Las siguientes pruebas consisten en cargar los modelos entrenados en el sintetizador _2ASMRSynth_ y luego alimentar los parámetros del modelo (nótese el caótico movimiento de los faders) con una lista de cada valor en el tiempo. En el siguiente ejemplo son 8 listas, una para cada dimensión del espacio latente representada en los faders.
 
-<video width="100%" controls src="_media/French8dim.mp4" title="Title"></video>
+<video width="100%" controls src="_media/French8dim.mp4" title="French8dim"></video>
 
 <p class="caption center">Francés 8 dimensiones</p>
 
 Para lograr esto se desarrolló un patch de Pure Data con el que se cargan los valores numéricos de un archivo de texto (generado durante la etapa de entrenamiento) y se _mapean_ o traducen a controles MIDI (rango de 0-127).
 
-<video width="100%" controls src="_media/French4dim_drunkYlatent.mp4" title="Title"></video>
+<video width="100%" controls src="_media/yYvX1yVfKI.mp4" title="Exploración caótica"></video>
 
 <p class="caption center">Francés 4 dimensiones recorrido con algoritmo 'drunk'</p>
 
-Esta herramienta que posibilita la ejecución en tiempo real del modelo trae un problema inherente de su método de control: el protocolo MIDI está limitado a valores de 0-127. Esta resolución no es lo suficientemente precisa para _expresar_ la voz en cada una de sus variables internas del espacio latente. Como resultado sonoro aparecen sonidos similares a una voz cuyos movimientos son reminiscentes a algo artificial, quizás medio robótico, con saltos abruptos en su calidad vocal _con_ <em>con</em>sonantes <em>con</em>stantes. La característica fantasmagórica, a su vez, está producida por el problema de la aplicación de una fase aleatoria en el audio. El asunto de la fase es un clásico problema en la generación de audio por IA que explicaré posteriormente en los Conceptos Técnicos.
+Esta herramienta que posibilita la ejecución en tiempo real del modelo trae un problema inherente de su método de control: el protocolo MIDI está limitado a valores de 0-127. Esta resolución no es lo suficientemente precisa para _expresar_ la voz en cada una de sus variables internas del espacio latente. Como resultado sonoro aparecen sonidos similares a una voz cuyos movimientos son reminiscentes a algo artificial, quizás medio robótico, con saltos abruptos en su calidad vocal <em class="rainbow-text">con con</em>sonantes <em class="rainbow-text">con</em>stantes. La característica fantasmagórica, a su vez, está producida por el problema de la aplicación de una fase aleatoria en el audio. El asunto de la fase es un típico problema en la generación de audio por IA que explicaré posteriormente en los [Conceptos Técnicos](#problema-fase).
 
 ## Separación en fonemas/fragmentos
 
@@ -191,7 +195,7 @@ Al llegar a [TTSmaker.com](http://ttsmaker.com/) y gracias a la charla con Mateo
 
 6. Recortar archivos de audio con AudioStellar o `VOSK-phoneme-slicer.py` para generar segmentos pequeños, uno por cada fonema.
 
-   ℹ️ **NOTA:** En este caso, utilicé exclusivamente AudioStellar para esta tarea dado que este separa a partir de transientes. Esta estrategia única para todos los idiomas permite cierta homogeneidad de cómo los analizamos, sin considerar reglas específicas de cada uno. Caso contrario, se debería conseguir un modelo entrenado por cada lengua –o desarrollarlo– para realizar una separación de fonemas específica debido a que no todos tienen las mismas reglas fonéticas. Esto complejiza y alarga bastante la tarea y no aporta considerablemente al resultado final sonoro. Armé un nuevo script para utilizar los métodos que AudioStellar utiliza en su código para realizar los recortes. Para esto Leandro me indicó en qué parte del código de ASt se encuentran estas funcionalidades y tomé lo que necesitaba para armar el script (ver código en Apéndice).
+   ?> En este caso, utilicé exclusivamente AudioStellar para esta tarea dado que este separa a partir de transientes. Esta estrategia única para todos los idiomas permite cierta homogeneidad de cómo los analizamos, sin considerar reglas específicas de cada uno. Caso contrario, se debería conseguir un modelo entrenado por cada lengua –o desarrollarlo– para realizar una separación de fonemas específica debido a que no todos tienen las mismas reglas fonéticas. Esto complejiza y alarga bastante la tarea y no aporta considerablemente al resultado final sonoro. Armé un nuevo script para utilizar los métodos que AudioStellar utiliza en su código para realizar los recortes. Para esto Leandro me indicó en qué parte del código de ASt se encuentran estas funcionalidades y tomé lo que necesitaba para armar el script (ver código en Apéndice).
 
   De esta forma, con la estructura de carpetas del paso anterior, se generarían las _tajadas_ de cada idioma en lote, de forma programática, en cuestión de minutos. Sólo se debe especificar los siguientes parámetros en el script, que son los mismos que ofrece la interfaz de AudioStellar:
 
@@ -207,9 +211,9 @@ Al llegar a [TTSmaker.com](http://ttsmaker.com/) y gracias a la charla con Mateo
 
   Para mayor información, revisar la [documentación de `librosa`](https://librosa.org/doc/main/generated/librosa.onset.onset_detect.html#librosa.onset.onset_detect).
 
-7. Crear mapa en AudioStellar utilizando MFCC, algoritmo que ignora características de pitch –ideal para voces de diferentes personas– pero conserva características tímbricas –prosodia– de manera que agrupe los fonemas sin importar quien lo diga. MFCC es el algoritmo más cercano a una subjetividad perceptiva del sonido.
+1. Crear mapa en AudioStellar utilizando MFCC, algoritmo que ignora características de pitch –ideal para voces de diferentes personas– pero conserva características tímbricas –prosodia– de manera que agrupe los fonemas sin importar quien lo diga. MFCC es el algoritmo más cercano a una subjetividad perceptiva del sonido.
 
-8. 💡 Experimentar.
+2. 💡 Experimentar.
 
 ?> Este experimento es altamente escalable, es decir que cuanto más largos, o más archivos generados por el TTS se utilicen, habrá mayor riqueza de fonemas, más contenido por idioma. La cantidad de lenguas, y cuáles, dependerá de la búsqueda sonora del experimento.
 
@@ -228,29 +232,35 @@ Cuando el generador de texto aleatorio no ofrece determinado idioma, y si se tra
 
 Por ejemplo, para turco esta fue la conversación con ChatGPT:
 
-`💬 generate a random turkish text of 100 words`
+<p class="chat A">generate a random turkish text of 100 words</p>
 
-  > Certainly, here's a random 100-word gibberish text in Turkish:
-  >
-  > "Gibberish metinleri, yabancı dillerin seslerini taklit eden ilginç bir yolculuğa davet ediyor. Zıpır zıpır harf sıralamaları, düşünce dünyasını farklı bir evrene taşıyor. Bu tuhaf dilin anlamı yok, ama onun sesleri ve ritmi şaşırtıcı derecede gerçekçi. Kuşlar zıpırdıyor, rüzgar zıpırdıyor ve güneş yavaşça batıyor. Bu yazıları anlamasanız bile, zıplamak istediğiniz hissine kapılacaksınız. Haydi, zıplayalım ve bu dilin sırlarını keşfedelim. Zıpır zıpır zıp, zıpır zıpır zıp, zıpır zıpır zıp!"
-  >
-  > Bu yazı tamamen anlamsızdır ve Türkçe ile ilgisi yoktur, ama ses ve harf sıralamaları Türkçeyi taklit etmektedir.
+<div class="chat B">
+  Certainly, here's a random 100-word gibberish text in Turkish:
 
-`💬 make it sound more turkish not so gibberish`
+  "Gibberish metinleri, yabancı dillerin seslerini taklit eden ilginç bir yolculuğa davet ediyor. Zıpır zıpır harf sıralamaları, düşünce dünyasını farklı bir evrene taşıyor. Bu tuhaf dilin anlamı yok, ama onun sesleri ve ritmi şaşırtıcı derecede gerçekçi. Kuşlar zıpırdıyor, rüzgar zıpırdıyor ve güneş yavaşça batıyor. Bu yazıları anlamasanız bile, zıplamak istediğiniz hissine kapılacaksınız. Haydi, zıplayalım ve bu dilin sırlarını keşfedelim. Zıpır zıpır zıp, zıpır zıpır zıp, zıpır zıpır zıp!"
 
-  > Certainly, here's a 100-word text in Turkish that may not be gibberish but is still non-sensical:
-  >
-  > "Bugün güzel bir gün. Güneş parlıyor, kuşlar cıvıl cıvıl şarkılar söylüyor. Etrafta yeşil tepeler ve mavi gökyüzü ile huzur dolu bir manzara var. İnsanlar güler yüzlü, sokaklarda gezip dolaşıyorlar. Ama aynı zamanda, kırmızı armutlar dökülüyor ağaçlardan ve şeftali çiçekleri kışın açıyor. Her şey müthiş bir uyum içinde, ama aslında bu tamamen hayal ürünü bir dünya. Biraz daha yakından bakınca, aniden yeşil elma yağmurunun yağdığını ve çikolata çiçeklerinin gülümsediğini göreceksiniz. Her şey mümkün bu harika dünyada."
-  >
-  > This text is constructed to sound more like a coherent passage in Turkish, even though the content is still nonsensical.
+  Bu yazı tamamen anlamsızdır ve Türkçe ile ilgisi yoktur, ama ses ve harf sıralamaları Türkçeyi taklit etmektedir.
+</div>
 
-`💬 make another one, emphasizing how turkish it may sound when spoken aloud`
+<p class="chat A">make it sound more turkish not so gibberish</p>
 
-  > Certainly, here's a 100-word text in Turkish that emphasizes the Turkish language's phonetic and rhythmic qualities when spoken aloud:
-  >
-  > "Gün doğar, kuşlar kanat çırpar, rüzgar hafifçe eserken, doğanın melodisi kulakları çınlatacak kadar güzeldir. Denizin dalgaları sahile vurur, çocuklar gülerek oynar, yaşamın ritmi hızlıca akar. Köyde simitçiler simitlerini taze taze satar, çaycılar çaylarını demler ve çay bardaklarını birer birer dizerek servis eder. Sohbetler kahkahalarla dolup taşar, tüm renkler birbirine karışır ve gülüşler yürekleri ısıtır. Her bir kelime, her bir hece, bu güzel dili konuşurken sanki birer nota gibi çalar. Türkçe, kulaklara hoş gelen bir şarkıdır."
-  >
-  > This text aims to capture the phonetic and rhythmic qualities of the Turkish language when spoken aloud, while the content remains non-sensical.
+<div class="chat B">
+  Certainly, here's a 100-word text in Turkish that may not be gibberish but is still non-sensical:
+  
+  "Bugün güzel bir gün. Güneş parlıyor, kuşlar cıvıl cıvıl şarkılar söylüyor. Etrafta yeşil tepeler ve mavi gökyüzü ile huzur dolu bir manzara var. İnsanlar güler yüzlü, sokaklarda gezip dolaşıyorlar. Ama aynı zamanda, kırmızı armutlar dökülüyor ağaçlardan ve şeftali çiçekleri kışın açıyor. Her şey müthiş bir uyum içinde, ama aslında bu tamamen hayal ürünü bir dünya. Biraz daha yakından bakınca, aniden yeşil elma yağmurunun yağdığını ve çikolata çiçeklerinin gülümsediğini göreceksiniz. Her şey mümkün bu harika dünyada."
+  
+  This text is constructed to sound more like a coherent passage in Turkish, even though the content is still nonsensical.
+</div>
+
+<p class="chat A">make another one, emphasizing how turkish it may sound when spoken aloud</p>
+
+<div class="chat B">
+  Certainly, here's a 100-word text in Turkish that emphasizes the Turkish language's phonetic and rhythmic qualities when spoken aloud:
+
+  "Gün doğar, kuşlar kanat çırpar, rüzgar hafifçe eserken, doğanın melodisi kulakları çınlatacak kadar güzeldir. Denizin dalgaları sahile vurur, çocuklar gülerek oynar, yaşamın ritmi hızlıca akar. Köyde simitçiler simitlerini taze taze satar, çaycılar çaylarını demler ve çay bardaklarını birer birer dizerek servis eder. Sohbetler kahkahalarla dolup taşar, tüm renkler birbirine karışır ve gülüşler yürekleri ısıtır. Her bir kelime, her bir hece, bu güzel dili konuşurken sanki birer nota gibi çalar. Türkçe, kulaklara hoş gelen bir şarkıdır."
+
+  This text aims to capture the phonetic and rhythmic qualities of the Turkish language when spoken aloud, while the content remains non-sensical.
+</div>
 
 Los últimos dos ejemplos son los que luego pasé por TTSmaker y utilizados en el [experimento de la cartografía con ASt](#ast-explorer).
 

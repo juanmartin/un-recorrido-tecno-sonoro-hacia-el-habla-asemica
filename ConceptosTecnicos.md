@@ -26,6 +26,8 @@ Consiste en las siguientes partes:
 
 Para entrenar el Autoencoder, se utiliza una **función de pérdida** que mide la diferencia entre los datos de entrada y la reconstrucción. El modelo ajusta sus parámetros para minimizar esta pérdida, lo que significa que aprenderá a crear representaciones internas útiles.
 
+<a id="problema-fase"></a>
+
 El Autoencoder es útil en varias aplicaciones como la eliminación de ruido en datos, la generación de datos similares a los de entrada y la detección de anomalías. Al comprimir la información en una representación interna puede ser útil para simplificar datos complejos y hacer que sea más fácil trabajar con ellos o identificar patrones importantes. Esta reducción de dimensionalidad que simplifica la representación de los datos, en el campo del audio requiere primero realizar la Transformada de Fourier en la que las funciones representativas del sonido pasan del dominio del tiempo al dominio de la frecuencia, obteniendo información acerca de todas las ondas fundamentales en frecuencia y amplitud. Al intentar reconstruir la señal de audio desde el espacio latente, la fase original puede no ser recuperada con precisión, resultando en una señal que carece de la coherencia temporal y espacial adecuada. Esta discrepancia en la fase puede introducir artefactos y distorsiones en el audio generado, afectando negativamente su calidad y naturalidad.
 
 <a id="caminos"></a>
