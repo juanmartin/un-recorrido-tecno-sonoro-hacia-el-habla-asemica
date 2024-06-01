@@ -66,3 +66,16 @@ p.center {
 code.lang-txt {
   text-wrap: pretty !important;
 }
+.chat {
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px 0;
+}
+.A {
+  background-color: var(--selection-color);
+  border-radius: 20px 20px 5px 20px;
+}
+.B {
+  background-color: var(--mono-tint2);
+  border-radius: 20px 20px 20px 5px;
+}

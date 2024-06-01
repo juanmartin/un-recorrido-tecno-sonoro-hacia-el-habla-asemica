@@ -42,329 +42,326 @@ La conversación pasó por varias etapas, fue larga pero rápida y eficaz ya que
 
 1. Pedí que genere el código necesario para realizar mi objetivo:
 
-    > generate a script that would chop audio into phonemes using a combination of VOSK and ffmpeg. Its input would be an audio file containing speech in any language and it should output multiple audio files in a folder, each containing one phoneme of the initial audio file.
-    >
+    <p class="chat A">generate a script that would chop audio into phonemes using a combination of VOSK and ffmpeg. Its input would be an audio file containing speech in any language and it should output multiple audio files in a folder, each containing one phoneme of the initial audio file.</p>
+
 2. En principio comprendió su tarea, pero el script retornaba timestamps –marcas de tiempo– en formato de texto, de manera que habría que hacer el trabajo de separarlos manualmente.
 
-    > I need the output to be audio files, not text. Also modify the code so that I can pass the input audio_file and model_path as parameters.
-    >
+    <p class="chat A">I need the output to be audio files, not text. Also modify the code so that I can pass the input audio_file and model_path as parameters.</p>
 
+    <div class="chat B">
     To segment an audio file into phoneme audio files using Vosk and allow for input parameters, you can modify the code as follows. This code will take the input audio file, Vosk model path, and an output directory as parameters and save phoneme segments as separate audio files:
 
-    - <Código>
-
-        ```python
-        import os
-        import vosk
-        import wave
-        import shutil
-        
-        def segment_audio_to_phonemes(audio_path, model_path, output_dir):
-            # Initialize the Vosk recognizer with the model
-            model = vosk.Model(model_path)
-            recognizer = vosk.KaldiRecognizer(model, 16000)
-        
-            # Open the audio file
-            wf = wave.open(audio_path, 'rb')
-        
-            # Initialize variables
-            results = []
-            data = wf.readframes(4000)  # Read audio data in chunks
-            segment_count = 0
-        
-            # Create the output directory if it doesn't exist
-            os.makedirs(output_dir, exist_ok=True)
-        
-            while len(data) > 0:
-                recognizer.AcceptWaveform(data)
-                data = wf.readframes(4000)
-        
-                if recognizer.FinalResult():
-                    # Get the final recognition result
-                    result = recognizer.Result()
-                    results.append(result)
-        
-                    # Save the phoneme segment as a separate audio file
-                    phoneme_audio = recognizer.GetWaveform()
-                    output_path = os.path.join(output_dir, f'segment_{segment_count}.wav')
-                    with wave.open(output_path, 'wb') as outwf:
-                        outwf.setnchannels(1)
-                        outwf.setsampwidth(2)
-                        outwf.setframerate(16000)
-                        outwf.writeframes(phoneme_audio)
-        
-                    segment_count += 1
-        
-            return results
-        
-        def main(audio_file, model_path, output_dir):
-            phoneme_results = segment_audio_to_phonemes(audio_file, model_path, output_dir)
-        
-            for i, result in enumerate(phoneme_results):
-                print(f"Segment {i + 1}: {result}")
-        
-        if __name__ == "__main__":
-            # Provide the input audio file, Vosk model path, and output directory as command-line arguments
-            input_audio_file = "your_audio.wav"  # Replace with your audio file
-            vosk_model_path = "path/to/your/model"  # Replace with the path to the Vosk model
-            output_directory = "output_phoneme_segments"  # Replace with your desired output directory
-        
-            # Clear the output directory if it already exists
-            if os.path.exists(output_directory):
-                shutil.rmtree(output_directory)
-        
-            main(input_audio_file, vosk_model_path, output_directory)
-        
-        ```
-
-    Make sure to provide the appropriate values for `input_audio_file`, `vosk_model_path`, and `output_directory` when running the script. The script will create separate audio files for each phoneme segment in the specified output directory.
-
-3. No era exactamente lo que necesitaba, y el código daba errores de funciones inexistentes, como si hubiera inventado partes de una librería que no existe. Aceptó su error y corrigió el código, acercándose bastante al resultado, pero aún con problemas que le hice saber, incluso dándole la pista del *sample rate* donde yo pensaba que radicaba el problema:
-
-    > two problems I have found:
-    - the segment text of all results is always empty.
-    - the chopped audio files seem to be in slow motion, I guess it was because of the sample rate being wrong, but maybe there's some other reason since we're now using pydub to automatically detect it.
-    can you fix these?
-    also add a print for the sample rate to be able to check if it was detected correctly.
-    >
-
-    I apologize for the issues. Let's address them and add a print statement to display the detected sample rate. Also, it's possible that the Vosk model used for segmentation may not provide phoneme-level output. You may need to use a different model that provides more granular results. Here's the updated script:
-
-    - <Código>
-
-        ```python
-        import os
-        import vosk
-        import wave
-        import shutil
-        import argparse
-        from pydub import AudioSegment
-        
-        def get_sample_rate(audio_path):
-            # Use pydub to load the audio file and obtain its sample rate
-            audio = AudioSegment.from_file(audio_path)
-            return audio.frame_rate
-        
-        def segment_audio_to_phonemes(audio_path, model_path, output_dir):
-            # Get the sample rate of the input audio file
-            sample_rate = get_sample_rate(audio_path)
-            print(f"Detected sample rate: {sample_rate}")
-        
-            # Initialize the Vosk recognizer with the model and the detected sample rate
-            model = vosk.Model(model_path)
-            recognizer = vosk.KaldiRecognizer(model, sample_rate)
-        
-            # Open the audio file
-            wf = wave.open(audio_path, 'rb')
-        
-            # Initialize variables
-            results = []
-            data = wf.readframes(4000)  # Read audio data in chunks
-            segment_count = 0
-        
-            # Create the output directory if it doesn't exist
-            os.makedirs(output_dir, exist_ok=True)
-        
-            phoneme_segments = {}  # Store phoneme boundaries and audio data
-            phoneme_start = 0  # Start time of the current phoneme segment in milliseconds
-        
-            while len(data) > 0:
-                recognizer.AcceptWaveform(data)
-                data = wf.readframes(4000)
-        
-                if recognizer.FinalResult():
-                    # Get the final recognition result, which includes phonemes
-                    result = recognizer.Result()
-                    results.append(result)
-        
-                    # Extract the end time of the phoneme from the audio frame position
-                    phoneme_end = wf.tell() / sample_rate * 1000  # Calculate the end time of the phoneme in milliseconds
-                    phoneme_duration = phoneme_end - phoneme_start
-        
-                    # Store the phoneme boundaries and audio data
-                    phoneme_segments[segment_count] = {
-                        "start": phoneme_start,
-                        "end": phoneme_end,
-                        "duration": phoneme_duration,
-                    }
-        
-                    phoneme_start = phoneme_end
-                    segment_count += 1
-        
-            # Save the phoneme segments as separate audio files
-            wf = wave.open(audio_path, 'rb')  # Reopen the audio file
-            for segment_number, boundaries in phoneme_segments.items():
-                start_frame = int(boundaries["start"] / 1000 * sample_rate)
-                end_frame = int(boundaries["end"] / 1000 * sample_rate)
-        
-                # Extract the audio data for the phoneme segment
-                wf.setpos(start_frame)
-                audio_data = wf.readframes(end_frame - start_frame)
-        
-                # Save the phoneme segment as an audio file
-                output_path = os.path.join(output_dir, f'segment_{segment_number}.wav')
+    ```python
+    import os
+    import vosk
+    import wave
+    import shutil
+    
+    def segment_audio_to_phonemes(audio_path, model_path, output_dir):
+        # Initialize the Vosk recognizer with the model
+        model = vosk.Model(model_path)
+        recognizer = vosk.KaldiRecognizer(model, 16000)
+    
+        # Open the audio file
+        wf = wave.open(audio_path, 'rb')
+    
+        # Initialize variables
+        results = []
+        data = wf.readframes(4000)  # Read audio data in chunks
+        segment_count = 0
+    
+        # Create the output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+    
+        while len(data) > 0:
+            recognizer.AcceptWaveform(data)
+            data = wf.readframes(4000)
+    
+            if recognizer.FinalResult():
+                # Get the final recognition result
+                result = recognizer.Result()
+                results.append(result)
+    
+                # Save the phoneme segment as a separate audio file
+                phoneme_audio = recognizer.GetWaveform()
+                output_path = os.path.join(output_dir, f'segment_{segment_count}.wav')
                 with wave.open(output_path, 'wb') as outwf:
                     outwf.setnchannels(1)
                     outwf.setsampwidth(2)
-                    outwf.setframerate(sample_rate)
-                    outwf.writeframes(audio_data)
-        
-            return results
-        
-        def main(args):
-            phoneme_results = segment_audio_to_phonemes(args.input_audio_file, args.vosk_model_path, args.output_directory)
-        
-            for i, result in enumerate(phoneme_results):
-                print(f"Segment {i + 1}: {result}")
-        
-        if __name__ == "__main__":
-            parser = argparse.ArgumentParser(description="Segment audio into phoneme audio files using Vosk.")
-            parser.add_argument("input_audio_file", type=str, help="Path to the input audio file.")
-            parser.add_argument("vosk_model_path", type=str, help="Path to the Vosk model.")
-            parser.add_argument("output_directory", type=str, help="Directory to save phoneme audio segments.")
-        
-            args = parser.parse_args()
-            main(args)
-        
-        ```
+                    outwf.setframerate(16000)
+                    outwf.writeframes(phoneme_audio)
+    
+                segment_count += 1
+    
+        return results
+    
+    def main(audio_file, model_path, output_dir):
+        phoneme_results = segment_audio_to_phonemes(audio_file, model_path, output_dir)
+    
+        for i, result in enumerate(phoneme_results):
+            print(f"Segment {i + 1}: {result}")
+    
+    if __name__ == "__main__":
+        # Provide the input audio file, Vosk model path, and output directory as command-line arguments
+        input_audio_file = "your_audio.wav"  # Replace with your audio file
+        vosk_model_path = "path/to/your/model"  # Replace with the path to the Vosk model
+        output_directory = "output_phoneme_segments"  # Replace with your desired output directory
+    
+        # Clear the output directory if it already exists
+        if os.path.exists(output_directory):
+            shutil.rmtree(output_directory)
+    
+        main(input_audio_file, vosk_model_path, output_directory)
+    
+    ```
+
+    Make sure to provide the appropriate values for `input_audio_file`, `vosk_model_path`, and `output_directory` when running the script. The script will create separate audio files for each phoneme segment in the specified output directory.
+    </div>
+
+3. No era exactamente lo que necesitaba, y el código daba errores de funciones inexistentes, como si hubiera inventado partes de una librería que no existe. Aceptó su error y corrigió el código, acercándose bastante al resultado, pero aún con problemas que le hice saber, incluso dándole la pista del *sample rate* donde yo pensaba que radicaba el problema:
+
+    <div class="chat A">
+    two problems I have found:
+
+      - the segment text of all results is always empty.
+      - the chopped audio files seem to be in slow motion, I guess it was because of the sample rate being wrong, but maybe there's some other reason since we're now using pydub to automatically detect it.
+
+  can you fix these?
+
+  also add a print for the sample rate to be able to check if it was detected correctly.
+    </div>
+
+    <div class="chat B">
+    I apologize for the issues. Let's address them and add a print statement to display the detected sample rate. Also, it's possible that the Vosk model used for segmentation may not provide phoneme-level output. You may need to use a different model that provides more granular results. Here's the updated script:
+
+    ```python
+    import os
+    import vosk
+    import wave
+    import shutil
+    import argparse
+    from pydub import AudioSegment
+    
+    def get_sample_rate(audio_path):
+        # Use pydub to load the audio file and obtain its sample rate
+        audio = AudioSegment.from_file(audio_path)
+        return audio.frame_rate
+    
+    def segment_audio_to_phonemes(audio_path, model_path, output_dir):
+        # Get the sample rate of the input audio file
+        sample_rate = get_sample_rate(audio_path)
+        print(f"Detected sample rate: {sample_rate}")
+    
+        # Initialize the Vosk recognizer with the model and the detected sample rate
+        model = vosk.Model(model_path)
+        recognizer = vosk.KaldiRecognizer(model, sample_rate)
+    
+        # Open the audio file
+        wf = wave.open(audio_path, 'rb')
+    
+        # Initialize variables
+        results = []
+        data = wf.readframes(4000)  # Read audio data in chunks
+        segment_count = 0
+    
+        # Create the output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+    
+        phoneme_segments = {}  # Store phoneme boundaries and audio data
+        phoneme_start = 0  # Start time of the current phoneme segment in milliseconds
+    
+        while len(data) > 0:
+            recognizer.AcceptWaveform(data)
+            data = wf.readframes(4000)
+    
+            if recognizer.FinalResult():
+                # Get the final recognition result, which includes phonemes
+                result = recognizer.Result()
+                results.append(result)
+    
+                # Extract the end time of the phoneme from the audio frame position
+                phoneme_end = wf.tell() / sample_rate * 1000  # Calculate the end time of the phoneme in milliseconds
+                phoneme_duration = phoneme_end - phoneme_start
+    
+                # Store the phoneme boundaries and audio data
+                phoneme_segments[segment_count] = {
+                    "start": phoneme_start,
+                    "end": phoneme_end,
+                    "duration": phoneme_duration,
+                }
+    
+                phoneme_start = phoneme_end
+                segment_count += 1
+    
+        # Save the phoneme segments as separate audio files
+        wf = wave.open(audio_path, 'rb')  # Reopen the audio file
+        for segment_number, boundaries in phoneme_segments.items():
+            start_frame = int(boundaries["start"] / 1000 * sample_rate)
+            end_frame = int(boundaries["end"] / 1000 * sample_rate)
+    
+            # Extract the audio data for the phoneme segment
+            wf.setpos(start_frame)
+            audio_data = wf.readframes(end_frame - start_frame)
+    
+            # Save the phoneme segment as an audio file
+            output_path = os.path.join(output_dir, f'segment_{segment_number}.wav')
+            with wave.open(output_path, 'wb') as outwf:
+                outwf.setnchannels(1)
+                outwf.setsampwidth(2)
+                outwf.setframerate(sample_rate)
+                outwf.writeframes(audio_data)
+    
+        return results
+    
+    def main(args):
+        phoneme_results = segment_audio_to_phonemes(args.input_audio_file, args.vosk_model_path, args.output_directory)
+    
+        for i, result in enumerate(phoneme_results):
+            print(f"Segment {i + 1}: {result}")
+    
+    if __name__ == "__main__":
+        parser = argparse.ArgumentParser(description="Segment audio into phoneme audio files using Vosk.")
+        parser.add_argument("input_audio_file", type=str, help="Path to the input audio file.")
+        parser.add_argument("vosk_model_path", type=str, help="Path to the Vosk model.")
+        parser.add_argument("output_directory", type=str, help="Directory to save phoneme audio segments.")
+    
+        args = parser.parse_args()
+        main(args)
+    
+    ```
 
     This updated script should display the detected sample rate, and it retains the functionality to segment the audio into phonemes and save them as audio files. If you encounter issues with the phoneme segment text being empty, you may need to investigate whether the chosen Vosk model provides phoneme-level recognition results.
+    </div>
 
 4. Supuestamente debía generarme, además de los segmentos de audio, texto de los fonemas separados, pero esto nunca lo logró, así que descarté ese resultado ya que sólo me interesaban los resultados sonoros para el experimento. El problema fue que tampoco solucionó los resultados de audio que parecían estar en *slow motion.*
 
-    > As I mentioned, the files that the script outputs seem to be pitched down, or slow motion. I need the output wav files to playback at the same pitch as the input file. It seems like the playback speed is wrong.
-    >
+    <p class="chat A">As I mentioned, the files that the script outputs seem to be pitched down, or slow motion. I need the output wav files to playback at the same pitch as the input file. It seems like the playback speed is wrong.</p>
 
-    Esta vez no hizo nada más que agregar un comentario en el código. Un código comentado no es computado por el intérprete de Python, es sólo una aclaración para el programador humano.
+    Esta vez no hizo nada más que agregar un comentario en el código. Un código comentado no es computado por el intérprete de Python, es sólo una aclaración para el programador humano:
 
     `# Save the phoneme segment as an audio file with the same sample rate`
 
-    > you didn't change any code, just a comment, that doesn't change the result. Please correct yourself.
-    >
+    <p class="chat A">you didn't change any code, just a comment, that doesn't change the result. Please correct yourself.</p>
 
-    Esta vez no cambió **nada**.
+    Esta vez no cambió **nada**. La respuesta fue exactamente la misma que la anterior.
 
-    > you are still not addressing the issue
-    >
+    <p class="chat A">you are still not addressing the issue</p>
 
+    <div class="chat B">
     I apologize for any confusion. To ensure that the output audio files maintain the same pitch and playback speed as the input audio, you should also copy the input audio's sample width and number of channels when saving the phoneme segments. Here's the corrected code:
 
-    - <Código>
-
-        ```python
-        # VOSK_phoneme_slicer.py
-        
-        import os
-        import vosk
-        import wave
-        import shutil
-        import argparse
-        from pydub import AudioSegment
-        
-        def get_audio_properties(audio_path):
-            # Use pydub to load the audio file and obtain its properties
-            audio = AudioSegment.from_file(audio_path)
-            return audio.frame_rate, audio.sample_width, audio.channels
-        
-        def segment_audio_to_phonemes(audio_path, model_path, output_dir):
-            # Get the properties of the input audio file
-            sample_rate, sample_width, channels = get_audio_properties(audio_path)
-            print(f"Detected sample rate: {sample_rate}")
-        
-            # Initialize the Vosk recognizer with the model and the detected sample rate
-            model = vosk.Model(model_path)
-            recognizer = vosk.KaldiRecognizer(model, sample_rate)
-        
-            # Open the audio file
-            wf = wave.open(audio_path, 'rb')
-        
-            # Initialize variables
-            results = []
-            data = wf.readframes(4000)  # Read audio data in chunks
-            segment_count = 0
-        
-            # Create the output directory if it doesn't exist
-            os.makedirs(output_dir, exist_ok=True)
-        
-            phoneme_segments = {}  # Store phoneme boundaries and audio data
-            phoneme_start = 0  # Start time of the current phoneme segment in milliseconds
-        
-            while len(data) > 0:
-                recognizer.AcceptWaveform(data)
-                data = wf.readframes(4000)
-        
-                if recognizer.FinalResult():
-                    # Get the final recognition result, which includes phonemes
-                    result = recognizer.Result()
-                    results.append(result)
-        
-                    # Extract the end time of the phoneme from the audio frame position
-                    phoneme_end = wf.tell() / sample_rate * 1000  # Calculate the end time of the phoneme in milliseconds
-                    phoneme_duration = phoneme_end - phoneme_start
-        
-                    # Store the phoneme boundaries and audio data
-                    phoneme_segments[segment_count] = {
-                        "start": phoneme_start,
-                        "end": phoneme_end,
-                        "duration": phoneme_duration,
-                    }
-        
-                    phoneme_start = phoneme_end
-                    segment_count += 1
-        
-            # Save the phoneme segments as separate audio files
-            wf = wave.open(audio_path, 'rb')  # Reopen the audio file
-            for segment_number, boundaries in phoneme_segments.items():
-                start_frame = int(boundaries["start"] / 1000 * sample_rate)
-                end_frame = int(boundaries["end"] / 1000 * sample_rate)
-        
-                # Extract the audio data for the phoneme segment
-                wf.setpos(start_frame)
-                audio_data = wf.readframes(end_frame - start_frame)
-        
-                # Save the phoneme segment as an audio file with the same properties as the input audio
-                output_path = os.path.join(output_dir, f'segment_{segment_number}.wav')
-                with wave.open(output_path, 'wb') as outwf:
-                    outwf.setnchannels(channels)
-                    outwf.setsampwidth(sample_width)
-                    outwf.setframerate(sample_rate)
-                    outwf.writeframes(audio_data)
-        
-            return results
-        
-        def main(args):
-            phoneme_results = segment_audio_to_phonemes(args.input_audio_file, args.vosk_model_path, args.output_directory)
-        
-            for i, result in enumerate(phoneme_results):
-                print(f"Segment {i + 1}: {result}")
-        
-        if __name__ == "__main__":
-            parser = argparse.ArgumentParser(description="Segment audio into phoneme audio files using Vosk.")
-            parser.add_argument("input_audio_file", type=str, help="Path to the input audio file.")
-            parser.add_argument("vosk_model_path", type=str, help="Path to the Vosk model.")
-            parser.add_argument("output_directory", type=str, help="Directory to save phoneme audio segments.")
-        
-            args = parser.parse_args()
-            main(args)
-        
-        ```
+    ```python
+    # VOSK_phoneme_slicer.py
+    
+    import os
+    import vosk
+    import wave
+    import shutil
+    import argparse
+    from pydub import AudioSegment
+    
+    def get_audio_properties(audio_path):
+        # Use pydub to load the audio file and obtain its properties
+        audio = AudioSegment.from_file(audio_path)
+        return audio.frame_rate, audio.sample_width, audio.channels
+    
+    def segment_audio_to_phonemes(audio_path, model_path, output_dir):
+        # Get the properties of the input audio file
+        sample_rate, sample_width, channels = get_audio_properties(audio_path)
+        print(f"Detected sample rate: {sample_rate}")
+    
+        # Initialize the Vosk recognizer with the model and the detected sample rate
+        model = vosk.Model(model_path)
+        recognizer = vosk.KaldiRecognizer(model, sample_rate)
+    
+        # Open the audio file
+        wf = wave.open(audio_path, 'rb')
+    
+        # Initialize variables
+        results = []
+        data = wf.readframes(4000)  # Read audio data in chunks
+        segment_count = 0
+    
+        # Create the output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+    
+        phoneme_segments = {}  # Store phoneme boundaries and audio data
+        phoneme_start = 0  # Start time of the current phoneme segment in milliseconds
+    
+        while len(data) > 0:
+            recognizer.AcceptWaveform(data)
+            data = wf.readframes(4000)
+    
+            if recognizer.FinalResult():
+                # Get the final recognition result, which includes phonemes
+                result = recognizer.Result()
+                results.append(result)
+    
+                # Extract the end time of the phoneme from the audio frame position
+                phoneme_end = wf.tell() / sample_rate * 1000  # Calculate the end time of the phoneme in milliseconds
+                phoneme_duration = phoneme_end - phoneme_start
+    
+                # Store the phoneme boundaries and audio data
+                phoneme_segments[segment_count] = {
+                    "start": phoneme_start,
+                    "end": phoneme_end,
+                    "duration": phoneme_duration,
+                }
+    
+                phoneme_start = phoneme_end
+                segment_count += 1
+    
+        # Save the phoneme segments as separate audio files
+        wf = wave.open(audio_path, 'rb')  # Reopen the audio file
+        for segment_number, boundaries in phoneme_segments.items():
+            start_frame = int(boundaries["start"] / 1000 * sample_rate)
+            end_frame = int(boundaries["end"] / 1000 * sample_rate)
+    
+            # Extract the audio data for the phoneme segment
+            wf.setpos(start_frame)
+            audio_data = wf.readframes(end_frame - start_frame)
+    
+            # Save the phoneme segment as an audio file with the same properties as the input audio
+            output_path = os.path.join(output_dir, f'segment_{segment_number}.wav')
+            with wave.open(output_path, 'wb') as outwf:
+                outwf.setnchannels(channels)
+                outwf.setsampwidth(sample_width)
+                outwf.setframerate(sample_rate)
+                outwf.writeframes(audio_data)
+    
+        return results
+    
+    def main(args):
+        phoneme_results = segment_audio_to_phonemes(args.input_audio_file, args.vosk_model_path, args.output_directory)
+    
+        for i, result in enumerate(phoneme_results):
+            print(f"Segment {i + 1}: {result}")
+    
+    if __name__ == "__main__":
+        parser = argparse.ArgumentParser(description="Segment audio into phoneme audio files using Vosk.")
+        parser.add_argument("input_audio_file", type=str, help="Path to the input audio file.")
+        parser.add_argument("vosk_model_path", type=str, help="Path to the Vosk model.")
+        parser.add_argument("output_directory", type=str, help="Directory to save phoneme audio segments.")
+    
+        args = parser.parse_args()
+        main(args)
+    
+    ```
 
     This corrected code ensures that the output audio files maintain the same sample width and number of channels as the input audio, preserving the pitch and playback speed. Please try running this updated code, and let me know if it resolves the issue.
+    </div>
 
 En resumen, la conversación con ChatGPT para generar el código, como si fuera un empleado *ad-honorem* de la investigación, pasó por varias etapas. En principio, al no lograr el objetivo requerido, se fue corrigiendo el pedido para alinearlo con este. Luego, la aparición de errores propios del código, como métodos –funciones– que no existen o se llaman de otra forma, y por último un problema sobre los audios generados que no eran generados con el sample rate correcto.
 
 Finalmente, corrí el último [script sugerido](https://www.notion.so/31eaddcc2bb841bcaa124ed890ed8ca7?pvs=21) sobre uno de los audios de mi dataset para realizar la separación de los archivos de audio. VOSK necesita el archivo del modelo específico para comprender el idioma con el que va a trabajar, por suerte cuentan con varios idiomas ya entrenados y [disponibles](https://alphacephei.com/vosk/models) para su descarga y uso. A continuación algunos de los resultados:
 
 - El audio original a recortar fue de la [conversación en francés](https://www.notion.so/31eaddcc2bb841bcaa124ed890ed8ca7?pvs=21) descargada de YouTube referido anteriormente.
-- Algunos recortes:
+  Algunos recortes:
 
-[segment_0.wav](_media_/segment_0.wav)
-
-[segment_2.wav](_media_/segment_2.wav)
-
-[segment_1.wav](_media_/segment_1.wav)
-
-[segment_3.wav](_media_/segment_3.wav)
+  <audio controls src="_media/segment_0.wav" title="segment_0.wav"></audio>
+  <audio controls src="_media/segment_1.wav" title="segment_1.wav"></audio>
+  <audio controls src="_media/segment_2.wav" title="segment_2.wav"></audio>
+  <audio controls src="_media/segment_3.wav" title="segment_3.wav"></audio>
 
 Al analizar los resultados, los segmentos de fonemas tienen la misma corta duración, lo cual me dio sospechas, sin embargo parecen ser unidades básicas de la lengua en cuestión. Imaginé de inmediato que debía conseguir el modelo para todos los idiomas que quisiera integrar en mi sistema, y si no estaban disponibles habría que generarlos mediante entrenamiento. Comencé a pensar en otras alternativas para realizar esta separación de forma más homogénea en los idiomas, dado que además, no los conozco a todos como para juzgar si los resultados generados serían correctos.
 
