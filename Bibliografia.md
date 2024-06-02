@@ -10,7 +10,11 @@ Chomsky, N. (1957). Syntactic Structures. Mouton and Co.
 
 Dadabots. (s/f). Recuperado el 21 de junio de 2023, de <https://dadabots.com/science.php>
 
+Deleuze, G. (1994). Lógica del sentido. Paidós.
+
 Elliott, R., & Bull, M. (2017). The Sound of Nonsense. Bloomsbury Academic. <https://books.google.com.ar/books?id=4rU7DwAAQBAJ>
+
+Foucault, M. (1982). Las palabras y las cosas: Una arqueología de las ciencias humanas. Siglo XXI.
 
 HOME & Elsewhere. (s/f). Rosaire Appel. Recuperado el 28 de mayo de 2024, de <https://www.rosaireappel.com/home--elsewhere.html>
 
