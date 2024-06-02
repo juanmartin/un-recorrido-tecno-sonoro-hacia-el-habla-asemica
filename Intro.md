@@ -204,24 +204,37 @@ Una característica clave de la Gramática Generativa es la distinción entre "c
 
 ## Sinsentido
 
+Durante mi proceso creativo generalmente elijo militar la experiencia de lo sensible por sí misma. Es natural encontrarme con la discusión acerca del sentido de lo que hago. Es como si la experiencia estético-sensible no alcanzara y fuera necesario algo más que la obra para que haya contenido. La teoría estética tiene infinitos autores que abordaron este tema, Sontag, Groys, Derrida, Wittgenstein, etc. A mi, en particular, me interesó pensar en clave de dos líneas: el giro lingüístico y la lógica del sentido de Deleuze.
+
+Desde muy joven siento que el lenguaje a mí no me alcanza, ni me parece el medio adecuado para transmitir mi experiencia de lo sensible. Siento que es una tarea muy ambiciosa y una gran responsabilidad para asignarle al lenguaje. En nuestra sociedad hay mucha exigencia para hacerlo así, hacer esta tesis fue para mi de particular dificultad por eso, y creo que el giro lingüístico influyó mucho en que así sea. El giro lingüístico enfatiza el lenguaje como el principal medio a través del cual entendemos y construimos la realidad. Sin embargo, este enfoque tiene sus limitaciones, especialmente cuando se trata de transmitir experiencias propias de la sensación que van más allá de las palabras.
+
+Además de comprender las limitaciones del lenguaje, me parece crucial reconocer la relevancia de otros tipos de inteligencias no racionales, más cercanas a los mecanismos de un animal, que destacan la conexión directa entre la sensibilidad y la acción sin intermediarios racionales. Me interesa explorar otro paradigma donde la experiencia sensible se comunica y se vive de manera inmediata y visceral. Este enfoque subraya la importancia de explorar cómo nuestras percepciones y acciones están intrínsecamente conectadas sin la necesidad de una mediación lingüística.
+
+Para entender cómo las experiencias sensibles pueden ser transmitidas a través de medios no lingüísticos es interesante el aporte de Gilles Deleuze (1994). El propone que el sinsentido no es una ausencia de significado, sino una dimensión activa que coexiste con el sentido. El autor plantea que el sinsentido permite la creación de nuevos significados y abre espacios para formas de expresión que no pueden ser capturadas por el lenguaje verbal. En una línea similar, Foucault (1982) analiza cómo el lenguaje y la realidad se disocian, y sugiere que hay aspectos de la experiencia humana que no pueden ser completamente capturados por las palabras.
+
+El Giro Lingüístico ha sido fundamental para entender cómo el lenguaje estructura nuestra percepción de la realidad, no obstante, la contracara de esto es que la racionalidad impuesta por el giro lingüístico crea una distancia entre el ser humano y su experiencia corporal y sensorial. Deleuze, al criticar esta totalización, sugiere que es necesario trascender el lenguaje verbal y explorar otras formas de expresión que involucren directamente al cuerpo y los sentidos.
+
 A lo largo de este trabajo tomo el sinsentido como un recurso estético que utilizo en distintos niveles de mi investigación. Me refiero al sentido propio de esta investigación, de mi carrera, del constante accionar en cada paso de cada experimento. Entrando a la materialidad: el sentido sonoro por sí mismo, el nuevo sentido que genera el sinsentido, un relato que no tiene sentido pero puede ser interpretado y genera imágenes que tienen sentido en un mundo cuyas reglas del sentido son otras.
 
-El prefijo negativo de _sin-sentido_ propone una falta, pero como se plantea en "The Sound of Nonsense” también es _meta-sentido_ y es que esto refiere a una nueva estrategia, una decisión arbitraria, diferente (Elliott & Bull, 2017). No es lo opuesto al sentido, es otra cosa. Esto va en línea con el trabajo de escritores del sinsentido, como Lewis Carroll, conocido por su famosa obra “Alicia en el país de las maravillas”. Me atrevo a mencionar al movimiento del _Realismo Mágico_, que conocí gracias a Gabriel García Márquez, en donde las reglas del juego parecen cambiar por completo a nuestro universo pero allí son parte de la cotidianeidad. Me gustaría decir que es nuestra versión latinoamericana del sinsentido.
+El prefijo negativo de _sin-sentido_ propone una falta, pero como se plantea en “The Sound of Nonsense” también es _meta-sentido_ y es que esto refiere a una nueva estrategia, una decisión arbitraria, diferente (Elliott & Bull, 2017). No es lo opuesto al sentido, es otra cosa. Esto va en línea con el trabajo de escritores del sinsentido, como Lewis Carroll, conocido por su famosa obra “Alicia en el país de las maravillas”. Me atrevo a mencionar al movimiento del _Realismo Mágico_, que conocí gracias a Gabriel García Márquez, en donde las reglas del juego parecen cambiar por completo a nuestro universo pero allí son parte de la cotidianeidad. Me gustaría decir que es nuestra versión latinoamericana del sinsentido.
 
-Richard Elliot no logra una definición concreta del sinsentido por lo que establece cinco pautas de a qué se refiere con sinsentido en su texto. Me quedo con dos de ellas, y el entramado entre todas:
+Richard Elliot (2017) no logra una definición concreta del sinsentido por lo que establece cinco pautas de a que se refiere con sinsentido en su texto. Me quedo con dos de ellas, y el entramado entre todas:
 
 > Destaco las que me interesan:
 >
-> - **Aquello que introduce una lógica alterada incluso cuando se utiliza un lenguaje _norma_. Sería el reino de [Lewis] Carroll y sus seguidores o de la comedia Goonesca.**
+> - **Aquello que introduce una lógica alterada incluso cuando se utiliza un lenguaje _norma_. Sería el reino de [Lewis] Carroll y sus seguidores o de la comedia Goonesca.**
 > - Lo que se mantiene dentro de un régimen sintáctico «normal» pero introduce fallos y otras estrategias disruptivas y juega con la lógica de la semántica. Los escritores y músicos modernistas y posmodernistas estarían entre los ejemplos de este tipo.
 > - **Lo que surge de alterar la sintaxis para crear magia, confusión o verdad. Incluiría recortes, permutaciones y otras estrategias que juegan con la lógica de la sintaxis.**
 > - Lo que roza o se solapa con lo absurdo. Esto incluiría el drama Beckettiano y la canción Dylanesca.
 > - Lo que utiliza códigos o términos que sólo entienden los especialistas o los iniciados. Para los no especialistas o ajenos al tema, sólo se trata de «tonterías», lo que comúnmente se conoce como jerga. Esto incluye el lenguaje de moda, como el jazz jive, la jerga del hip-hop, los términos subculturales, ciertos discursos académicos y el Shipping Forecast de la BBC.
 >
 > Entre ellos se encuentra el momento del sinsentido, ese espacio de desconcierto entre dos o más modos de significado en el que la búsqueda de sentido se convierte en un intercambio de códigos.
+>
 
 Quizás se vea borroso el borde entre el sinsentido y la fantasía, pero la fantasía adhiere a un sistema de reglas y lógicas que se respetan a lo largo de su desarrollo. El sinsentido, por otro lado, desafía constantemente cualquier atisbo de regla que se establezca. Está más cerca de un mecanismo que permite el lenguaje: poder decir cualquier cosa, armar estructuras de palabras que no suelen ir juntas, casi como si la materialidad de un juego de encastrar piezas sean palabras, o incluso mejor: letras.
 
 > <p class="rainbow-text">Es aleifuv una emuuef forma dkljelkeaji orden ojfodj palabras qe mve letras unoe j d ap.</p>
 
-Y no pasa nada. Como si fuera simplemente _otra forma_ de armar una oración, sólo porque se puede.
+Y no pasa nada. Como si fuera simplemente _otra forma_ de armar una oración, sólo porque se puede.
+
+Las limitaciones del lenguaje para capturar la totalidad de la experiencia humana nos llevan a la necesidad de recurrir a otras formas de sensibilidad. Los sonidos pueden crear "lenguajes" que, aunque carezcan de un significado semántico directo, evocan sensaciones y experiencias profundas. Esta capacidad de los sonidos para transmitir lo inefable resalta la importancia de explorar medios no verbales para comunicar la experiencia de lo sensible.
