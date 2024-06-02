@@ -114,6 +114,9 @@ a:hover {
 .full-width {
   width: 100%;
 }
+audio {
+  width: 100%;
+}
 .mt-1 {
   margin-top: 0.1em !important;
 }

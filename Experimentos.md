@@ -20,13 +20,13 @@ A continuación algunos ejemplos de los archivos incluidos en el dataset. Son ar
 
 <div class="grid">
   <div class="full-width center">
-    <audio class="full-width" controls src="_media/common_voice_fr_19598591.wav" title="common_voice_fr_19598591.wav"></audio>
+    <audio controls src="_media/common_voice_fr_19598591.wav" title="common_voice_fr_19598591.wav"></audio>
   </div>
   <div class="full-width center">
-    <audio class="full-width" controls src="_media/common_voice_fr_19598240.wav" title="common_voice_fr_19598240.wav"></audio>
+    <audio controls src="_media/common_voice_fr_19598240.wav" title="common_voice_fr_19598240.wav"></audio>
   </div>
   <div class="full-width center">
-    <audio class="full-width" controls src="_media/common_voice_fr_19140964.wav" title="common_voice_fr_19140964.wav"></audio>
+    <audio controls src="_media/common_voice_fr_19140964.wav" title="common_voice_fr_19140964.wav"></audio>
   </div>
 </div>
 
@@ -44,7 +44,7 @@ $ sox common_* frances.wav
 
 `sox` es una utilidad para manipular audio desde la consola, funciona en macOS, Linux y Windows. De esa forma evité el trabajo manual de concatenar todos los archivos.
 
-<audio class="full-width" controls src="_media/french.mp3" title="Archivo de audio mp3 61.8kbps VBR para fines demostrativos, pero se utilizó el wav para entrenar el modelo."></audio>
+<audio controls src="_media/french.mp3" title="Archivo de audio mp3 61.8kbps VBR para fines demostrativos, pero se utilizó el wav para entrenar el modelo."></audio>
 
 <p class="caption center">Archivo de audio mp3 61.8kbps VBR para fines demostrativos, pero se utilizó el wav para entrenar el modelo.</p>
 
@@ -52,19 +52,19 @@ Lo mismo pero para el Español:
 
 <div class="grid">
   <div class="full-width center">
-    <audio class="full-width" controls src="_media/common_voice_es_18681301.wav" title="common_voice_es_18681301.wav"></audio>
+    <audio controls src="_media/common_voice_es_18681301.wav" title="common_voice_es_18681301.wav"></audio>
   </div>
   <div class="full-width center">
-    <audio class="full-width" controls src="_media/common_voice_es_19125377.wav" title="common_voice_es_19125377.wav"></audio>
+    <audio controls src="_media/common_voice_es_19125377.wav" title="common_voice_es_19125377.wav"></audio>
   </div>
   <div class="full-width center">
-    <audio class="full-width" controls src="_media/common_voice_es_19602100.wav" title="common_voice_es_19602100.wav"></audio>
+    <audio controls src="_media/common_voice_es_19602100.wav" title="common_voice_es_19602100.wav"></audio>
   </div>
 </div>
 
 Y su versión concatenada:
 
-<audio class="full-width" controls src="_media/spanish.mp3" title="Archivo convertido a mp3 con ffmpeg a 61.7kbps VBR"></audio>
+<audio controls src="_media/spanish.mp3" title="Archivo convertido a mp3 con ffmpeg a 61.7kbps VBR"></audio>
 
 <p class="caption center">Archivo convertido a mp3 con ffmpeg a 61.7kbps VBR</p>
 
@@ -80,11 +80,11 @@ El proceso de entrenamiento que utilicé incluye la posibilidad de reconstruir e
 
 Dado este audio:
 
-<audio class="full-width" controls src="_media/common_voice_es_19609042.wav" title="Audio original alimentado a la red"></audio>
+<audio controls src="_media/common_voice_es_19609042.wav" title="Audio original alimentado a la red"></audio>
 
 Se reconstruyó el siguiente audio directamente desde el código. Para eso se insertan en el espacio latente del modelo los mismos valores que devuelve el entrenamiento. Resultando en:
 
-<audio class="full-width" controls src="_media/reconstructed.mp3" title="Audio reconstruido"></audio>
+<audio controls src="_media/reconstructed.mp3" title="Audio reconstruido"></audio>
 
 ![Espectrograma del resultado reconstruido.](_media/predicted_spectrogram.png "Espectrograma del resultado reconstruido.")
 
@@ -94,13 +94,13 @@ Al solicitarle inferencia al modelo para generar nuevos sonidos a partir del ent
 
 - Podcast en francés. mp3 55.7kbps VBR para fines demostrativos:
 
-  <audio class="full-width" id="podcast-frances" controls src="_media/french-clean.mp3" title="Audio extraído de https://www.youtube.com/watch?v=N55d9mPm_HA"></audio>
+  <audio id="podcast-frances" controls src="_media/french-clean.mp3" title="Audio extraído de https://www.youtube.com/watch?v=N55d9mPm_HA"></audio>
 
   <p class="caption center">Audio extraído de https://www.youtube.com/watch?v=N55d9mPm_HA</p>
 
 - Japonés:
   
-  <audio class="full-width" controls src="_media/japanese-clean.mp3" title="Title"></audio>
+  <audio controls src="_media/japanese-clean.mp3" title="Title"></audio>
 
   <p class="caption center">Audio extraído de https://www.youtube.com/watch?v=trySjnuJfJY</p>
 
@@ -126,7 +126,7 @@ En principio, junto con Leandro Garber, pensamos en enviar datos aleatorios de c
 
 Con el modelo [multi-lengua](#multi-lengua-training) la idea fue alimentar las dimensiones del espacio latente con los datos de entrenamiento de un modelo entrenado en Francés anteriormente. La pregunta era ¿qué pasaría si a un modelo bilingüe le hago _hablar_ uno de los idiomas que conoce?
 
-<audio class="full-width" controls src="_media/JF-MODEL_japanese-fantasmagorico.mp3" title="JF-MODEL_japanese-fantasmagorico"></audio>
+<audio controls src="_media/JF-MODEL_japanese-fantasmagorico.mp3" title="JF-MODEL_japanese-fantasmagorico"></audio>
 
 <p class="caption center">JF-MODEL_japanese-fantasmagorico.mp3</p>
 
@@ -164,48 +164,48 @@ Organicé una serie de [entrevistas](#Entrevistas) o encuentros con personas con
 
 <div class="grid">
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron0-spanish.wav" title="Tacotron Español"></audio>
+    <audio controls src="_media/tacotron0-spanish.wav" title="Tacotron Español"></audio>
     <p class="caption center mt-1">Tacotron Español</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron1-french.wav" title="Tacotron Francés"></audio>
+    <audio controls src="_media/tacotron1-french.wav" title="Tacotron Francés"></audio>
     <p class="caption center mt-1">Tacotron Francés</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron2-german.wav" title="Tacotron Alemán"></audio>
+    <audio controls src="_media/tacotron2-german.wav" title="Tacotron Alemán"></audio>
     <p class="caption center mt-1">Tacotron Alemán</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron3-greek.wav" title="Tacotron Griego"></audio>
+    <audio controls src="_media/tacotron3-greek.wav" title="Tacotron Griego"></audio>
     <p class="caption center mt-1">Tacotron Griego</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron4-dutch.wav" title="Tacotron Holandés"></audio>
+    <audio controls src="_media/tacotron4-dutch.wav" title="Tacotron Holandés"></audio>
     <p class="caption center mt-1">Tacotron Holandés</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron5-finnish.wav" title="Tacotron Finlandés"></audio>
+    <audio controls src="_media/tacotron5-finnish.wav" title="Tacotron Finlandés"></audio>
     <p class="caption center mt-1">Tacotron Finlandés</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron6-hungarian.wav" title="Tacotron Húngaro"></audio>
+    <audio controls src="_media/tacotron6-hungarian.wav" title="Tacotron Húngaro"></audio>
     <p class="caption center mt-1">Tacotron Húngaro</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron7-chinese.wav" title="Tacotron Chino"></audio>
+    <audio controls src="_media/tacotron7-chinese.wav" title="Tacotron Chino"></audio>
     <p class="caption center mt-1">Tacotron Chino</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron8-japanese.wav" title="Tacotron Japonés"></audio>
+    <audio controls src="_media/tacotron8-japanese.wav" title="Tacotron Japonés"></audio>
     <p class="caption center mt-1">Tacotron Japonés</p>
   </div>
   <div class="center full-width">
-    <audio class="full-width" controls src="_media/tacotron9-russian.wav" title="Tacotron Ruso"></audio>
+    <audio controls src="_media/tacotron9-russian.wav" title="Tacotron Ruso"></audio>
     <p class="caption center mt-1">Tacotron Ruso</p>
   </div>
 </div>
 
-El _prompt_ para generar estas voces fue el siguiente:
+El _prompt_, es decir, el texto que <em class="rainbow-text">hablan</em> estas voces fue el siguiente:
   
   ```python
   inputs = [
@@ -379,21 +379,88 @@ Las voces generadas con TTSMaker fueron recortados con el [script que desarroll�
 
 Al probar esta aplicación, me resonó haber hallado esa multiplicidad de voces en diferentes idiomas, similar a aquel primer disparador de este trabajo al escuchar el bullicio en espacios públicos de ciudades cosmopolitas. Al barrer entre los idiomas aparece ese coro de personas hablando en diferentes lenguas, fragmentos de conversaciones que se mezclan en el aire. Aún no sentí haber llegado a la invención de un nuevo idioma, pero sí a una multitud de conversaciones virtuales.
 
-![Patch de control por OSC para AudioStellar](_media/custom_osc_ast.png "Patch de control por OSC para AudioStellar")
+![Patch de control probabilístico por OSC para AudioStellar](_media/custom_osc_ast.png "Patch de control probabilístico por OSC para AudioStellar")
 
 ### Mi propia voz _(Experimento #32)_
 
-A partir de los resultados sonoros de los experimentos anteriores, mi inquietud por el habla asémica crece aún más, como si esquivara cualquier forma de conclusión y ese universo se expandiera hacia un sinfín de posibilidades. Me di cuenta que necesitaba emparejar los timbres de las voces si quería realmente comenzar a _inventar idiomas_. Pero, ¿qué timbre? ¿qué voz sería la que represente este nuevo lenguaje vocalizado por computadora? Por supuesto la respuesta apareció de inmediato, ¡la mía! ¿Quién sino con mayor disponibilidad y entrega para esta experimentación?. De aquí surgen dos posibilidades:
+A partir de los resultados sonoros de los experimentos anteriores, mi inquietud por el habla asémica crece aún más, como si esquivara cualquier forma de conclusión y ese universo se expandiera hacia un sinfín de posibilidades. Me di cuenta que necesitaba emparejar los timbres de las voces si quería realmente comenzar a _inventar idiomas_. Pero, ¿qué timbre? ¿qué voz sería la que represente este nuevo lenguaje vocalizado por computadora? Por supuesto la respuesta apareció de inmediato, ¡la mía! ¿Quién sino con mayor disponibilidad y entrega para esta experimentación? De aquí surgen dos posibilidades:
 
 - A partir de los fragmentos de audio del experimento anterior, encontrar algún sistema Speech-to-Speech que transforme esas voces generadas por TTSMaker a mi propia voz, de manera que el contenido <em class="rainbow-text">a-semántico</em> sea extraído de esos audios, incluyendo la cadencia, la entonación, las palabras y la pronunciación, pero no el timbre, que será el de mi voz.
 - Clonar mi propia voz y luego con ese modelo inferir (generar audio a partir del modelo) aquellos textos que había generado como recurso fuente para los TTS.
 
 De cualquiera de estas maneras lograría obtener muchos fragmentos de la misma persona hablando una gran cantidad de idiomas con la posibilidad de mezclarlos de forma temporal pero no del todo morfológica, aunque con las posibilidades que ofrece AudioStellar se acerca bastante a la interpolación entre idiomas.
 
-Finalmente decidí pagar una suscripción de [ElevenLabs](https://elevenlabs.io/) que me permitió rápidamente clonar mi propia voz con alrededor de 3 minutos de grabación que hice con un micrófono Shure SM57 sin ruidos de fondo. Si bien hace falta mucho menos tiempo para obtener un modelo de voz, la calidad de la clonación es proporcional al tiempo de grabación, hasta los 3 minutos (por el momento), luego puede llegar a sobre-generalizar. El relato fue pedido en los 29 idiomas que proporciona el modelo **Eleven Multilingual v2** (árabe, búlgaro, chino, croata, checo, danés, holandés, inglés, filipino, finlandés, francés, alemán, griego, hindi, indonesio, italiano, japonés, coreano, malayo, polaco, portugués, rumano, ruso, eslovaco, español sueco, tamil, turco, ucraniano).
+Finalmente decidí pagar una suscripción de [ElevenLabs](https://elevenlabs.io/) que me permitió rápidamente clonar mi propia voz con alrededor de 5 minutos de grabación que hice con un micrófono Shure SM57 sin ruidos de fondo. Si bien hace falta mucho menos tiempo para obtener un modelo de voz, la calidad de la clonación es proporcional al tiempo de grabación, hasta los 5 minutos (por el momento), luego de eso ya deja de mejorar el resultado (proablemente cause _overfitting_). El relato fue generado en audio en los 29 idiomas que proporciona el modelo **Eleven Multilingual v2** (árabe, búlgaro, chino, croata, checo, danés, holandés, inglés, filipino, finlandés, francés, alemán, griego, hindi, indonesio, italiano, japonés, coreano, malayo, polaco, portugués, rumano, ruso, eslovaco, español sueco, tamil, turco, ucraniano).
 
-La escucha de estos experimentos generó ideas para mejoras en su _performatividad_. Una nueva _feature_ (característica 🚀) fue la adición de rangos de velocidad de habla de forma que la velocidad de disparo de cada fragmento sea aleatoria pero controlable y acotada. Esto permitió que la máquina de idiomas sea más _orgánica_ en su habla, más _humana_, ya que evita rítmicas constantes, sin embargo, si se acota a determinada velocidad constante, podría utilizarse a efectos musicales.
+?> Settings del modelo: **Stability** entre 35% y 50%, **Similarity** entre 75% y 90%, **Style Exaggeration** 0% (porque no afecta en modo TTS, sí en modo STS), **Speaker Boost** encendido.
+
+Hice una prueba poniendo un texto sinsentido, ilegible, golpeando cualquier tecla del teclado, para ver cómo sonaba, ¿en qué idioma lo interpretaría? 🤔
+
+> nvuejia njsogrh nv nifdn sgiurehjns finv nvfdsj gejrk lsnfdlfdsv fhdjsl hjfdsgj fdkls;g jeve v vmdn ncx gfdg nfgv ngdg l!@!@Jl jlj dfwjh
+fkdp jJN Jnj  . fd, fm ,wef ejfiow f,f f .fj ikoewfjekofjewf .d fs koejjfio. jfnksoj feowijf ont 32o mnfdsm f. . jfsdjnf #@Rmn nfn ewfneso enn5kkl nmdlf . j jfsf j ,fes, 4ejiofjsiojfs 3 jmkldmfkldsf ,. dsk pJPIO%U$#)( j kljdS%U*()*#) jkgn ,. mfdsko jiow jgj fod3cmcx,lz.,/;vncxv nmzv b eowyterwui bkfs  guireyuwdfhj sbnm,ds .afd m, bbhvcxuidoqyufer
+
+<audio controls src="_media/ElevenLabs_Juan_GIBBERISH.wav" title="ElevenLabs_Juan_GIBBERISH"></audio>
+<p class="caption center">Clon Juan Balbuceo</p>
+
+Los siguientes son con la [historia de fantasía](#historia) para cada idioma, algunos ejemplos:
+
+<div class="grid">
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_spanish.wav" title="Juan Español"></audio>
+    <p class="caption center mt-1">Clon Juan Español</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_ingles.wav" title="Juan Inglés"></audio>
+    <p class="caption center mt-1">Clon Juan Inglés</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_aleman.wav" title="Juan Alemán"></audio>
+    <p class="caption center mt-1">Clon Juan Alemán</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_arabe.wav" title="Juan Árabe"></audio>
+    <p class="caption center mt-1">Clon Juan Árabe</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_chino.wav" title="Juan Chino"></audio>
+    <p class="caption center mt-1">Clon Juan Chino</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_frances.wav" title="Juan Francés"></audio>
+    <p class="caption center mt-1">Clon Juan Francés</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_italiano.wav" title="Juan Italiano"></audio>
+    <p class="caption center mt-1">Clon Juan Italiano</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_japones.wav" title="Juan Japonés"></audio>
+    <p class="caption center mt-1">Clon Juan Japonés</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_koreano.wav" title="Juan Coreano"></audio>
+    <p class="caption center mt-1">Clon Juan Coreano</p>
+  </div>
+  <div class="center full-width">
+    <audio controls src="_media/ElevenLabs_Juan_portugues.wav" title="Juan Portugés"></audio>
+    <p class="caption center mt-1">Clon Juan Portugés</p>
+  </div>
+</div>
+
+!> Dato curioso: estaba resfriado cuando grabé mi voz, por lo que el modelo clonado también 🤧
+
+<video width="100%" controls src="_media/ASt-ElevenLabs-JM_1.mp4" title="AudioStellar + ElevenLabs"></video>
+
+<p class="caption center">AudioStellar con mi voz clonada en 29 idiomas</p>
+
+La escucha de estos experimentos generó ideas para mejoras en su _performatividad_. Una nueva _feature_ (característica 🚀) fue la adición de rango máximo y mínimo en velocidad de habla, de forma que la velocidad de disparo de cada fragmento sea aleatoria pero controlable y acotada. Esto permitió que la máquina de idiomas sea más _orgánica_ en su habla, más _humana_, ya que evita rítmicas constantes. Sin embargo, si se acota a determinada velocidad constante, podría utilizarse a efectos musicales.
 
 ![Última iteración del patch de control adaptado a los idiomas provistos por ElevenLabs para AudioStellar](_media/custom_osc_ast_elevenLabsJM.png "Última iteración del patch de control adaptado a los idiomas provistos por ElevenLabs para AudioStellar")
 
-Settings del modelo: **Stability** entre 35% y 50%, **Similarity** entre 75% y 90%, **Style Exaggeration** 0% (porque no afecta en modo TTS, sí en modo STS), **Speaker Boost** encendido.
+Las pruebas que realicé me trajeron nuevas sonoridades que no esperaba utilizando únicamente la voz. En principio intenté acotarme a las formas básicas de sampling (muestreo), es decir, reproducir los audios, más rápido o más lento, concatenarlos, que se pisen o no, el orden de los fragmentos, y demás operaciones básicas, ya que no quería perder la esencia de la voz y ver si lograba nuevas formas de habla. Sin embargo, el conjunto de herramientas y la forma de explorarlas me llevó a ir más allá y correrme de la búsqueda del idioma asémico que refleje la voz sino a nuevas sonoridades como experiencia estética sin ni siquiera tener la voz como eje. En esta instancia me llamaron más la atención aqellos resultados que se acercaban más al <em class="rainbow-text">noise</em> y se alejaban de la voz, hasta incluso a sonoridades más musicales.
+
+<video width="100%" controls src="_media/ASt-ElevenLabs-JM_1-tekno_websd.mp4" title="Improvisación musical con voz"></video>
+
+<p class="caption center">Improvisación musical con mi voz generada</p>
+
+Habiendo experimentado con mi propia voz en idiomas que no hablo fue interesante. Además, la posibilidad de crear modelos de clones con el timbre de la voz de cualquier persona, incluso conocidas con tan sólo tomar audios de WhatsApp, y hacer que digan lo que uno quiera, resulta sorprendente y a la vez escalofriante. Se me presenta como un dilema ético del uso de estas herramientas, pero también la convierte en una utilidad creativa muy poderosa. Sin embargo, esta es una discusión que excede el alcance de este trabajo aunque no deja de ser un tema tangencial en cuanto a la generación de voces.
