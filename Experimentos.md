@@ -348,7 +348,15 @@ Esta primera versión de mi patch de control de AudioStellar con Pure Data me pe
 
 ### Máquina Probabilística _(Experimento #32.1)_
 
-En esta nueva iteración sobre el primer experimento con TTS, consideré algunos factores que favorecerían al resultado sonoro que busqué desde el comienzo.
+En esta nueva iteración sobre el primer experimento con TTS, consideré algunos factores que favorecerían al resultado sonoro que busqué desde el comienzo. Para comenzar, agregué al patch de Pure Data la posibilidad de elegir el idioma de forma probabilística. Con un fader por idioma, el usuario puede elegir cuántas chances hay de que se dispare un fragmento de ese idioma. Además, también se puede controlar la duración de este fragmento, y así controlar la _velocidad_ del habla.
+
+Otra decisión fue la de quedarme con una [historia de fantasía](#historia) inventada por ChatGPT. Cada una de las versiones no fue traducida sino que le pedía nuevamente el texto en el idioma que quisiera luego reproducir con mi voz clonada. En los experimentos anteriores había textos de otros generadores de _gibberish_ pero para este caso quería mantener este sinsentido en el relato, dándole más peso a este gesto. Para cada versión de la historia en cada lengua, generé dos audios, uno con voz femenina y otro con voz masculina, realizando una curaduría tímbrica de voces, y según las ofrecidas en TTSMaker.
+
+<a id="historia"></a>
+
+> _En una galaxia muy, muy lejana, los pingüinos bailan tango con sandías y estrellas fugaces como luces de neón cubiertas de chocolate. El sol es como una gran naranja y la luna es como un gran algodón de azúcar. Los ríos fluyen con jarabe de arce y las nubes parecen pasteles de limón. Los peces saltan del agua y tocan el piano mientras las mariposas pintan dibujos en sus alas. Las carreteras están cubiertas de chocolate derretido y las casas tienen techos hechos a medida. Las estrellas fugaces se convierten en caramelos de frambuesa y los mosquitos tocan el violín en mitad de la noche. Todo esto es parte de un dulce sueño donde las olas del mar están hechas de salsa de caramelo y las estrellas brillan como caramelos de diamantes. De las nubes llueven macarrones y el atardecer es como un cuadro de chocolate. Es un mundo de imaginación, donde los arcoíris son la escalera hacia los sueños celestiales y los atardeceres saben a mil helados diferentes. Los barcos flotan en los ríos con caramelo y las montañas se convierten en pasteles dulces._
+
+Las voces generadas con TTSMaker fueron recortados con el [script que desarrollé](#script-para-experimento-31) para generar los segmentos de audio de cada idioma. Estos fueron importados en AudioStellar y organizados en clusters por idioma al estar organizados por carpeta. Finalmente, con el patch de Pure Data, se controló la reproducción de estos fragmentos de habla en tiempo real, similar a la iteración anterior, pero esta vez los fragmentos de habla son más largos para mantener la integibilidad de cada idioma.
 
 - Texto generado por ChatGPT en estilo nonsensical, ha demostrado ser bueno generando relatos sinsentido reminiscentes a alicia en el país de las maravillas. Sintácticamente correcto, pero historias delirantes.
 - genero de las voces, mismo texto, a dos voces. nueva CURADURÍA TÍMBRICA DE VOCES.
@@ -366,10 +374,6 @@ Al probar esta aplicación, me resonó haber hallado esa multiplicidad de voces 
 
 Me pareció pertitente como hilo conductor "semántico" que la **historia** que fue despedazada en fragmentos de habla sea la misma, pero traducida en todos los idiomas que pude generar:
 
-<a id="historia"></a>
-
-> _En una galaxia muy, muy lejana, los pingüinos bailan tango con sandías y estrellas fugaces como luces de neón cubiertas de chocolate. El sol es como una gran naranja y la luna es como un gran algodón de azúcar. Los ríos fluyen con jarabe de arce y las nubes parecen pasteles de limón. Los peces saltan del agua y tocan el piano mientras las mariposas pintan dibujos en sus alas. Las carreteras están cubiertas de chocolate derretido y las casas tienen techos hechos a medida. Las estrellas fugaces se convierten en caramelos de frambuesa y los mosquitos tocan el violín en mitad de la noche. Todo esto es parte de un dulce sueño donde las olas del mar están hechas de salsa de caramelo y las estrellas brillan como caramelos de diamantes. De las nubes llueven macarrones y el atardecer es como un cuadro de chocolate. Es un mundo de imaginación, donde los arcoíris son la escalera hacia los sueños celestiales y los atardeceres saben a mil helados diferentes. Los barcos flotan en los ríos con caramelo y las montañas se convierten en pasteles dulces._
-
 ### Mi propia voz _(Experimento #32)_
 
 A partir de los resultados sonoros de los experimentos anteriores, mi inquietud por el habla asémica crece aún más, como si esquivara cualquier forma de conclusión y ese universo se expandiera hacia un sinfín de posibilidades. Me di cuenta que necesitaba emparejar los timbres de las voces si quería realmente comenzar a _inventar idiomas_. Pero, ¿qué timbre? ¿qué voz sería la que represente este nuevo lenguaje vocalizado por computadora? Por supuesto la respuesta apareció de inmediato, la mía. De aquí surgen dos posibilidades:
@@ -379,10 +383,10 @@ A partir de los resultados sonoros de los experimentos anteriores, mi inquietud 
 
 De cualquiera de estas maneras lograría obtener muchos fragmentos de la misma persona (yo) hablando una gran cantidad de idiomas con la posibilidad de mezclarlos de forma temporal pero no morfológica. Esta distinción es importante para aclarar que estos últimos 3 experimentos pueden dar un acercamiento a esta invención de idiomas con una operación
 
-Finalmente decidí pagar ElevenLabs…
+Finalmente decidí pagar ElevenLabs.
 
-COMPLETAR
+La escucha de estos experimentos generó ideas para mejoras en su _performatividad_. Una nueva _feature_ (característica 🚀) fue la adición de rangos de velocidad de habla de forma que la velocidad de disparo de cada fragmento sea aleatoria pero controlable y acotada. Esto permitió que la máquina de idiomas sea más _orgánica_ en su habla, más _humana_, ya que evita rítmicas constantes, sin embargo, si se acota a determinada velocidad constante, podría utilizarse a efectos musicales.
 
-También tomé la decisión de quedarme con la [fantasiosa historia](#historia) inventada por ChatGPT. Cada una de las versiones no fue traducida sino que le pedía nuevamente el texto en el idioma que quisiera luego reproducir con mi voz clonada. En los experimentos anteriores había textos de otros generadores de _gibberish_ pero para este caso quería mantener este sinsentido en el relato, dándole más sentido a este gesto. Este relato fue pedido en los 29 idiomas que proporciona el modelo **Eleven Multilingual v2** (árabe, búlgaro, chino, croata, checo, danés, holandés, inglés, filipino, finlandés, francés, alemán, griego, hindi, indonesio, italiano, japonés, coreano, malayo, polaco, portugués, rumano, ruso, eslovaco, español sueco, tamil, turco, ucraniano).
+El relato fue pedido en los 29 idiomas que proporciona el modelo **Eleven Multilingual v2** (árabe, búlgaro, chino, croata, checo, danés, holandés, inglés, filipino, finlandés, francés, alemán, griego, hindi, indonesio, italiano, japonés, coreano, malayo, polaco, portugués, rumano, ruso, eslovaco, español sueco, tamil, turco, ucraniano).
 
 Settings del modelo: **Stability** entre 35% y 50%, **Similarity** entre 75% y 90%, **Style Exaggeration** 0% (porque no afecta en modo TTS, sí en modo STS), **Speaker Boost** encendido.
