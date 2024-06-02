@@ -3,8 +3,11 @@
   --theme-saturation: 75%;
   --theme-lightness: 50%;
 }
-body {
+p {
   text-align: justify;
+}
+.sidebar > h1 {
+  text-wrap: balance;
 }
 a:hover {
   text-decoration: none;
@@ -96,6 +99,7 @@ code.lang-txt {
   border-radius: 15px;
   padding: 15px;
   margin: 10px 0;
+  text-align: justify;
 }
 .A {
   background-color: var(--selection-color);
