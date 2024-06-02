@@ -12,6 +12,7 @@ a:hover {
 .cover a {
   border: none !important;
   background: none !important;
+  text-decoration: none !important;
 }
 media="(prefers-color-scheme: dark)" {
   .cover .cover-main > p:last-child {
