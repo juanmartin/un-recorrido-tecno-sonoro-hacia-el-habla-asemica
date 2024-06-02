@@ -160,7 +160,7 @@ La distribución de los fonemas en el mapa 2D de AudioStellar es lo que define e
 <a name="Cartografía Mundial del Habla" id="cartografias-explicacion"></a>
 - Si se agrupan por sus características sonoras, se podrán contemplar fonemas similares de los distintos idiomas, se barren las barreras geopolíticas, trazando un mapa donde el sonido hace nuestro sentido (ref sound of nonsense), es nuestra fuente de verdad y no vamos a interpolar entre idiomas sino entre sonidos de diferentes orígenes, agrupados por sus cualidades similares. Así encontramos una nueva [_Cartografía Mundial del Habla_](#audiostellar-puredata-experimento-32).
 
-Organicé una serie de [entrevistas](#Entrevistas) o encuentros con personas con experiencia en la generación de habla por computadora a modo de extender la mano y salir de mis propias ideas. En todos los casos fueron mencionados los [TTS](#TTS). Con el entusiasmo de las conversaciones, indagué brevemente en el famoso [Tacotron](https://pytorch.org/hub/nvidia_deeplearningexamples_tacotron2/). Este modelo de generación de habla es muy popular en la comunidad de inteligencia artificial y se basa en la arquitectura de un _encoder_ y un _decoder_ que se entrenan conjuntamente para convertir texto en habla. Aunque no profundicé en su uso, obtuve algunos rápidos resultados sonoros.
+Organicé una serie de [entrevistas](#Entrevistas) o encuentros con personas con experiencia en la generación de habla por computadora a modo de extender la mano y salir de mis propias ideas. En todos los casos fueron mencionados los [TTS](#TTS). Con el entusiasmo de las conversaciones, indagué brevemente en el famoso [Tacotron](https://pytorch.org/hub/nvidia_deeplearningexamples_tacotron2/). Este modelo de generación de habla es muy popular en la comunidad de inteligencia artificial y se basa en la arquitectura de un _encoder_ y un _decoder_ que se entrenan conjuntamente para convertir texto en habla. Aunque no profundicé en su uso, obtuve algunos rápidos resultados sonoros basándome en [este Colab](https://colab.research.google.com/github/Tomiinek/Multilingual_Text_to_Speech/blob/master/notebooks/multi_training_demo.ipynb).
 
 <div class="grid">
   <div class="center full-width">
@@ -205,7 +205,24 @@ Organicé una serie de [entrevistas](#Entrevistas) o encuentros con personas con
   </div>
 </div>
 
-Si bien el resultado estético y formal de estas voces me resultó divertido, no supe encausarlo en mi investigación de la invención de nuevos idiomas dado que la manera en la que estos modelos trabajan es en diferido, y mi capricho por la generación en tiempo real me llevó a buscar otras alternativas. En este punto, la idea de separar en fonemas y recorrerlos en AudioStellar me pareció una salida exploratoria más directa.
+El _prompt_ para generar estas voces fue el siguiente:
+  
+  ```python
+  inputs = [
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|spanish",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|french",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|german",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|greek",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|dutch",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|finnish",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|hungarian",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|chinese",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|japanese",
+          "fdhjk dfshjkf dsahjk fdsahjfds hjklfds sfhjkds fhsjfsehfcnvvnenvwci hznvjei nwifnewau idjksv ncjdw adjsfncv.|russian",
+  ]
+  ```
+
+Si bien el resultado estético y formal de estas voces me resultó divertido, no se adecuaba exactamente en mi investigación de la invención de nuevos idiomas dado que la manera en la que estos modelos trabajan es en diferido, y mi capricho por la generación en tiempo real me llevó a buscar otras alternativas. En este punto, la idea de separar en fonemas y recorrerlos en AudioStellar me pareció una salida exploratoria más directa.
 
 La [entrevista con Mateo Amaral](#mateo-amaral) me hizo pensar en el uso no convencional de las herramientas, en este caso tecnologías de generación de habla como los TTS, como un recurso propio de nuestro proceso creativo como artistas trabajando en piezas que luego componen obras. A lo largo del desarrollo de estos experimentos que se describen a continuación, los distintos pasos me hacen pensar en _trucos_ que uso para perseguir mi determinada búsqueda estética.
 
@@ -350,43 +367,33 @@ Esta primera versión de mi patch de control de AudioStellar con Pure Data me pe
 
 En esta nueva iteración sobre el primer experimento con TTS, consideré algunos factores que favorecerían al resultado sonoro que busqué desde el comienzo. Para comenzar, agregué al patch de Pure Data la posibilidad de elegir el idioma de forma probabilística. Con un fader por idioma, el usuario puede elegir cuántas chances hay de que se dispare un fragmento de ese idioma. Además, también se puede controlar la duración de este fragmento, y así controlar la _velocidad_ del habla.
 
-Otra decisión fue la de quedarme con una [historia de fantasía](#historia) inventada por ChatGPT. Cada una de las versiones no fue traducida sino que le pedía nuevamente el texto en el idioma que quisiera luego reproducir con mi voz clonada. En los experimentos anteriores había textos de otros generadores de _gibberish_ pero para este caso quería mantener este sinsentido en el relato, dándole más peso a este gesto. Para cada versión de la historia en cada lengua, generé dos audios, uno con voz femenina y otro con voz masculina, realizando una curaduría tímbrica de voces, y según las ofrecidas en TTSMaker.
+Otra decisión fue la de quedarme con una [historia de fantasía](#historia) inventada por ChatGPT al mejor estilo de Alicia en el País de las Maravillas. Así, podría tener palabras reales existentes para cada lengua. Cada una de las versiones no fue traducida sino que le pedía nuevamente el texto en el idioma que quisiera luego reproducir con mi voz clonada. En los experimentos anteriores había textos de otros generadores de _gibberish_ pero para este caso quería mantener este sinsentido en el relato, dándole más peso a este gesto. Para cada versión de la historia en cada lengua, generé dos audios, uno con voz femenina y otro con voz masculina, realizando una curaduría tímbrica de voces, y según las ofrecidas en TTSMaker. El único idioma que no pude generar de la misma forma fue el Guaraní, pero encontré un modelo en [HuggingFace](https://huggingface.co/facebook/mms-tts-grn) que me permitió generar un fragmento de habla en este idioma de voz masculina.
 
 <a id="historia"></a>
 
 > _En una galaxia muy, muy lejana, los pingüinos bailan tango con sandías y estrellas fugaces como luces de neón cubiertas de chocolate. El sol es como una gran naranja y la luna es como un gran algodón de azúcar. Los ríos fluyen con jarabe de arce y las nubes parecen pasteles de limón. Los peces saltan del agua y tocan el piano mientras las mariposas pintan dibujos en sus alas. Las carreteras están cubiertas de chocolate derretido y las casas tienen techos hechos a medida. Las estrellas fugaces se convierten en caramelos de frambuesa y los mosquitos tocan el violín en mitad de la noche. Todo esto es parte de un dulce sueño donde las olas del mar están hechas de salsa de caramelo y las estrellas brillan como caramelos de diamantes. De las nubes llueven macarrones y el atardecer es como un cuadro de chocolate. Es un mundo de imaginación, donde los arcoíris son la escalera hacia los sueños celestiales y los atardeceres saben a mil helados diferentes. Los barcos flotan en los ríos con caramelo y las montañas se convierten en pasteles dulces._
 
-Las voces generadas con TTSMaker fueron recortados con el [script que desarrollé](#script-para-experimento-31) para generar los segmentos de audio de cada idioma. Estos fueron importados en AudioStellar y organizados en clusters por idioma al estar organizados por carpeta. Finalmente, con el patch de Pure Data, se controló la reproducción de estos fragmentos de habla en tiempo real, similar a la iteración anterior, pero esta vez los fragmentos de habla son más largos para mantener la integibilidad de cada idioma.
-
-- Texto generado por ChatGPT en estilo nonsensical, ha demostrado ser bueno generando relatos sinsentido reminiscentes a alicia en el país de las maravillas. Sintácticamente correcto, pero historias delirantes.
-- genero de las voces, mismo texto, a dos voces. nueva CURADURÍA TÍMBRICA DE VOCES.
-- largo de los audios
-- menor cantidad de word shuffling, sinsentido sólo en el contenido, pero palabras reales.
-- segmentos de habla más largos en slicer audiostellar
-- poner a prueba la maquina2 con estas nuevas condiciones
-- observaciones.
-- Para Guaraní se encontró este modelo: <https://huggingface.co/facebook/mms-tts-grn> sólo provee 1 voz de hombre.
-- no inventa idiomas, genera conversaciones y multitudes.
+Las voces generadas con TTSMaker fueron recortados con el [script que desarrollé](#script-para-experimento-31) para generar los segmentos de audio de cada idioma. Esta vez, modificando los parámetros para obtener fragmentos más largos que aumentaran la inteligibilidad o distinción de la lengua. Estos fueron importados en AudioStellar y organizados en clusters por idioma al estar organizados por carpeta. Finalmente, con el patch de Pure Data, se controló la reproducción de estos fragmentos de habla en tiempo real, similar a la iteración anterior, pero esta vez los fragmentos de habla son más largos para mantener la integibilidad de cada idioma.
 
 <video width="100%" controls src="_media/maquina chance1 - male.mp4" title="Maquina Probabilística 1"></video>
 
-Al probar esta aplicación, me resonó haber hallado esa multiplicidad de voces en diferentes idiomas, similar a aquel primer disparador de este trabajo al escuchar el bullicio en espacios públicos de ciudades cosmopolitas. Al barrer entre los idiomas aparece ese coro de personas hablando en diferentes lenguas, fragmentos de conversaciones que se mezclan en el aire.
+Al probar esta aplicación, me resonó haber hallado esa multiplicidad de voces en diferentes idiomas, similar a aquel primer disparador de este trabajo al escuchar el bullicio en espacios públicos de ciudades cosmopolitas. Al barrer entre los idiomas aparece ese coro de personas hablando en diferentes lenguas, fragmentos de conversaciones que se mezclan en el aire. Aún no sentí haber llegado a la invención de un nuevo idioma, pero sí a una multitud de conversaciones virtuales.
 
-Me pareció pertitente como hilo conductor "semántico" que la **historia** que fue despedazada en fragmentos de habla sea la misma, pero traducida en todos los idiomas que pude generar:
+![Patch de control por OSC para AudioStellar](_media/custom_osc_ast.png "Patch de control por OSC para AudioStellar")
 
 ### Mi propia voz _(Experimento #32)_
 
-A partir de los resultados sonoros de los experimentos anteriores, mi inquietud por el habla asémica crece aún más, como si esquivara cualquier forma de conclusión y ese universo se expandiera hacia un sinfín de posibilidades. Me di cuenta que necesitaba emparejar los timbres de las voces si quería realmente comenzar a _inventar idiomas_. Pero, ¿qué timbre? ¿qué voz sería la que represente este nuevo lenguaje vocalizado por computadora? Por supuesto la respuesta apareció de inmediato, la mía. De aquí surgen dos posibilidades:
+A partir de los resultados sonoros de los experimentos anteriores, mi inquietud por el habla asémica crece aún más, como si esquivara cualquier forma de conclusión y ese universo se expandiera hacia un sinfín de posibilidades. Me di cuenta que necesitaba emparejar los timbres de las voces si quería realmente comenzar a _inventar idiomas_. Pero, ¿qué timbre? ¿qué voz sería la que represente este nuevo lenguaje vocalizado por computadora? Por supuesto la respuesta apareció de inmediato, ¡la mía! ¿Quién sino con mayor disponibilidad y entrega para esta experimentación?. De aquí surgen dos posibilidades:
 
-- A partir de los fragmentos de audio del experimento anterior, encontrar algún sistema Speech-to-Speech que transforme esas voces generadas por TTSMaker a mi propia voz, de manera que el contenido _a-semántico_ sea extraído de esos audios, incluyendo la cadencia, la entonación, las palabras y la pronunciación, pero no el timbre, que será el de mi voz.
-- Clonar mi propia voz y luego con ese modelo inferir (generar audio a partir del modelo) los textos que había generado como recurso fuente para los TTS.
+- A partir de los fragmentos de audio del experimento anterior, encontrar algún sistema Speech-to-Speech que transforme esas voces generadas por TTSMaker a mi propia voz, de manera que el contenido <em class="rainbow-text">a-semántico</em> sea extraído de esos audios, incluyendo la cadencia, la entonación, las palabras y la pronunciación, pero no el timbre, que será el de mi voz.
+- Clonar mi propia voz y luego con ese modelo inferir (generar audio a partir del modelo) aquellos textos que había generado como recurso fuente para los TTS.
 
-De cualquiera de estas maneras lograría obtener muchos fragmentos de la misma persona (yo) hablando una gran cantidad de idiomas con la posibilidad de mezclarlos de forma temporal pero no morfológica. Esta distinción es importante para aclarar que estos últimos 3 experimentos pueden dar un acercamiento a esta invención de idiomas con una operación
+De cualquiera de estas maneras lograría obtener muchos fragmentos de la misma persona hablando una gran cantidad de idiomas con la posibilidad de mezclarlos de forma temporal pero no del todo morfológica, aunque con las posibilidades que ofrece AudioStellar se acerca bastante a la interpolación entre idiomas.
 
-Finalmente decidí pagar ElevenLabs.
+Finalmente decidí pagar una suscripción de [ElevenLabs](https://elevenlabs.io/) que me permitió rápidamente clonar mi propia voz con alrededor de 3 minutos de grabación que hice con un micrófono Shure SM57 sin ruidos de fondo. Si bien hace falta mucho menos tiempo para obtener un modelo de voz, la calidad de la clonación es proporcional al tiempo de grabación, hasta los 3 minutos (por el momento), luego puede llegar a sobre-generalizar. El relato fue pedido en los 29 idiomas que proporciona el modelo **Eleven Multilingual v2** (árabe, búlgaro, chino, croata, checo, danés, holandés, inglés, filipino, finlandés, francés, alemán, griego, hindi, indonesio, italiano, japonés, coreano, malayo, polaco, portugués, rumano, ruso, eslovaco, español sueco, tamil, turco, ucraniano).
 
 La escucha de estos experimentos generó ideas para mejoras en su _performatividad_. Una nueva _feature_ (característica 🚀) fue la adición de rangos de velocidad de habla de forma que la velocidad de disparo de cada fragmento sea aleatoria pero controlable y acotada. Esto permitió que la máquina de idiomas sea más _orgánica_ en su habla, más _humana_, ya que evita rítmicas constantes, sin embargo, si se acota a determinada velocidad constante, podría utilizarse a efectos musicales.
 
-El relato fue pedido en los 29 idiomas que proporciona el modelo **Eleven Multilingual v2** (árabe, búlgaro, chino, croata, checo, danés, holandés, inglés, filipino, finlandés, francés, alemán, griego, hindi, indonesio, italiano, japonés, coreano, malayo, polaco, portugués, rumano, ruso, eslovaco, español sueco, tamil, turco, ucraniano).
+![Última iteración del patch de control adaptado a los idiomas provistos por ElevenLabs para AudioStellar](_media/custom_osc_ast_elevenLabsJM.png "Última iteración del patch de control adaptado a los idiomas provistos por ElevenLabs para AudioStellar")
 
 Settings del modelo: **Stability** entre 35% y 50%, **Similarity** entre 75% y 90%, **Style Exaggeration** 0% (porque no afecta en modo TTS, sí en modo STS), **Speaker Boost** encendido.

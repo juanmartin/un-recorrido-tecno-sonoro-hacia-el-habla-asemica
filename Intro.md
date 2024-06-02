@@ -176,11 +176,7 @@ Cuanto más abstracta sea una representación, más se puede insertar en eso la 
 
 ## Lingüística
 
-Voy a quedarme con las fonética y descartar la estructura
-
-Por que hablo de esto que sigue.
-
-Entonces doy conceptos:
+Dado que este trabajo se ancla en la generación de habla sintética, es importante comprender algunos conceptos básicos de la lingüística, la fonética y la fonología. Estas disciplinas se ocupan del estudio de los sonidos del habla, su producción y organización en los idiomas humanos, y cómo estos sonidos se combinan para formar palabras y oraciones con significado.
 
 ### El sonido del habla
 

@@ -8,7 +8,11 @@ Pablo desarrolló y probó este instrumento en una distribución de Linux basada
 
 Finalmente instalé una máquina virtual en mi computadora con Windows, probé varios softwares de virtualización, primero VirtualBox por ser open source, pero que no utiliza los recursos de la máquina de forma óptima y por ende corría lento. Luego VMWare, que corre mejor, a la que le instalé Linux Mint, y todo funcionó de maravilla. El archivo de audio y video de esta investigación está grabado con ese entorno virtual.
 
-El sintetizador de Pablo Riera es una excelente idea y herramienta para lograr inferencia en tiempo real de un modelo sonoro, pero no estaba alcanzando los resultados que quería, por lo que investigué alternativas en otros entornos donde tuviera más control de las partes involucradas, sin tiempos de compilación ni plataformas específicas, procesamiento y código en tiempo real: entra Miller Puckette. Busqué *cajitas* desarrolladas en Max/MSP o PureData.
+El sintetizador de Pablo Riera es una excelente idea y herramienta para lograr inferencia en tiempo real de un modelo sonoro, pero no estaba alcanzando los resultados que quería, por lo que investigué alternativas en otros entornos donde tuviera más control de las partes involucradas, sin tiempos de compilación ni plataformas específicas, procesamiento y código en tiempo real: entra Miller Puckette. Busqué *cajitas* desarrolladas en [Max/MSP](https://cycling74.com/products/max) o [Pure Data](https://puredata.info/).
+
+![Boceto de patch en Max/MSP para la exploración del espacio latente](_media/max-latent.png "Boceto de patch en Max/MSP para la exploración del espacio latente")
+
+Volví a encontrarme con [RAVE](https://forum.ircam.fr/collections/detail/rave/), un *framework* para generar modelos de redes neuronales para audio. Mencioné que *volví* a encontrarlo porque ya lo había investigado como una alternativa al Autoencoder de Riera. El equipo de investigación de [IRCAM](https://www.ircam.fr/) ha desarrollado un objeto de Max `nn~` que podría haber sido de utilidad. El problema es que este sólo corre modelos desarrollados con su estructura, que es diferente al autoencoder que yo entrené, y entrenar un modelo con el framework de RAVE es un proceso que excede el tiempo y recursos que dispuse. Por lo que decidí descartar este camino.
 
 ## Separación en fonemas
 
