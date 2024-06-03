@@ -254,8 +254,10 @@ La conversación pasó por varias etapas, fue larga pero rápida y eficaz ya que
     <div class="chat B" id="script-sugerido">
     I apologize for any confusion. To ensure that the output audio files maintain the same pitch and playback speed as the input audio, you should also copy the input audio's sample width and number of channels when saving the phoneme segments. Here's the corrected code:
 
+    <a id="vosk_phoneme_slicer"></a>
+
     ```python
-    # VOSK_phoneme_slicer.py
+    # vosk_phoneme_slicer.py
     
     import os
     import vosk
