@@ -97,11 +97,8 @@ code.lang-txt {
   text-align: justify;
 }
 .A {
-  background-color: hsl(var(--theme-hue), var(--theme-saturation), 35%);
+  background-color: hsl(var(--theme-hue), var(--theme-saturation), var(--brillo));
   border-radius: 20px 20px 5px 20px;
-}
-.dark-mode .A {
-  background-color: hsl(var(--theme-hue), var(--theme-saturation), 80%);
 }
 .B {
   background-color: var(--mono-tint2);
