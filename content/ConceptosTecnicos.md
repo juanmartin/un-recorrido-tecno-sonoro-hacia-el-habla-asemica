@@ -18,7 +18,7 @@ Un Autoencoder es una arquitectura de redes neuronales artificiales utilizado en
 
 Consiste en las siguientes partes:
 
-![Estructura de un Autoencoder](_media/autoencoder.png)
+![Estructura de un Autoencoder](../_media/autoencoder.png)
 
 1. **Capa de Codificación (Encoder)**: En la primera parte del modelo, llamada el codificador (encoder), los datos de entrada se transforman en una representación interna más compacta. Esta capa reduce la dimensionalidad de los datos, capturando las características más importantes.
 2. **Espacio Latente (Latent Space)**: Es la parte del medio, la representación interna o intermedia de los datos que se encuentran entre el codificador y el decodificador. En este espacio latente, las características más importantes de los datos de entrada se capturan de una manera más compacta y abstraída. Es decir, en lugar de describir cada detalle de los datos, el espacio latente representa características más significativas y abstractas. Un espacio latente bien entrenado permite operaciones que permiten explorar y manipular las características subyacentes de los datos de entrada de manera más eficiente.

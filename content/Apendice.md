@@ -10,7 +10,7 @@ Ideé una pieza llamada `gla 1.0b (generador de lenguaje asémico)` basado en es
 
 > El proyecto consiste en una instalación interactiva que invita a escuchar los idiomas del mundo, apelar a nuestro imaginario para lograr entender algo que en principio no hará sentido, pero interpelará nuestras subjetividades. Quienes experimenten la obra se encontrarán con un dispositivo pequeño en un pedestal con un dos auriculares colgados al frente. El aparato es un controlador con perillas rotuladas que representan cada una un idioma distinto. Al interactuar con el sistema se escucharán monólogos teniendo la posibilidad de mezclar cada lengua, descubriendo qué aparece en su interpolación.
 
-![Render de gla 1.0b](_media/gla_render_2.png "Render de gla 1.0b")
+![Render de gla 1.0b](../_media/gla_render_2.png "Render de gla 1.0b")
 
 <div class="grid">
   <div>
@@ -25,7 +25,7 @@ Ideé una pieza llamada `gla 1.0b (generador de lenguaje asémico)` basado en es
 
 El proyecto [recibió una mención](https://www.cceba.org.ar/medialab/proyectos-seleccionados-y-menciones-2). Se comunicaron para incentivarme a continuarlo, enriquecerlo y participar de futuras instancias de la convocatoria, incluso en otras como el programa [Presente Continuo](https://presentecontinuo.org/).
 
-El proyecto completo que presenté puede encontrarse en este [PDF](_media/230702_Formato-de-proyecto-MediaLab-apoyo-2023.pdf).
+El proyecto completo que presenté puede encontrarse en este [PDF](../_media/230702_Formato-de-proyecto-MediaLab-apoyo-2023.pdf).
 
 ## 2ASMRSynth
 
@@ -35,7 +35,7 @@ Finalmente instalé una máquina virtual en mi computadora con Windows, probé v
 
 El sintetizador de Pablo Riera es una excelente idea y herramienta para lograr inferencia en tiempo real de un modelo sonoro, pero no estaba alcanzando los resultados que quería, por lo que investigué alternativas en otros entornos donde tuviera más control de las partes involucradas, sin tiempos de compilación ni plataformas específicas, procesamiento y código en tiempo real: entra Miller Puckette. Busqué *cajitas* desarrolladas en [Max/MSP](https://cycling74.com/products/max) o [Pure Data](https://puredata.info/).
 
-![Boceto de patch en Max/MSP para la exploración del espacio latente](_media/max-latent.png "Boceto de patch en Max/MSP para la exploración del espacio latente")
+![Boceto de patch en Max/MSP para la exploración del espacio latente](../_media/max-latent.png "Boceto de patch en Max/MSP para la exploración del espacio latente")
 
 Volví a encontrarme con [RAVE](https://forum.ircam.fr/collections/detail/rave/), un *framework* para generar modelos de redes neuronales para audio. Mencioné que *volví* a encontrarlo porque ya lo había investigado como una alternativa al Autoencoder de Riera. El equipo de investigación de [IRCAM](https://www.ircam.fr/) ha desarrollado un objeto de Max `nn~` que podría haber sido de utilidad. El problema es que este sólo corre modelos desarrollados con su estructura, que es diferente al autoencoder que yo entrené, y entrenar un modelo con el framework de RAVE es un proceso que excede el tiempo y recursos que dispuse. Por lo que decidí descartar este camino.
 

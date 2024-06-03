@@ -88,9 +88,9 @@ Se reconstruyó el siguiente audio directamente desde el código. Para eso se in
 
 <audio controls src="_media/reconstructed.mp3" title="Audio reconstruido"></audio>
 
-![Espectrograma del resultado reconstruido.](_media/predicted_spectrogram.png "Espectrograma del resultado reconstruido.")
+![Espectrograma del resultado reconstruido.](../_media/predicted_spectrogram.png "Espectrograma del resultado reconstruido.")
 
-![Camino de valores del espacio latente de 4 dimensiones que genera el audio reconstruido.](_media/Z_latent_score.png "Camino de valores del espacio latente de 4 dimensiones que genera el audio reconstruido.")
+![Camino de valores del espacio latente de 4 dimensiones que genera el audio reconstruido.](../_media/Z_latent_score.png "Camino de valores del espacio latente de 4 dimensiones que genera el audio reconstruido.")
 
 Al solicitarle inferencia al modelo para generar nuevos sonidos a partir del entrenamiento con los mostrados anteriormente, los resultados no eran muy favorables para mi investigación por su alto nivel de ruido, por lo que decidí buscar videos en YouTube de Podcasts o conversaciones para armar un nuevo dataset. Encontré voces limpias de gente con buena calidad de grabación, sentí que con estos el modelo podría generalizar voces más nítidas.
 
@@ -114,7 +114,7 @@ La idea es explorar este espacio para encontrar nuevos [_caminos_](#caminos) que
 
 Para facilitar la exploración contamos con el [**2ASMRSynth**](https://github.com/pabloriera/2ASMRS) también programado por Pablo Riera. Es una especie de sintetizador basado en [JUCE](https://juce.com/) que puede generar inferencia sonora en tiempo real a partir de un modelo de tipo [`torchscript`](https://pytorch.org/docs/stable/jit.html). Como expliqué anteriormente, uno carga el modelo en la aplicación y puede mover los parámetros dentro del espacio latente y escucharlo en tiempo real, como un instrumento. La sonoridad de este instrumento dependerá del modelo cargado.
 
-![2ASMRSynth Sintetizador de inferencia de modelos](_media/2ASMRSynth.png "Captura de pantalla del 2ASMRSynth corriendo en Linux Mint.")
+![2ASMRSynth Sintetizador de inferencia de modelos](../_media/2ASMRSynth.png "Captura de pantalla del 2ASMRSynth corriendo en Linux Mint.")
 
 Cada _fader_ del instrumento representa una de las dimensiones del espacio latente, y al moverlos le estamos asignando valores a cada una. La parte del decodificador del modelo genera la salida de audio. Mover estos valores manualmente, por ejemplo con el mouse, no resulta interesante ya que se debe orquestar un movimiento coordinado de todos los parámetros para que la salida haga _sentido_. Por supuesto que cuenta con la posibilidad de ser controlado mediante el protocolo MIDI.
 
@@ -250,7 +250,7 @@ Al llegar a [TTSmaker.com](http://ttsmaker.com/) y gracias a la charla con Mateo
 
 4. La estructura de carpetas para la organización de sonidos resultantes podría ser la siguiente:
 
-  ![Estructura de carpeta TTS](_media/tts-folder.png "Estructura de carpeta TTS")
+  ![Estructura de carpeta TTS](../_media/tts-folder.png "Estructura de carpeta TTS")
 
   O bien generalizando:
 
@@ -381,7 +381,7 @@ Las voces generadas con TTSMaker fueron recortados con el [script que desarroll�
 
 Al probar esta aplicación, me resonó haber hallado esa multiplicidad de voces en diferentes idiomas, similar a aquel primer disparador de este trabajo al escuchar el bullicio en espacios públicos de ciudades cosmopolitas. Al barrer entre los idiomas aparece ese coro de personas hablando en diferentes lenguas, fragmentos de conversaciones que se mezclan en el aire. Aún no sentí haber llegado a la invención de un nuevo idioma, pero sí a una multitud de conversaciones virtuales.
 
-![Patch de control probabilístico por OSC para AudioStellar](_media/custom_osc_ast.png "Patch de control probabilístico por OSC para AudioStellar")
+![Patch de control probabilístico por OSC para AudioStellar](../_media/custom_osc_ast.png "Patch de control probabilístico por OSC para AudioStellar")
 
 ### Mi propia voz _(Experimento #32)_
 
@@ -457,7 +457,7 @@ Los siguientes son con la [historia de fantasía](#historia) para cada idioma, a
 
 La escucha de estos experimentos generó ideas para mejoras en su _performatividad_. Una nueva _feature_ (característica 🚀) fue la adición de rango máximo y mínimo en velocidad de habla, de forma que la velocidad de disparo de cada fragmento sea aleatoria pero controlable y acotada. Esto permitió que la máquina de idiomas sea más _orgánica_ en su habla, más _humana_, ya que evita rítmicas constantes. Sin embargo, si se acota a determinada velocidad constante, podría utilizarse a efectos musicales.
 
-![Última iteración del patch de control adaptado a los idiomas provistos por ElevenLabs para AudioStellar](_media/custom_osc_ast_elevenLabsJM.png "Última iteración del patch de control adaptado a los idiomas provistos por ElevenLabs para AudioStellar")
+![Última iteración del patch de control adaptado a los idiomas provistos por ElevenLabs para AudioStellar](../_media/custom_osc_ast_elevenLabsJM.png "Última iteración del patch de control adaptado a los idiomas provistos por ElevenLabs para AudioStellar")
 
 Las pruebas que realicé me trajeron nuevas sonoridades que no esperaba utilizando únicamente la voz. En principio intenté acotarme a las formas básicas de sampling (muestreo), es decir, reproducir los audios, más rápido o más lento, concatenarlos, que se pisen o no, el orden de los fragmentos, y demás operaciones básicas, ya que no quería perder la esencia de la voz y ver si lograba nuevas formas de habla. Sin embargo, el conjunto de herramientas y la forma de explorarlas me llevó a ir más allá y correrme de la búsqueda del idioma asémico que refleje la voz sino a nuevas sonoridades como experiencia estética sin ni siquiera tener la voz como eje. En esta instancia me llamaron más la atención aqellos resultados que se acercaban más al <em class="rainbow-text">noise</em> y se alejaban de la voz, hasta incluso a sonoridades más musicales.
 

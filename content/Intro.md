@@ -36,7 +36,7 @@ Esta obra se expuso en el espacio común del Museo MAR de Mar del Plata, es deci
 
 [Link al artículo](https://www.juanm.art/in/projects/paracrypt) - [Link a la obra](https://juanmartin.github.io/)
 
-![Parallax Cryptography](_media/parallax-crypt.png "Screenshot del sitio")
+![Parallax Cryptography](../_media/parallax-crypt.png "Screenshot del sitio")
 
 Esta pieza de Net Art propone un acertijo de perspectivas que utiliza letras como símbolos arbitrarios de lenguaje. Mediante una interfaz de buscador bastante cotidiana y un algoritmo geométrico, quien utilice el sitio puede encriptar un mensaje perdido en una suerte de sopa de letras tridimensional que sólo puede desencriptar encontrando la perspectiva única donde la profundidad de campo visual deja de ser relevante. Se puede navegar y recorrer este universo de símbolos libremente hasta encontrar la perspectiva que revela el mensaje.
 
@@ -107,7 +107,7 @@ No sólo el contenido del video muestra lo que busco realizar a través del soft
 
 ### Arte
 
-![Pieter Bruegel el Viejo - La Torre de Babel (Rotterdam)](_media/babel.png "Pieter Bruegel el Viejo - La Torre de Babel (Rotterdam)")
+![Pieter Bruegel el Viejo - La Torre de Babel (Rotterdam)](../_media/babel.png "Pieter Bruegel el Viejo - La Torre de Babel (Rotterdam)")
 
 **Éramos la humanidad** (Amaral, 2022) es un proyecto audiovisual de Mateo Amaral que utiliza distintos sistemas de inteligencia artificial y motores de videojuegos para imaginar un futuro posthumano. En este futuro, los Entes -seres híbridos entre inteligencia artificial y vida orgánica- habitan un extraño ciberespacio entre estructuras incompresibles y restos de la cultura humana.
 
@@ -144,7 +144,7 @@ El software es un componente clave de este desarrollo. A continuación menciono 
 
 **Wekinator** (Wekinator, n.d.) es un software creado por Rebecca Fiebrink en 2009 que permite a los usuarios entrenar modelos de aprendizaje automático en tiempo real para crear aplicaciones interactivas y sistemas de control personalizados. Su enfoque en la interactividad y la creatividad lo hace especialmente adecuado para procesos creativos en música, arte, diseño interactivo y performance, ofreciendo a los artistas y diseñadores nuevas formas de explorar la interacción humano-máquina.
 
-![Wekinator](_media/wekinator.png "Wekinator UI")
+![Wekinator](../_media/wekinator.png "Wekinator UI")
 
 Este software fue uno de los primeros encuentros que tuve con IA y vale la pena mencionarlo ya que en el campo de las artes electrónicas podría considerarse como una navaja suiza de la inteligencia artificial, dado que de manera muy intuitiva uno puede _mapear_ gestos desde alguna entrada como una cámara o sensor a datos fácilmente traducibles en audio, imagen o la interacción con actuadores físicos.
 
@@ -188,7 +188,7 @@ La fonética se enfoca en la producción de sonidos individuales, aislados. Exis
 
 <iframe width="100%" height="500" src="https://www.youtube.com/embed/W6WO5XabD-s?si=3xarbdUDQIVSaG9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-![IPA Fonética](_media/ipa-fonetica.png "https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html")
+![IPA Fonética](../_media/ipa-fonetica.png "https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html")
 
 La fonología se enfoca en cómo los sonidos se combinan para formar palabras y oraciones y así identificar patrones distintivos en diferentes idiomas para entender cómo se diferencian y se relacionan entre sí. Estudia la combinación de fonemas en la estructura y la sintaxis de un idioma -o cualquier idioma- para generar determinado significado. Básicamente la fonología le da contenido semántico a la fonética, que la usa como medio para estructurar el habla humana.
 
