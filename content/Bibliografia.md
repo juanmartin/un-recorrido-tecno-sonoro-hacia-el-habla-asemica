@@ -26,4 +26,4 @@ Ladefoged, P., & Maddieson, I. (1996). The Sounds of the World’s Languages. Wi
 
 Riera, P. E., Eguía, M. C., & Zabaljáuregui, M. (2017). Timbre spaces with sparse autoencoders. Brazilian Symposium on Computer Music, 16. Proceedings... Sao Paulo: SBC, 93–98. <https://compmus.ime.usp.br/sbcm/2017/papers/sbcm-2017-14.pdf>
 
-Archivo P.A.I.S.: Cuatro hipótesis de trabajo – nicolás varchausky. (2000). Recuperado el 21 de junio de 2023, de <https://www.varchausky.com.ar/archivo-pais/archivo-p-a-i-s-cuatro-hipotesis-de-trabajo/>
+Varchausky, N. (2000). Archivo P.A.I.S.: Cuatro hipótesis de trabajo – nicolás varchausky. <https://www.varchausky.com.ar/archivo-pais/archivo-p-a-i-s-cuatro-hipotesis-de-trabajo/>
