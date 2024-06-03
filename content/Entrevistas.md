@@ -2,7 +2,7 @@
 
 Luego de las últimas pruebas y experimentaciones sobre la separación de fonemas, surgió la necesidad de extender la mano hacia colegas que trabajaron con tecnologías aledañas en busca de estrategias alternativas para acercarse al resultado sonoro deseado en el principio de esta investigación.
 
-**ArchiVoz** es un proyecto derivado de [**Intercambios Transorgánicos**](https://intercambiostransorganicos.org/), grupo de investigación radicado en UNTREF dirigido por [**Gala Lucía González Barrios**](https://gala.bio/), del cual fui parte entre 2014 y 2018, y quedé vinculado en forma de consultor externo para necesidades técnicas puntuales. Se puede encontrar más información en el Trabajo Final de Grado de Gala (Barrios & Tedesco, s/f). Ella dio el puntapié inicial para hablar con dos investigadores de su equipo con experiencia en tecnologías basadas en inteligencia artificial para la generación de audio, específicamente, de habla generado por sistemas TTS –texto a habla–.
+**ArchiVoz** es un proyecto derivado de [**Intercambios Transorgánicos**](https://intercambiostransorganicos.org/), grupo de investigación radicado en UNTREF dirigido por [**Gala Lucía González Barrios**](https://gala.bio/), del cual fui parte entre 2014 y 2018, y quedé vinculado en forma de consultor externo para necesidades técnicas puntuales. Se puede encontrar más información en el Trabajo Final de Grado de Gala (Barrios & Tedesco, 2021). Ella dio el puntapié inicial para hablar con dos investigadores de su equipo con experiencia en tecnologías basadas en inteligencia artificial para la generación de audio, específicamente, de habla generado por sistemas TTS –texto a habla–.
 
 ## ArchiVoz
 
