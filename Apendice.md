@@ -1,6 +1,31 @@
 # Apéndice
 
-Esta sección es un anexo al trabajo donde se encuentra información técnica extra en detalle. Dado que gran parte de este trabajo fue una travesía tecnológica, me parecía pertinente que quede completamente documentada. Sin embargo, como no hace a la historia principal, preferí anexar este contenido al final para quien le sea de utilidad o interés.
+Esta sección es un anexo donde se encuentran devenires auxiliares de la investigación. Tanto un devenir de obra en formato de carpeta para aplicación a premios, y luego información técnica extra en detalle. Dado que gran parte de este trabajo fue una travesía tecnológica, me parecía pertinente que quede completamente documentada. Sin embargo, como no hace al relato principal, preferí anexar este contenido al final para quien le sea de utilidad o interés.
+
+## gla 1.0b (Generador de Lenguaje Asémico) -MediaLab CCEBA-
+
+En junio de 2023 el [Centro Cultural de España en Buenos Aires (CCEBA)](https://www.cceba.org.ar) lanza la tercera convocatoria [**Apoyo a la producción. Arte Contemporáneo MediaLab CCEBA 2023: Prácticas artísticas y tecnológicas**](https://www.cceba.org.ar/medialab/apoyo-a-la-produccion-2023). Me pareció que mi trabajo podía enmarcarse en la convocatoria y la experiencia de armar un proyecto acotado en alcance y recursos como devenir concreto de la investigación me pareció un buen ejercicio. Además, sería un buen incentivo moral y económico si llegaba a ser seleccionado.
+
+Ideé una pieza llamada `gla 1.0b (generador de lenguaje asémico)` basado en esta investigación. A continuación, la descripción breve que presenté acerca del proyecto:
+
+> El proyecto consiste en una instalación interactiva que invita a escuchar los idiomas del mundo, apelar a nuestro imaginario para lograr entender algo que en principio no hará sentido, pero interpelará nuestras subjetividades. Quienes experimenten la obra se encontrarán con un dispositivo pequeño en un pedestal con un dos auriculares colgados al frente. El aparato es un controlador con perillas rotuladas que representan cada una un idioma distinto. Al interactuar con el sistema se escucharán monólogos teniendo la posibilidad de mezclar cada lengua, descubriendo qué aparece en su interpolación.
+
+![Render de gla 1.0b](_media/gla_render_2.png "Render de gla 1.0b")
+
+<div class="grid">
+  <div>
+    <img src="_media/gla_render_1.png" alt="Render de gla 1.0b" />
+    <p class="caption center mt-1">Render de frente de gla 1.0b</p>
+  </div>
+  <div>
+    <img src="_media/gla_ui.png" alt="Boceto de interfaz de gla 1.0b" />
+    <p class="caption center mt-1">Boceto de interfaz de gla 1.0b</p>
+  </div>
+</div>
+
+El proyecto [recibió una mención](https://www.cceba.org.ar/medialab/proyectos-seleccionados-y-menciones-2). Se comunicaron para incentivarme a continuarlo, enriquecerlo y participar de futuras instancias de la convocatoria, incluso en otras como el programa [Presente Continuo](https://presentecontinuo.org/).
+
+El proyecto completo que presenté puede encontrarse en este [PDF](_media/230702_Formato-de-proyecto-MediaLab-apoyo-2023.pdf).
 
 ## 2ASMRSynth
 
