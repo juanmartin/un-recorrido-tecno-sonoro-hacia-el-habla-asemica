@@ -57,9 +57,13 @@ Instagram: [@patentepatente](https://www.instagram.com/patentepatente)
 
 <div class="pic-wall-container">
   <img src="_media/patentes1.png" alt="Patente MALO 56" />
+  <p class="caption center mt-1">MALOS 6</p>
   <img src="_media/patentes3.png" alt="Patente LÁPIZ 8" />
+  <p class="caption center mt-1">LÁPIZ 8</p>
   <img src="_media/patentes2.png" alt="Patente LAGO 52" />
+  <p class="caption center mt-1">LAGO 52</p>
   <img src="_media/patentes4.png" alt="Patente LERDO 18" />
+  <p class="caption center mt-1">LERDO 18</p>
 </div>
 
 Otra serie de fotografías de patentes (matrículas) de vehículos en la calle. A veces _aparecen_ textos que pueden formar las letras más los números si los convertimos a su semejante en letra, por ejemplo el 7 una T, el 3 una E, el 1 una I o l, el 8 una B, etc. Resulta relevante también el hecho de que _justo_ haya ubicado los ojos sobre ese texto callejero, como si fuera un _mensaje_ que nos toca ver.
