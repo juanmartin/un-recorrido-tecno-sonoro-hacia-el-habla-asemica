@@ -14,7 +14,7 @@ El proyecto pretende investigar este aspecto y así generar espacios para result
 
 Quiero interpelar al imaginario de quienes lo experimentan, buscando empatizar con ciertos sectores de nuestra memoria para evocar una sensación de familiaridad, acoplarse a una parte de nuestra experiencia que no alcanza a ser racionalizada. Ese lugar intermedio es de sumo interés para mi trabajo.
 
-## Proceso Creativo
+## Devenir hacia el despojo de sentido
 
 La operación recurrente que realizo en las piezas y obras que hice a lo largo de mi carrera es la de despojar de sentido -o al menos el sentido conocido o cotidiano- a la mirada que tenemos sobre el mundo, sus cosas, la existencia que nos atraviesa por los sentidos. Al liberar las cosas de su contenido semántico, se da lugar a re-generar el sentido, desde una perspectiva nueva.
 
