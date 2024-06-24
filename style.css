@@ -120,3 +120,52 @@ audio {
 .mt-1 {
   margin-top: 0.1em !important;
 }
+
+/* SIDEBAR INDEX COLLAPSE */
+
+/* Hide all nested lists by default */
+.sidebar ul {
+  /* display: none; */
+}
+
+/* style.css additions for collapsible sidebar */
+
+/* Ensure the ::after pseudo-element is visible */
+.sidebar-nav > ul > li > a.collapsible {
+  position: relative;
+  padding-right: 20px; /* Make space for the arrow */
+}
+
+.sidebar-nav > ul > li > a.collapsible::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.sidebar-nav > ul > li.collapsed > a.collapsible::after {
+  content: "►";
+}
+
+.sidebar-nav ul li.collapsed > ul {
+  display: none !important;
+}
+/* Style for the collapse toggle button */
+.collapse-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 5px; /* Space between button and link */
+  font-size: inherit; /* Match font size with surrounding text */
+}
+
+/* Hide child items when parent is collapsed */
+.sidebar-nav > ul > li.collapsed > ul {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
