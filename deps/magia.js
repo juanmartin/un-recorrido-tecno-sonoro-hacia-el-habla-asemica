@@ -14,6 +14,10 @@ window.$docsify.plugins = [].concat(function (hook, vm) {
           search.setAttribute("aria-placeholder", "Buscar");
           search.setAttribute("placeholder", "Buscar");
         }
+
+        // aca se puede jugar
+
+        coso();
       });
 
       observer.observe(search, { attributes: true });
@@ -21,15 +25,52 @@ window.$docsify.plugins = [].concat(function (hook, vm) {
 
     // Agregar el botón de dark/light mode
     const darkLightLink = document.querySelector("#docsify-darklight-theme");
-    console.log("darklight link", darkLightLink);
     const sidebar = document.getElementsByClassName("app-name")[0];
     sidebar.appendChild(darkLightLink);
-    console.log("sidebar", sidebar);
 
     darkLightLink.style.position = "relative";
     darkLightLink.style.display = "block";
     darkLightLink.style.margin = "auto";
     darkLightLink.style.top = "0";
     darkLightLink.style.right = "0";
+
+    // sidebar collapse
+    // initializeCollapsibleSidebar();
   });
+
+  console.log("content loaded");
 }, window.$docsify.plugins);
+
+function coso() {
+  // let sidebar = document.querySelectorAll(".sidebar-nav ul, .sidebar-nav li");
+  let sidebar = document.querySelectorAll(".sidebar-nav");
+  // let asd = document.querySelectorAll("ul");
+  // console.log("asd", asd);
+  console.log("sidebar", sidebar);
+
+  sidebar.forEach((el) => {
+    console.log("childs", el);
+    let ul;
+    if (el.nodeType == "ul") {
+      ul = el;
+    }
+    el.querySelectorAll("li").forEach((li) => {
+      console.log("lis", li);
+      li.addEventListener("click", (el) => {
+        console.log("click ul", el);
+        console.log("click ul", el.target);
+        // ul.classList.toggle("hidden");
+        const link = item.querySelector("a");
+        console.log("link", link);
+        const collapseButton = document.createElement("button");
+        collapseButton.textContent = "▼";
+        collapseButton.classList.add("collapse-toggle");
+        collapseButton.addEventListener("click", function () {
+          item.classList.toggle("hidden");
+          collapseButton.textContent = item.classList.contains("hidden") ? "►" : "▼";
+        });
+        item.insertBefore(collapseButton, link);
+      });
+    });
+  });
+}

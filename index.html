@@ -9,22 +9,10 @@
       content="Trabajo Final de Grado para la Licenciatura en Artes Electrónicas de la Universidad Nacional de Tres de Febrero (UNTREF) de Juan Martín Sesali Maydana"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/style.min.css"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="deps/lib/style.min.css" type="text/css" />
     <!-- Themes (light + dark) -->
-    <link
-      rel="stylesheet"
-      title="light"
-      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
-    />
-    <link
-      rel="stylesheet"
-      title="dark"
-      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
-    />
+    <link rel="stylesheet" title="light" href="deps/lib/theme-simple.css" />
+    <link rel="stylesheet" title="dark" href="deps/lib/theme-simple-dark.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -51,23 +39,24 @@
     <!-- Docsify v4 -->
     <!-- <script src="//cdn.jsdelivr.net/npm/docsify@4"></script> -->
     <!-- Required -->
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+    <script src="deps/lib/docsify.min.js"></script>
+    <script src="deps/lib/docsify-themeable.min.js"></script>
 
     <!-- Recommended -->
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+    <script src="deps/lib/search.js"></script>
+    <script src="deps/lib/zoom-image.min.js"></script>
 
     <!-- Other -->
-    <script src="https://unpkg.com/docsify-copy-code@2"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
-    <script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
+    <script src="deps/lib/docsify-copy-code@2.1.js"></script>
+    <script src="deps/lib/prism-python.min.js"></script>
+    <script src="deps/lib/prism-yaml.min.js"></script>
+    <script src="deps/lib/prism-bash.min.js"></script>
+    <script src="deps/lib/docsify-image-caption.min.js"></script>
     <!-- docsify-darklight-theme -->
-    <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/main.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/index.min.js"></script>
+    <script src="deps/lib/main.min.js"></script>
+    <script src="deps/lib/index.min.js"></script>
 
-    <script src="deps/magia.js"></script>
+    <!-- Magia -->
+    <script src="deps/magia.js" defer></script>
   </body>
 </html>
