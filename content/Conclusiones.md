@@ -8,8 +8,8 @@ La experiencia de escucha de los resultados logrados es sólo una parte de lo qu
 
 En principio contemplé la idea de este proceso como una investigación que celebre los resultados que generaría, y considero que se ve reflejado en los experimentos. Por otro lado, encontrarse  en la intersección del sentido y la sensación, es una tarea que no veo cerca de finalizar, sino una que se expande y abre más desafíos, no sólo desde el plano técnico, también me invita a pensar con más precisión qué es lo que busco como resultados, afinando cada paso del proceso. En realidad, **no hay conclusiones, hay devenires.**
 
-Por último. Como trabajo final de grado de la Licenciatura en Artes Electrónicas, y su naturaleza multimedia que me trajo a desarrollar este sitio web como soporte para el archivo de esta aventura, quiero dejar establecido que el siguiente _commit_ al repositorio que lo aloja, será el que se entrega a la universidad como versión final. Sin embargo, pueden existir cambios y mejoras en el futuro (propio de su naturaleza digital), pero que al estar versionado con git, puede comprobarse criptográficamente cuál es la versión de entrega.
+Por último. Como trabajo final de grado de la Licenciatura en Artes Electrónicas, y su naturaleza multimedia que me trajo a desarrollar este sitio web como soporte para el archivo de esta aventura, quiero dejar establecido que el siguiente _commit_ al repositorio que lo aloja, será el que se entrega a la universidad como versión final. Sin embargo, pueden existir cambios y mejoras en el futuro (propio de su naturaleza digital), pero que al estar versionado con [git](https://git-scm.com/), puede verificarse criptográficamente cuál es la versión de entrega.
 
 [Link al Repositorio](https://github.com/juanmartin/un-recorrido-tecno-sonoro-hacia-el-habla-asemica)
 
-Hash del commit de entrega: ``
+Hash del commit de entrega: `1e86cb1f291e94f2094a445e19eb49c029b51b30`
