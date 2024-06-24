@@ -12,4 +12,4 @@ Por último. Como trabajo final de grado de la Licenciatura en Artes Electrónic
 
 [Link al Repositorio](https://github.com/juanmartin/un-recorrido-tecno-sonoro-hacia-el-habla-asemica)
 
-Hash del commit de entrega: `1e86cb1f291e94f2094a445e19eb49c029b51b30`
+Hash del commit de entrega: `a66ba72e29aa718eab333e9f8c0f8361668ad25d`
