@@ -383,7 +383,7 @@ Al probar esta aplicación, me resonó haber hallado esa multiplicidad de voces 
 
 ![Patch de control probabilístico por OSC para AudioStellar](../_media/custom_osc_ast.png "Patch de control probabilístico por OSC para AudioStellar")
 
-### Mi propia voz _(Experimento #32)_
+### Mi propia voz _(Experimento #33)_
 
 A partir de los resultados sonoros de los experimentos anteriores, mi inquietud por el habla asémica crece aún más, como si esquivara cualquier forma de conclusión y ese universo se expandiera hacia un sinfín de posibilidades. Me di cuenta que necesitaba emparejar los timbres de las voces si quería realmente comenzar a _inventar idiomas_. Pero, ¿qué timbre? ¿qué voz sería la que represente este nuevo lenguaje vocalizado por computadora? Por supuesto la respuesta apareció de inmediato, ¡la mía! ¿Quién sino con mayor disponibilidad y entrega para esta experimentación? De aquí surgen dos posibilidades:
 
